@@ -1,12 +1,19 @@
+/*4. Клас «трикутник»:
+        - трикутник задається довжиною трьох сторін
+        - конструктор класа перевіряє, чи можна створити трикутник із заданими сторонами.
+        - методи класу дозволяють знаходити периметр трикутника, площу трикутника;
+        - існує метод для порівняння з іншим трикутником.*/
+
+
 package com.company;
 
 public class Main {
 
     public static void main(String[] args) {
         Triangle tr1=new Triangle(3,4,5);
-        System.out.println("a="+ tr1.getA()+" b="+ tr1.getB()+" c="+ tr1.getC());
+        tr1.printTriangle();
         Triangle tr=new Triangle(0,1,1);
-        System.out.println("a="+ tr.getA()+" b="+ tr.getB()+" c="+ tr.getC());
+        tr.printTriangle();
         tr.setA(5);
         tr.setB(5);
         tr.setC(5);
@@ -61,8 +68,7 @@ class Triangle {
     }
 
     public boolean IsEqual(Triangle tr2){
-        if(this.a==tr2.a && this.b==tr2.b && this.c==tr2.c) return true;
-        else return false;
+        return this.a == tr2.a && this.b == tr2.b && this.c == tr2.c;
     }
 
     public double Perimeter(){
@@ -70,7 +76,10 @@ class Triangle {
     }
 
     public double Area(){
-        double p=this.Perimeter();
+        double p=this.Perimeter()/2d;
         return Math.sqrt(p*(p-this.a)*(p-this.b)*(p-this.c));
+    }
+    public void printTriangle() {
+        System.out.println("a="+ this.getA()+" b="+ this.getB()+" c="+ this.getC());
     }
 }

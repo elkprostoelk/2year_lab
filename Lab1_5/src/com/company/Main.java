@@ -1,3 +1,4 @@
+//4) Знайти мінімальне значення функції f(x)=sin x + cos^2 x На відрізку [0,π]
 package com.company;
 
 import java.util.ArrayList;
