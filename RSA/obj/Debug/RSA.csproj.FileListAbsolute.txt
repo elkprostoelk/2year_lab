@@ -1,0 +1,12 @@
+C:\Users\Mikhail Novikov\Desktop\RSA\bin\Debug\RSA.exe.config
+C:\Users\Mikhail Novikov\Desktop\RSA\bin\Debug\RSA.exe
+C:\Users\Mikhail Novikov\Desktop\RSA\bin\Debug\RSA.pdb
+C:\Users\Mikhail Novikov\Desktop\RSA\obj\Debug\RSA.csprojAssemblyReference.cache
+C:\Users\Mikhail Novikov\Desktop\RSA\obj\Debug\RSA.Form1.resources
+C:\Users\Mikhail Novikov\Desktop\RSA\obj\Debug\RSA.Properties.Resources.resources
+C:\Users\Mikhail Novikov\Desktop\RSA\obj\Debug\RSA.csproj.GenerateResource.cache
+C:\Users\Mikhail Novikov\Desktop\RSA\obj\Debug\RSA.csproj.CoreCompileInputs.cache
+C:\Users\Mikhail Novikov\Desktop\RSA\obj\Debug\RSA.exe
+C:\Users\Mikhail Novikov\Desktop\RSA\obj\Debug\RSA.pdb
+C:\Users\Mikhail Novikov\Desktop\RSA\obj\Debug\RSA.EncryptForm.resources
+C:\Users\Mikhail Novikov\Desktop\RSA\obj\Debug\RSA.DecryptForm.resources
