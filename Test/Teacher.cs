@@ -8,6 +8,7 @@ namespace Test
     {
         public float Salary { get; set; }
         public int MaxNumberOfCourseWorks { get; private set; }
+        public List<Student> CourseWorkStudents { get; private set; }
         private AcademicDegrees academicdegree;
         public string AcademicDegree
         {
@@ -46,7 +47,7 @@ namespace Test
         }
         private Ranks title;
         public string Title
-        { 
+        {
             get
             {
                 switch (this.title)
@@ -62,7 +63,7 @@ namespace Test
                     case Ranks.Assistant:
                         return "Assistant";
                     default:
-                        return "";
+                        return string.Empty;
                 }
             }
             set
@@ -86,14 +87,14 @@ namespace Test
         }
         public enum AcademicDegrees
         {
-            DoctorOfSсiences=1,
+            DoctorOfSсiences = 1,
             CandidateOfSciences,
             Masters,
             Bachelors
         }
         public enum Ranks
         {
-            Professor=1,
+            Professor = 1,
             Docent,
             ElderTeacher,
             Teacher,
@@ -105,29 +106,34 @@ namespace Test
             academicdegree = AcademicDegrees.Masters;
             title = Ranks.Teacher;
             MaxNumberOfCourseWorks = 1;
+            CourseWorkStudents = new List<Student>(MaxNumberOfCourseWorks);
         }
         public Teacher(string name, int age, AddressField address, float salary, int maxnumofcourseworks, string acaddegree, string title) : base(name, age, address)
         {
             Salary = salary;
             AcademicDegree = acaddegree;
-            Title=title;
+            Title = title;
             MaxNumberOfCourseWorks = maxnumofcourseworks;
+            CourseWorkStudents = new List<Student>(MaxNumberOfCourseWorks);
+        }
+        public void AddCourseWorkStudent(Student student)
+        {
+            CourseWorkStudents.Add(student);
+        }
+        public void DeleteCourseWorkStudent(Student student)
+        {
+            CourseWorkStudents.Remove(student);
+            student.courseWork = null;
         }
         public override string ToString()
         {
             string result = base.ToString() + "|";
             result += this.Salary + "|";
             result += this.AcademicDegree + "|";
-            result += this.Title;
+            result += this.Title + "|";
+            foreach (var item in CourseWorkStudents)
+                result += item.Name + "|" + item.courseWork.Title;
             return result;
-        }
-        public float getSalary()
-        {
-            return this.Salary;
-        }
-        public void setSalary(float s)
-        {
-            this.Salary = s;
         }
     }
 }

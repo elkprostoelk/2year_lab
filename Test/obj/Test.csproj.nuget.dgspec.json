@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Mikhail Novikov\\Desktop\\Test\\Test.csproj": {}
+    "C:\\Users\\Mikhail Novikov\\Documents\\GitHub\\2year_lab\\Test\\Test.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Mikhail Novikov\\Desktop\\Test\\Test.csproj": {
+    "C:\\Users\\Mikhail Novikov\\Documents\\GitHub\\2year_lab\\Test\\Test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Mikhail Novikov\\Desktop\\Test\\Test.csproj",
+        "projectUniqueName": "C:\\Users\\Mikhail Novikov\\Documents\\GitHub\\2year_lab\\Test\\Test.csproj",
         "projectName": "Test",
-        "projectPath": "C:\\Users\\Mikhail Novikov\\Desktop\\Test\\Test.csproj",
+        "projectPath": "C:\\Users\\Mikhail Novikov\\Documents\\GitHub\\2year_lab\\Test\\Test.csproj",
         "packagesPath": "C:\\Users\\Mikhail Novikov\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Mikhail Novikov\\Desktop\\Test\\obj\\",
+        "outputPath": "C:\\Users\\Mikhail Novikov\\Documents\\GitHub\\2year_lab\\Test\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Mikhail Novikov\\AppData\\Roaming\\NuGet\\NuGet.Config",

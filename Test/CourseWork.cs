@@ -6,17 +6,21 @@ namespace Test
 {
     public class CourseWork
     {
-        public string Topic { get; set; }
+        public string Title { get; set; }
         public string Description { get; set; }
         public CourseWork()
         {
-            Topic = "";
+            Title = "";
             Description = "";
         }
-        public CourseWork(string topic, string description)
+        public CourseWork(string title, string description)
         {
-            Topic = topic;
+            Title = title;
             Description = description;
+        }
+        public override string ToString()
+        {
+            return "|" + Title + " " + Description;
         }
     }
 }

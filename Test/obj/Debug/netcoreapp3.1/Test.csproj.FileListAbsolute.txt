@@ -11,3 +11,9 @@ C:\Users\Mikhail Novikov\Desktop\Test\obj\Debug\netcoreapp3.1\Test.csproj.CoreCo
 C:\Users\Mikhail Novikov\Desktop\Test\obj\Debug\netcoreapp3.1\Test.dll
 C:\Users\Mikhail Novikov\Desktop\Test\obj\Debug\netcoreapp3.1\Test.pdb
 C:\Users\Mikhail Novikov\Desktop\Test\obj\Debug\netcoreapp3.1\Test.genruntimeconfig.cache
+C:\Users\Mikhail Novikov\Documents\GitHub\2year_lab\Test\obj\Debug\netcoreapp3.1\Test.csprojAssemblyReference.cache
+C:\Users\Mikhail Novikov\Documents\GitHub\2year_lab\Test\obj\Debug\netcoreapp3.1\Test.AssemblyInfoInputs.cache
+C:\Users\Mikhail Novikov\Documents\GitHub\2year_lab\Test\obj\Debug\netcoreapp3.1\Test.AssemblyInfo.cs
+C:\Users\Mikhail Novikov\Documents\GitHub\2year_lab\Test\obj\Debug\netcoreapp3.1\Test.csproj.CoreCompileInputs.cache
+C:\Users\Mikhail Novikov\Documents\GitHub\2year_lab\Test\obj\Debug\netcoreapp3.1\Test.dll
+C:\Users\Mikhail Novikov\Documents\GitHub\2year_lab\Test\obj\Debug\netcoreapp3.1\Test.pdb
