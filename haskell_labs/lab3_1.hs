@@ -1,0 +1,1 @@
+geomSr list = (foldr (*) 1 list)**(1 / fromIntegral(length list))
