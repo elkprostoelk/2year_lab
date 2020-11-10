@@ -118,7 +118,8 @@ namespace Test
         }
         public void AddCourseWorkStudent(Student student)
         {
-            CourseWorkStudents.Add(student);
+            if (CourseWorkStudents.Count == MaxNumberOfCourseWorks) throw new IndexOutOfRangeException("Максимальное количество студентов записано!");
+            else CourseWorkStudents.Add(student);
         }
         public void DeleteCourseWorkStudent(Student student)
         {
@@ -129,11 +130,12 @@ namespace Test
         {
             string result = base.ToString() + "|";
             result += this.Salary + "|";
+            result += this.MaxNumberOfCourseWorks + "|";
             result += this.AcademicDegree + "|";
             result += this.Title + "|";
             foreach (var item in CourseWorkStudents)
-                result += item.Name + "|" + item.courseWork.Title;
-            return result;
+                result += item.Name + "&";
+            return result.Remove(result.LastIndexOf('&'));
         }
     }
 }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Test
 {
-    public class Person
+    public abstract class Person
     {
         public string Name { get; set; }
         public int Age { get; set; }
@@ -20,10 +20,6 @@ namespace Test
             Name=name;
             Age=age;
             Address=address;
-        }
-        public static Person getEmptyPerson()
-        {
-            return new Person();
         }
         public override string ToString()
         {

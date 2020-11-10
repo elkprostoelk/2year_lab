@@ -1,12 +1,21 @@
-<people>
+<People>
   <Student>
-    <name>xxx</name>
-    <age>0</age>
-    <address>Ukraine Khersonska Khersonsky Kherson 27 Universitetska 0</address>
+    <Name>Ivan Ivanov</Name>
+    <Age>20</Age>
+    <AddressField>Ukraine Khersonska Kherson 126 Universitetska 11</AddressField>
+    <isState>True</isState>
+    <Scholarship>1300</Scholarship>
+    <AverageBall>87,4</AverageBall>
+    <courseWork>Student-teacher app creating$App for student-teacher conversation</courseWork>
   </Student>
-  <Student>
-    <name>xxx</name>
-    <age>0</age>
-    <address>Ukraine Khersonska Khersonsky Kherson 27 Universitetska 0</address>
-  </Student>
-</people>
+  <Teacher>
+    <Name>Petr Petrov</Name>
+    <Age>49</Age>
+    <AddressField>Ukraine Khersonska Kherson 25 200YearOfKherson 10</AddressField>
+    <Salary>4000</Salary>
+    <MaxNumberOfCourseWorks>3</MaxNumberOfCourseWorks>
+    <AcademicDegree>Candidate of Sciences</AcademicDegree>
+    <Title>Assistant</Title>
+    <CourseWorkStudents>Ivan Ivanov</CourseWorkStudents>
+  </Teacher>
+</People>

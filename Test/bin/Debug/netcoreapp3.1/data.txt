@@ -1,4 +1,2 @@
-xxx|0|Ukraine Khersonska Kherson 27 Universitetska 0|Contract|0|0
-Ivan Ivanov|20|Ukraine Khersonska Kherson 110 Universitetska 12|State|1300|87,45
-xxx|0|Ukraine Khersonska Kherson 27 Universitetska 0|0|Masters|Teacher
-Petr Petrov|50|Ukraine Khersonska Kherson 124 Perekopska 4|5000|Candidate of Sciences|Docent
+Ivan Ivanov|20|Ukraine Khersonska Kherson 126 Universitetska 11|State|1300|87,4|Student-teacher app creating$App for student-teacher conversation
+Petr Petrov|49|Ukraine Khersonska Kherson 25 200YearOfKherson 10|4000|3|Candidate of Sciences|Assistant|Ivan Ivanov
