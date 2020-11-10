@@ -1,0 +1,59 @@
+﻿@model PrepodPortal.Models.SecurityDocument
+
+@Scripts.Render("~/bundles/jqueryval")
+
+@using (Ajax.BeginForm("AddSecurityDocument", new AjaxOptions() { HttpMethod = "Post", LoadingElementId = "ajax_loader_securityDocuments", UpdateTargetId = "securityDocuments_body", InsertionMode = InsertionMode.Replace }))
+{
+   @Html.ValidationSummary(true)
+   @Html.AntiForgeryToken()
+
+   <input type="hidden" name="UserId" value="@Model.UserId" />
+   <input type="hidden" name="Type" value="@Model.Type" />
+
+   <div class="puSection first">
+      @Html.LabelFor(model => model.Copyright.AuthorNameList, htmlAttributes: new { @class = "control-label col-md-2" })
+      @Html.ListBoxFor(m => m.Copyright.AuthorNameList,
+      new MultiSelectList(C.GetPrepodNameList()),
+      new { style = "height:auto; max-height:100px;" })
+      <div>Затисніть Ctrl щоб обрати</div>
+      @Html.ValidationMessageFor(model => model.Copyright.AuthorNameList, "", new { @class = "text-danger" })
+   </div>
+
+   <div class="puSection">
+      @Html.LabelFor(model => model.Copyright.Title, htmlAttributes: new { @class = "control-label col-md-2" })
+      <div class="col-md-10">
+         @Html.EditorFor(model => model.Copyright.Title, new { htmlAttributes = new { @class = "form-control" } })
+         @Html.ValidationMessageFor(model => model.Copyright.Title, "", new { @class = "text-danger" })
+      </div>
+   </div>
+
+   <div class="puSection">
+      @Html.LabelFor(model => model.Copyright.Type, htmlAttributes: new { @class = "control-label col-md-2" })
+      <div class="col-md-10">
+         @Html.EditorFor(model => model.Copyright.Type, new { htmlAttributes = new { @class = "form-control" } })
+         @Html.ValidationMessageFor(model => model.Copyright.Type, "", new { @class = "text-danger" })
+      </div>
+   </div>
+
+   <div class="puSection">
+      @Html.LabelFor(model => model.Copyright.RegisteredDate, htmlAttributes: new { @class = "control-label col-md-2" })
+      <div class="col-md-10">
+         @Html.EditorFor(model => model.Copyright.RegisteredDate, new { htmlAttributes = new { @class = "form-control" } })
+         @Html.ValidationMessageFor(model => model.Copyright.RegisteredDate, "", new { @class = "text-danger" })
+      </div>
+   </div>
+
+   <div class="puSection">
+      @Html.LabelFor(model => model.Copyright.RegistrationNum, htmlAttributes: new { @class = "control-label col-md-2" })
+      <div class="col-md-10">
+         @Html.EditorFor(model => model.Copyright.RegistrationNum, new { htmlAttributes = new { @class = "form-control" } })
+         @Html.ValidationMessageFor(model => model.Copyright.RegistrationNum, "", new { @class = "text-danger" })
+      </div>
+   </div>
+
+   <div class="puSection last">
+      <button class="button blue" title="Додати" type="submit" href="javascript:void(0)">
+         Додати
+      </button>
+   </div>
+}

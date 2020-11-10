@@ -1,0 +1,48 @@
+﻿@model PrepodPortal.Models.QualificationIncrease
+
+@Scripts.Render("~/bundles/jqueryval")
+
+@using (Ajax.BeginForm("AddQualificationIncrease", new AjaxOptions() { HttpMethod = "Post", LoadingElementId = "ajax_loader_increaseQualInfo", UpdateTargetId = "increaseQualInfo_body", InsertionMode = InsertionMode.Replace }))
+{
+   @Html.ValidationSummary(true)
+   @Html.AntiForgeryToken()
+
+   <input type="hidden" name="UserId" value="@Model.UserId" />
+   <input type="hidden" name="Type" id="IncreaseQualInfoType" value="" />
+
+   <div class="puSection first">
+      @Html.LabelFor(model => model.OrderNumber, htmlAttributes: new { @class = "control-label col-md-2" })
+      @Html.EditorFor(model => model.OrderNumber, new { htmlAttributes = new { @class = "form-control" } })
+      @Html.ValidationMessageFor(model => model.OrderNumber, "", new { @class = "text-danger" })
+   </div>
+
+   <div class="puSection" id="FieldInternshipTheme">
+      @Html.LabelFor(model => model.InternshipTheme, htmlAttributes: new { @class = "control-label col-md-2" })
+      @Html.EditorFor(model => model.InternshipTheme, new { htmlAttributes = new { @class = "form-control" } })
+      @Html.ValidationMessageFor(model => model.InternshipTheme, "", new { @class = "text-danger" })
+   </div>
+
+   <div class="puSection">
+      @Html.LabelFor(model => model.Organisation, htmlAttributes: new { @class = "control-label col-md-2" })
+      @Html.EditorFor(model => model.Organisation, new { htmlAttributes = new { @class = "form-control" } })
+      @Html.ValidationMessageFor(model => model.Organisation, "", new { @class = "text-danger" })
+   </div>
+
+   <div class="puSection">
+      @Html.LabelFor(model => model.StartDate, htmlAttributes: new { @class = "control-label col-md-2" })
+      @Html.EditorFor(model => model.StartDate, new { htmlAttributes = new { @class = "form-control" } })
+      @Html.ValidationMessageFor(model => model.StartDate, "", new { @class = "text-danger" })
+   </div>
+
+   <div class="puSection">
+      @Html.LabelFor(model => model.EndDate, htmlAttributes: new { @class = "control-label col-md-2" })
+      @Html.EditorFor(model => model.EndDate, new { htmlAttributes = new { @class = "form-control" } })
+      @Html.ValidationMessageFor(model => model.EndDate, "", new { @class = "text-danger" })
+   </div>
+
+   <div class="puSection last">
+      <button class="button blue" title="Додати" type="submit" href="javascript:void(0)">
+         Додати
+      </button>
+   </div>
+}

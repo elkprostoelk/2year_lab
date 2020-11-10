@@ -1,0 +1,280 @@
+﻿@model PrepodPortal.Models.UserProfile
+
+@{
+   bool isAdmin = User.IsInRole("admin") || User.IsInRole("superuser");
+   bool isMe = C.GetMyId(User) == Model.UserId;
+}
+
+<script type="text/javascript">
+   $(function () {
+      $("#science_tabs").tabs();
+   });
+</script>
+
+<div id="science_tabs" class="tabs">
+   <ul>
+      <li><a href="#science-increaseQualInfo" id="science_tab4" style="cursor: pointer !important" onclick="$('#FilterIncreaseQualInfoSubmit').trigger('click'); $('#get_increaseQualInfo').css('font-weight', 'bold');">Підвищ. кваліф.</a></li>
+      <li><a href="#science-publications" id="science_tab1" style="cursor: pointer !important" onclick="$('#get_publs_all').trigger('click'); $('#filterListArts div a').css('font-weight', 'normal'); $('#get_arts_all').css('font-weight', 'bold');">Публікації</a></li>
+      <li><a href="#science-convs" id="science_tab2" style="cursor: pointer !important" onclick="$('#get_convs_all').trigger('click'); $('#filterListConvs div a').css('font-weight', 'normal'); $('#get_convs_all').css('font-weight', 'bold');">Конференції</a></li>
+      <li><a href="#science-scrdocs" id="science_tab3" style="cursor: pointer !important" onclick="$('#get_securityDocuments_all').trigger('click'); $('#filterListSecurityDocuments div a').css('font-weight', 'normal'); $('#get_securityDocuments_all').css('font-weight', 'bold');">Охоронні документи</a></li>
+   </ul>
+
+   <div id="science-increaseQualInfo">
+      <div class="scienceTab_header">
+         @if (User.Identity.IsAuthenticated && isMe || isAdmin)
+         {<a href="javascript:void(0)" onclick="$('.puWinBg').fadeIn('fast');$('.puWinTitle').html('Вид підвищення кваліфікації');$('.puWinCont').html($('.puCont#selectIncreaseQualType').html());">Додати запис про підвищ. кваліф.</a>}
+         @using (Ajax.BeginForm("FilterIncreaseQualInfo", new AjaxOptions() { HttpMethod = "Get", LoadingElementId = "ajax_loader_increaseQualInfo", UpdateTargetId = "increaseQualInfo_body", InsertionMode = InsertionMode.Replace }))
+         {
+            <input type="hidden" name="UserId" value="@Model.UserId" />
+            <input type="submit" id="FilterIncreaseQualInfoSubmit" style="display:none" />
+         }
+      </div>
+      <div class="scienceTab_body_wrap">
+         <div id="ajax_loader_increaseQualInfo" class="ajax_loader"></div>
+         <div id="increaseQualInfo_body">
+         </div>
+      </div>
+   </div>
+
+   <div id="science-publications">
+      <div class="scienceTab_header">
+         @if (User.Identity.IsAuthenticated && isMe || isAdmin)
+         {<a href="javascript:void(0)" onclick="$('.puWinBg').fadeIn('fast'); $('.puWinTitle').html('Оберіть тип публікації'); $('.puWinCont').html($('.puCont#selectPublicationType').html());">Додати публікацію</a>}
+         <div style="position: relative;display: inline-block;@if (isAdmin || User.Identity.IsAuthenticated && isMe) {<text>margin-left: 20px</text>}">
+            <a href="javascript:" class="showToolTip2" style="text-decoration: none" onclick="showToolTip('filterListPublications')" title="Фильтр">Фільтр</a>
+            @using (Ajax.BeginForm("FilterPublications", new AjaxOptions() { HttpMethod = "Get", LoadingElementId = "ajax_loader_publications", UpdateTargetId = "publs_body", InsertionMode = InsertionMode.Replace }))
+            {
+               <input type="hidden" name="UserId" value="@Model.UserId" />
+               <input id="filterBy1" name="filterBy" value="" type="hidden" />
+               <input type="submit" id="FilterPublicationsSubmit" style="display:none" />
+            }
+            <div id="filterListPublications" class="toolTip2 tooltipCustom">
+               <div><a href="javascript:" id="get_publs_all" style="font-weight: bold" onclick="$('#filterBy1').val('All'); $('#filterListPublications div a').css('font-weight', 'normal'); $(this).css('font-weight', 'bold'); $('#FilterPublicationsSubmit').trigger('click');">Показати все</a></div>
+               <div><a href="javascript:" onclick="$('#filterBy1').val('Books'); $('#filterListPublications div a').css('font-weight', 'normal'); $(this).css('font-weight', 'bold'); $('#FilterPublicationsSubmit').trigger('click');">Підручники</a></div>
+               <div><a href="javascript:" onclick="$('#filterBy1').val('Monographs'); $('#filterListPublications div a').css('font-weight', 'normal'); $(this).css('font-weight', 'bold'); $('#FilterPublicationsSubmit').trigger('click');">Монографії</a></div>
+               <div><a href="javascript:" onclick="$('#filterBy1').val('Guidelines'); $('#filterListPublications div a').css('font-weight', 'normal'); $(this).css('font-weight', 'bold'); $('#FilterPublicationsSubmit').trigger('click');">Методич. рекомендації</a></div>
+               <div><a href="javascript:" onclick="$('#filterBy1').val('Aids'); $('#filterListPublications div a').css('font-weight', 'normal'); $(this).css('font-weight', 'bold'); $('#FilterPublicationsSubmit').trigger('click');">Посібники</a></div>
+               <div><a href="javascript:" onclick="$('#filterBy1').val('Article'); $('#filterListPublications div a').css('font-weight', 'normal'); $(this).css('font-weight', 'bold'); $('#FilterPublicationsSubmit').trigger('click');">Статті</a></div>
+               <div><a href="javascript:" onclick="$('#filterBy1').val('LectureTheses'); $('#filterListPublications div a').css('font-weight', 'normal'); $(this).css('font-weight', 'bold'); $('#FilterPublicationsSubmit').trigger('click');">Тези доповідей</a></div>
+            </div>
+         </div>
+      </div>
+
+      <div class="scienceTab_body_wrap">
+         <div id="ajax_loader_publications" class="ajax_loader"></div>
+         <div id="publs_body">
+         </div>
+      </div>
+
+   </div>
+
+
+   <div id="science-convs">
+      <div class="scienceTab_header">
+         @if (User.Identity.IsAuthenticated && isMe || isAdmin)
+         {<a href="javascript:void(0)" onclick="$('.puWinBg').fadeIn('fast');$('.puWinTitle').html('Додати конференцію');$('.puWinCont').html($('.puCont#addConversationCont').html());">Додати конференцію</a>}
+         <div style="position: relative;display: inline-block;@if (isAdmin || User.Identity.IsAuthenticated && isMe) {<text>margin-left: 20px</text>}">
+            <a href="javascript:" class="showToolTip2" style="text-decoration: none" onclick="showToolTip('filterListConvs');" title="Фільтр">Фільтр</a>
+            @using (Ajax.BeginForm("FilterConferences", new AjaxOptions() { HttpMethod = "Get", LoadingElementId = "ajax_loader_conversations", UpdateTargetId = "convs_body", InsertionMode = InsertionMode.Replace }))
+            {
+               <input type="hidden" name="UserId" value="@Model.UserId" />
+               <input id="filterBy2" name="filterBy" value="" type="hidden" />
+               <input type="submit" id="FilterConversationsSubmit" style="display:none" />
+            }
+            <div id="filterListConvs" class="toolTip2 tooltipCustom">
+               <div><a href="javascript:" id="get_convs_all" style="font-weight: bold" onclick="$('#filterBy2').val('All'); $('#filterListConvs div a').css('font-weight', 'normal'); $(this).css('font-weight', 'bold'); $('#FilterConversationsSubmit').trigger('click');">Показати все</a></div>
+               <div><a href="javascript:" onclick="$('#filterBy2').val('Helded'); $('#filterListConvs div a').css('font-weight', 'normal'); $(this).css('font-weight', 'bold'); $('#FilterConversationsSubmit').trigger('click');;">Проведені</a></div>
+               <div><a href="javascript:" onclick="$('#filterBy2').val('UnHelded'); $('#filterListConvs div a').css('font-weight', 'normal'); $(this).css('font-weight', 'bold'); $('#FilterConversationsSubmit').trigger('click');">Не проведені</a></div>
+               <div><a href="javascript:" onclick="$('#filterBy2').val('DateUp'); $('#filterListConvs div a').css('font-weight', 'normal'); $(this).css('font-weight', 'bold'); $('#FilterConversationsSubmit').trigger('click');">За датою ↑</a></div>
+               <div><a href="javascript:" onclick="$('#filterBy2').val('DateDown'); $('#filterListConvs div a').css('font-weight', 'normal'); $(this).css('font-weight', 'bold'); $('#FilterConversationsSubmit').trigger('click');">За датою ↓</a></div>
+            </div>
+         </div>
+      </div>
+      <div class="scienceTab_body_wrap">
+         <div id="ajax_loader_conversations" class="ajax_loader"></div>
+         <div id="convs_body">
+         </div>
+      </div>
+   </div>
+
+
+
+   <div id="science-scrdocs">
+      <div class="scienceTab_header">
+         @if (User.Identity.IsAuthenticated && isMe || isAdmin)
+         {<a href="javascript:void(0)" onclick="$('.puWinBg').fadeIn('fast');$('.puWinTitle').html('Оберіть тип охоронного документа');$('.puWinCont').html($('.puCont#selectSecurityDocType').html());">Додати охоронний документ</a>}
+         <div style="position: relative;display: inline-block;@if (isAdmin || User.Identity.IsAuthenticated && isMe) {<text>margin-left: 20px</text>}">
+            <a href="javascript:" class="showToolTip2" style="text-decoration: none" onclick="showToolTip('filterListSecurityDocuments')" title="Фільтр">Фільтр</a>
+            @using (Ajax.BeginForm("FilterSecurityDocuments", new AjaxOptions() { HttpMethod = "Get", LoadingElementId = "ajax_loader_securityDocuments", UpdateTargetId = "securityDocuments_body", InsertionMode = InsertionMode.Replace }))
+            {
+               <input type="hidden" name="UserId" value="@Model.UserId" />
+               <input id="filterBy3" name="filterBy" value="" type="hidden" />
+               <input type="submit" id="FilterSecurityDocumentsSubmit" style="display:none" />
+            }
+            <div id="filterListSecurityDocuments" class="toolTip2 tooltipCustom">
+               <div><a href="javascript:" id="get_securityDocuments_all" style="font-weight: bold" onclick="$('#filterBy3').val('All'); $('#filterListSecurityDocuments div a').css('font-weight', 'normal'); $(this).css('font-weight', 'bold'); $('#FilterSecurityDocumentsSubmit').trigger('click');">Показати все</a></div>
+               <div><a href="javascript:" onclick="$('#filterBy3').val('1'); $('#filterListSecurityDocuments div a').css('font-weight', 'normal'); $(this).css('font-weight', 'bold'); $('#FilterSecurityDocumentsSubmit').trigger('click');">Патенти</a></div>
+               <div><a href="javascript:" onclick="$('#filterBy3').val('2'); $('#filterListSecurityDocuments div a').css('font-weight', 'normal'); $(this).css('font-weight', 'bold'); $('#FilterSecurityDocumentsSubmit').trigger('click');">Док. на право на власність</a></div>
+            </div>
+         </div>
+      </div>
+      <div class="scienceTab_body_wrap">
+         <div id="ajax_loader_securityDocuments" class="ajax_loader"></div>
+         <div id="securityDocuments_body">
+         </div>
+      </div>
+   </div>
+
+</div>
+
+@{
+
+
+   //Publications
+
+   //Publication types dialogs
+   <div class="puCont" id="selectPublicationType">
+
+      <div class="puSection first">
+         @Html.DropDownList("selectListPublicationType", EnumHelper.GetSelectList(typeof(Enums.PublicationTypes)), "Тип Публікації", new { @id = "selectListPublicationType" })
+      </div>
+
+      <div class="puSection last">
+         <button class="button blue" title="Додати" type="button" href="javascript:void(0)" onclick="PublicationTypeSelected($('select[name=selectListPublicationType]').val())">
+            Обрати
+         </button>
+      </div>
+
+   </div>
+
+   <div class="puCont" id="selectArticleType">
+
+      <div class="puSection first">
+         @Html.DropDownList("selectListArticleType", EnumHelper.GetSelectList(typeof(Enums.ArticleTypes)), "Тип Статті", new { @id = "selectListArticleType" })
+      </div>
+
+      <div class="puSection last">
+         <button class="button blue" title="Додати" type="button" href="javascript:void(0)" onclick="ArticleTypeSelected($('select[name=selectListArticleType]').val())">
+            Обрати
+         </button>
+      </div>
+
+   </div>
+
+   <div class="puCont" id="selectSchoolBookType">
+
+      <div class="puSection first">
+         @Html.DropDownList("selectListSchoolBookType", EnumHelper.GetSelectList(typeof(Enums.SchoolBookTypes)), "Тип Підручника/Методич. рекомендації/Посібника", new { @id = "selectListSchoolBookType" })
+      </div>
+
+      <input name="schoolBookType2" type="hidden" id="schoolBookType2" value="" />
+
+      <div class="puSection last">
+         <button class="button blue" title="Додати" type="button" href="javascript:void(0)" onclick="SchoolBookTypeSelected($('select[name=selectListSchoolBookType]').val(),$('input[name=schoolBookType2]').val())">
+            Обрати
+         </button>
+      </div>
+
+   </div>
+
+   <div class="puCont" id="selectMonographType">
+
+      <div class="puSection first">
+         @Html.DropDownList("selectListMonographType", EnumHelper.GetSelectList(typeof(Enums.MonographTypes)), "Тип Монографії", new { @id = "selectListMonographType" })
+      </div>
+
+      <div class="puSection last">
+         <button class="button blue" title="Додати" type="button" href="javascript:void(0)" onclick="MonographTypeSelected($('select[name=selectListMonographType]').val())">
+            Обрати
+         </button>
+      </div>
+
+   </div>
+
+   <div class="puCont" id="selectIncreaseQualType">
+
+      <div class="puSection first">
+         @Html.DropDownList("selectListIncreaseQualType", EnumHelper.GetSelectList(typeof(Enums.QualificationIncreaseTypes)), "Вид підвищ. кваліф.", new { @id = "selectListIncreaseQualType" })
+      </div>
+
+      <div class="puSection last">
+         <button class="button blue" title="Додати" type="button" href="javascript:void(0)" onclick="IncreaseQualTypeSelected($('select[name=selectListIncreaseQualType').val())">
+            Обрати
+         </button>
+      </div>
+
+   </div>
+
+   <div class="puCont" id="selectMOHGryphType">
+
+      <div class="puSection first">
+         @Html.DropDownList("selectListMOHGryphType", EnumHelper.GetSelectList(typeof(Enums.MOHGryphTypes)), "Тип грифу МОН", new { @id = "selectListMOHGryphType" })
+      </div>
+
+      <input name="schoolBookType3" type="hidden" id="schoolBookType3" value="" />
+
+      <div class="puSection last">
+         <button class="button blue" title="Додати" type="button" href="javascript:void(0)" onclick="MOHGryphTypeSelected($('select[name=selectListMOHGryphType]').val(), $('input[name=schoolBookType3]').val())">
+            Обрати
+         </button>
+      </div>
+
+   </div>
+
+   //Qualification Increase Add dialog
+   <div class="puCont" id="addIncreaseQualInfoCont">
+      @Html.Partial("_AddQualificationIncreasePartial", new PrepodPortal.Models.QualificationIncrease { UserId = Model.UserId })
+   </div>
+
+   //Publication Add dialogs
+   <div class="puCont" id="addArticleCont">
+      @Html.Partial("_AddArticlePartial2", new PrepodPortal.Models.Publication() { UserId = Model.UserId, Type = (int)Enums.PublicationTypes.Article })
+   </div>
+   <div class="puCont" id="addSchoolBookCont">
+      @Html.Partial("_AddSchoolBookPartial", new PrepodPortal.Models.Publication() { UserId = Model.UserId, Type = (int)Enums.PublicationTypes.SchoolBook })
+   </div>
+   <div class="puCont" id="addTutorialCont">
+      @Html.Partial("_AddSchoolBookPartial", new PrepodPortal.Models.Publication() { UserId = Model.UserId, Type = (int)Enums.PublicationTypes.Tutorial })
+   </div>
+   <div class="puCont" id="addGuideLineCont">
+      @Html.Partial("_AddSchoolBookPartial", new PrepodPortal.Models.Publication() { UserId = Model.UserId, Type = (int)Enums.PublicationTypes.Guideline })
+   </div>
+   <div class="puCont" id="addMonographCont">
+      @Html.Partial("_AddMonographPartial", new PrepodPortal.Models.Publication() { UserId = Model.UserId, Type = (int)Enums.PublicationTypes.Monograph })
+   </div>
+   <div class="puCont" id="addLectureThesesCont">
+      @Html.Partial("_AddLectureThesesPartial", new PrepodPortal.Models.Publication() { UserId = Model.UserId, Type = (int)Enums.PublicationTypes.LectureTheses })
+   </div>
+
+   //Conferences
+   <div class="puCont" id="addConversationCont">
+      @Html.Partial("_AddConferencePartial", new PrepodPortal.Models.Conference() { UserId = Model.UserId })
+   </div>
+
+
+   //Security docs
+
+   //Security doc type dialogs
+   <div class="puCont" id="selectSecurityDocType">
+
+      <div class="puSection first">
+         @Html.DropDownList("selectListSecurityDocType", EnumHelper.GetSelectList(typeof(Enums.SecurityDocTypes)), "Тип охоронного документа", new { @id = "selectListSecurityDocType" })
+      </div>
+
+      <div class="puSection last">
+         <button class="button blue" title="Додати" type="button" href="javascript:void(0)" onclick="SecurityDocumentTypeSelected($('select[name=selectListSecurityDocType]').val())">
+            Обрати
+         </button>
+      </div>
+
+   </div>
+
+   //Sucurity doc Add dialogs
+   <div class="puCont" id="addPatentCont">
+      @Html.Partial("_AddPatentPartial", new PrepodPortal.Models.SecurityDocument() { UserId = Model.UserId, Type = (int)Enums.SecurityDocTypes.Patent })
+   </div>
+   <div class="puCont" id="addCopyrightCont">
+      @Html.Partial("_AddCopyrightPartial", new PrepodPortal.Models.SecurityDocument() { UserId = Model.UserId, Type = (int)Enums.SecurityDocTypes.Copyright })
+   </div>
+
+}

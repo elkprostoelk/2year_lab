@@ -1,0 +1,61 @@
+﻿@model IEnumerable<PrepodPortal.Models.QualificationIncrease>
+
+@if (TempData["closeForm"] != null)
+{
+   <script>
+      closeForm();
+   </script>
+}
+
+@{
+   bool isAdmin = User.IsInRole("admin");
+   //bool isMe = C.GetMyId(User) == Model.FirstOrDefault;
+}
+
+@foreach (var qualIncrease in Model)
+{
+   <div class="scienceBlock">
+      @{
+         if (User.Identity.IsAuthenticated && C.GetMyId(User) == qualIncrease.UserId || isAdmin)
+         {
+            using (Ajax.BeginForm("DeleteIncreaseQual", new AjaxOptions() { HttpMethod = "Delete", LoadingElementId = "ajax_loader_increaseQualInfo", UpdateTargetId = "increaseQualInfo_body", InsertionMode = InsertionMode.Replace }))
+            {
+               @Html.AntiForgeryToken()
+               <input type="hidden" name="Id" value="@qualIncrease.Id" />
+               <input type="submit" id="DeleteIncreaseQualSubmit_@qualIncrease.Id" style="display:none" />
+            }
+
+            <div class="remove_scienceBlock" onclick="if(confirm('Ви дійсно бажаєте видалити обраний запис?')){$('#DeleteIncreaseQualSubmit_@qualIncrease.Id').trigger('click')}"></div>
+         }
+      }
+
+      <div class="scienceBlock_title">
+         @if (qualIncrease.Type == (int)Enums.QualificationIncreaseTypes.CreativeVacations)
+         {
+            <text>Творчі відпустки</text>
+         }
+         else if (qualIncrease.Type == (int)Enums.QualificationIncreaseTypes.InternshipOverseas)
+         {
+            <text>Стажування за кордоном</text>
+         }
+         else if (qualIncrease.Type == (int)Enums.QualificationIncreaseTypes.InternshipInUkranianUniversity)
+         {
+            <text>Стажування у ВНЗ України</text>
+         }
+         else if (qualIncrease.Type == (int)Enums.QualificationIncreaseTypes.QualificationIncreaseCourses)
+         {
+            <text>Курси підвищення кваліфікації</text>
+         }
+      </div>
+      <div class="scienceBlock_mainInf">
+         <div><span>@Html.DisplayNameFor(model => model.OrderNumber): </span>@Html.DisplayFor(model => qualIncrease.OrderNumber)</div>
+         @if (qualIncrease.Type == (int)Enums.QualificationIncreaseTypes.InternshipOverseas || qualIncrease.Type == (int)Enums.QualificationIncreaseTypes.InternshipInUkranianUniversity)
+         {<div><span>@Html.DisplayNameFor(model => model.InternshipTheme): </span>@Html.DisplayFor(model => qualIncrease.InternshipTheme)</div>}
+         <div><span>@Html.DisplayNameFor(model => model.Organisation): </span>@Html.DisplayFor(model => qualIncrease.Organisation)</div>
+         @if (qualIncrease.StartDate.HasValue)
+         {<div><span>@Html.DisplayNameFor(model => model.StartDate): </span>@Html.DisplayFor(model => qualIncrease.StartDate)</div>}
+         @if (qualIncrease.EndDate.HasValue)
+         {<div><span>@Html.DisplayNameFor(model => model.EndDate): </span>@Html.DisplayFor(model => qualIncrease.EndDate)</div>}
+      </div>
+   </div>
+         }

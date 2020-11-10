@@ -1,0 +1,111 @@
+﻿@model IEnumerable<PrepodPortal.Models.Conference>
+
+@if (TempData["closeForm"] != null)
+{
+   <script>
+      closeForm();
+   </script>
+}
+
+@{
+   bool isAdmin = User.IsInRole("admin");
+   //bool isMe = C.GetMyId(User) == Model.FirstOrDefault;
+}
+
+@foreach (var conv in Model)
+{
+   <div class="scienceBlock">
+      @if (TempData["ForReports"] == null)
+      {
+         if (User.Identity.IsAuthenticated && C.GetMyId(User) == conv.UserId || isAdmin)
+         {
+            using (Ajax.BeginForm("DeleteConference", new AjaxOptions() { HttpMethod = "Delete", LoadingElementId = "ajax_loader_conversations", UpdateTargetId = "convs_body", InsertionMode = InsertionMode.Replace }))
+            {
+               @Html.AntiForgeryToken()
+               <input type="hidden" name="Id" value="@conv.Id" />
+               <input type="submit" id="DeleteConversationSubmit_@conv.Id" style="display:none" />
+            }
+
+            <div class="remove_scienceBlock" onclick="if(confirm('Ви дійсно бажаєте видалити обрану конференцію?')){$('#DeleteConversationSubmit_@conv.Id').trigger('click')}"></div>
+            <!--<div class="edit_scienceBlock" onclick="$('.puWinBg').fadeIn('fast');$('.puWinTitle').html('Редактировать конференцию');$('.puWinCont').html($('.puCont#EditConvCont_@conv.Id').html());"></div>
+                  -->
+            /*<!-- PU Edit Conversation Content -->
+            <div class="puCont" id="EditConvCont_@row.Id">
+                  <div class="puSection first">
+                     <label for="conv_title">Назва*</label>
+                     <input value="@conv.title" type="text" onclick="$(this).removeClass('error')" name="conv_title_@row.Id" id="conv_title" tabindex="10"/>
+                  </div>
+                  <div class="puSection">
+                     <label for="conv_organizer">Організатор</label>
+                     <input value="@conv.organizer" type="text" name="conv_organizer_@row.Id" id="conv_organizer" tabindex="20"/>
+                  </div>
+                     <div class="puSection">
+                     <label for="conv_whereWas">Місце проведення*</label>
+                     <input value="@conv.location" type="text" onclick="$(this).removeClass('error')" name="conv_whereWas_@row.Id" id="conv_whereWas" tabindex="30"/>
+                  </div>
+                  <div class="puSection">
+                     <label>Дата проведення*</label>
+                     <select onclick="$(this).removeClass('error')" style="width: 100px" name="conv_whenWas_day_@row.Id" id="conv_whenWas_day" tabindex="40">
+                        <option value="">День</option>
+                        @for(int i = 1; i < 32; i++)
+                        {
+                              <option value="@i" @if(i == conv.getConvDate_part(1)){<text>selected="1"</text>}>@i</option>
+                        }
+                     </select>
+                     <select onclick="$(this).removeClass('error')" style="width: 100px" id="conv_whenWas_month" name="conv_whenWas_month_@row.Id" tabindex="50">
+                        <option value="">Місяць</option>
+                        @for(int i = 1; i < 13; i++)
+                        {
+                              if(i < 10)
+                              {
+                                 string val = "0" + i.ToString();
+                                 <option value="@val" @if(i == conv.getConvDate_part(2)){<text>selected="1"</text>}>@Generic.getMonthTitle(i)</option>
+                              }
+                              else
+                              {
+                                 <option value="@i" @if(i == conv.getConvDate_part(2)){<text>selected="1"</text>}>@Generic.getMonthTitle(i)</option>
+                              }
+                        }
+                     </select>
+                     <select onclick="$(this).removeClass('error')" style="width: 100px" name="conv_whenWas_year_@row.Id" id="conv_whenWas_year" tabindex="60">
+                        <option value="">Рік</option>
+                        @for(int i = DateTime.Now.Year; i > DateTime.Now.Year - 110; i--)
+                        {
+                              <option value="@i" @if(i == conv.getConvDate_part(3)){<text>selected="1"</text>}>@i</option>
+                        }
+                     </select>
+                  </div>
+                  <div class="puSection">
+                     <label for="conv_isHeld_@row.Id" style="display:inline-block">Була проведена</label>
+                     <input @if(conv.isHeld){<text>checked="checked"</text>} type="checkbox" tabindex="70" name="conv_isHeld_@row.Id" id="conv_isHeld_@row.Id" />
+                  </div>
+                  <div class="puSection last">
+                  <a tabindex="80" class="button blue" title="Редагувати" href="javascript:void(0)" onclick="editConv(@userId,@row.Id,$('input[name=conv_title_@row.Id]').val(),$('input[name=conv_organizer_@row.Id]').val(),$('input[name=conv_whereWas_@row.Id]').val(),$('select[name=conv_whenWas_day_@row.Id]').val(),$('select[name=conv_whenWas_month_@row.Id').val(),$('select[name=conv_whenWas_year_@row.Id]').val(),document.getElementById('conv_isHeld_@row.Id').checked)">
+                     Редагувати
+                  </a>
+                  </div>
+            </div>
+            <!---->*/
+         }
+      }
+      <div class="scienceBlock_title">@conv.Title</div>
+      <div class="scienceBlock_mainInf">
+         @if (TempData["ForReports"] != null)
+         {
+            <div><span>Викладач:</span> @Html.ActionLink(conv.UserProfile.Name, "Index", new { id = conv.UserProfile.UserId })</div>
+         }
+         <div><span>Організатор:</span> @conv.Organizer</div>
+         <div><span>Місце проведення:</span> @conv.HeldLocation</div>
+         @if (conv.HeldDate.HasValue)
+            {
+            <div><span>Дата проведення:</span> @conv.HeldDate.Value</div>
+         }
+      </div>
+      @if (conv.IsHeld.HasValue)
+      {
+         <div class="conv_isHelded @if((bool)conv.IsHeld){<text>Yes</text>}else{<text>No</text>}">
+            <u>Відбулася</u>
+         </div>
+      }
+   </div>
+}

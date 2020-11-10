@@ -1,0 +1,40 @@
+﻿@model IEnumerable<PrepodPortal.Models.ScientometricDbProfile>
+
+@if (TempData["closeForm"] != null)
+{
+   <script>
+      closeForm();
+   </script>
+}
+
+@{
+   bool isAdmin = User.IsInRole("admin");
+   //bool isMe = C.GetMyId(User) == Model.FirstOrDefault;
+}
+
+@foreach (var scientometricDbProfile in Model)
+{
+   <div class="scienceBlock">
+      @{
+         if (User.Identity.IsAuthenticated && C.GetMyId(User) == scientometricDbProfile.UserId || isAdmin)
+         {
+            using (Ajax.BeginForm("DeleteScientometricDbProfile", new AjaxOptions() { HttpMethod = "Delete", UpdateTargetId = "changeScientometricDbProfileWrap", InsertionMode = InsertionMode.Replace }))
+            {
+               @Html.AntiForgeryToken()
+               <input type="hidden" name="Id" value="@scientometricDbProfile.Id" />
+               <input type="submit" id="DeleteScientometricDbProfileSubmit_@scientometricDbProfile.Id" style="display:none" />
+            }
+
+            <div class="remove_scienceBlock" onclick="if(confirm('Ви дійсно бажаєте видалити обраний запис?')){$('#DeleteScientometricDbProfileSubmit_@scientometricDbProfile.Id').trigger('click')}"></div>
+         }
+      }
+
+      <div class="scienceBlock_title">
+         @Html.DisplayFor(model => scientometricDbProfile.Name)
+      </div>
+      <div class="scienceBlock_mainInf">
+         <div><span>@Html.DisplayNameFor(model => model.ProfileLink): </span>@Html.DisplayFor(model => scientometricDbProfile.ProfileLink)</div>
+      </div>
+   </div>
+         }
+

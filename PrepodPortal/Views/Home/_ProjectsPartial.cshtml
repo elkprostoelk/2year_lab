@@ -1,0 +1,72 @@
+﻿@model PrepodPortal.Models.UserProfile
+
+@{
+   bool isAdmin = User.IsInRole("admin");
+   bool isMe = C.GetMyId(User) == Model.UserId;
+
+if (TempData["closeForm"] != null)
+{
+   <script>
+      closeForm();
+   </script>
+}
+
+if (isAdmin == true && isMe)
+{
+   <div style="border-bottom:1px solid #ccc;padding-bottom:10px">
+      <a class="button green" onclick="$('.puWinBg').fadeIn('fast'); $('.puWinTitle').html('Добавить проект'); $('.puWinCont').html($('.puCont#addProjectCont').html());" href="javascript:void(0)">Add project</a>
+   </div>
+   }
+
+   if (Model.Projects.Count == 0)
+   {
+      if(isMe)
+      {
+   <p style="color:#777">Ви не є керівником або учасником жодного проєкту.</p>
+      }
+      else
+      {
+   <p style="color:#777">@Model.Name не є керівником або учасником жодного проєкту.</p>
+      }
+}
+
+   foreach (var proj in Model.Projects)
+   {
+   <div class="scienceBlock">
+
+      @if (isAdmin || proj.Role == "Керівник" && isMe)
+      {
+         using (Ajax.BeginForm("DeleteProject", new AjaxOptions() { HttpMethod = "Delete", LoadingElementId = "ajax_loader_main", UpdateTargetId = "right_col", InsertionMode = InsertionMode.Replace }))
+         {
+         @Html.AntiForgeryToken()
+         <input type="hidden" name="Id" value="@proj.Id" />
+         <input type="submit" id="DeleteProjectSubmit_@proj.Id" style="display:none" />
+         }
+
+         <div class="remove_scienceBlock" onclick="if(confirm('Ви дійсно бажаєте видалити обраний проєкт?')){$('#DeleteProjectSubmit_@proj.Id').trigger('click')}"></div>
+      }
+
+      <div class="scienceBlock_title">@proj.Name</div>
+      <div class="scienceBlock_mainInf">
+         <div><span>@Html.DisplayNameFor(model => proj.Manager): </span>@Html.DisplayFor(model => proj.Manager)</div>
+         <div><span>@Html.DisplayNameFor(model => proj.Members): </span>@Html.DisplayFor(model => proj.Members)</div>
+         <div><span>@Html.DisplayNameFor(model => proj.Date): </span>@Html.DisplayFor(model => proj.Date)</div>
+         <div><span>@Html.DisplayNameFor(model => proj.Description): </span>@Html.DisplayFor(model => proj.Description)</div>
+         <div><span>@Html.DisplayNameFor(model => proj.Role): </span>@Html.DisplayFor(model => proj.Role)</div>
+         @if (proj.Role == "Керівник" && isMe || isAdmin && isMe)
+            {
+            <a onclick="$('.puWinBg').fadeIn('fast'); $('.puWinTitle').html('Редагувати проєкт'); $('.puWinCont').html($('.puCont#editProjectCont_@proj.Id').html());" href="javascript:void(0)" style="text-decoration:underline">Редагувати проєкт</a>
+
+            <div class="puCont" id="editProjectCont_@proj.Id">
+               @Html.Partial("_EditProjectPartial",proj)
+            </div>
+            }
+      </div>
+   </div>
+    }
+
+ <!--Add project-->
+   <div class="puCont" id="addProjectCont">
+      @Html.Partial("_AddProjectPartial", new PrepodPortal.Models.Project())
+   </div>
+}

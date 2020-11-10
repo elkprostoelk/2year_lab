@@ -1,0 +1,147 @@
+﻿@model IEnumerable<PrepodPortal.Models.UserProfile>
+
+@{
+   bool isAdmin = User.IsInRole("admin");
+   Random myRandom = new Random();
+
+   ViewBag.Title = "Список викладачів";
+}
+
+@section scripts
+{
+   <link type="text/css" rel="stylesheet" href="/Content/allTeachers.css" />
+}
+
+@section head
+{
+   <div id="head">
+      <div id="logo">
+      </div>
+      <div id="right_side">
+         <div id="search_wrap">
+            <div id="search">
+               <form id="search_form">
+                  <input type="text" name="search" id="search_inp" placeholder="Пошук по сайту" /><button type="submit" id="search_sbm"></button>
+               </form>
+            </div>
+         </div>
+         <div id="all_prepods">
+            <a href="" class="button blue">Список викладачів</a>
+            @if (isAdmin || User.IsInRole("profiles creator"))
+            {
+               <a href="/NewTeacher/" class="button green">Додати викладача (+)</a>
+            }
+            @if (!User.Identity.IsAuthenticated)
+            {
+               <a href="/" class="button green">Авторизуватися</a>
+            }
+         </div>
+      </div>
+   </div>
+}
+
+@section body
+{
+   <div id="allTeachers_ttl">
+      <h1>@ViewBag.Title</h1>
+      <div id="ttl_side_links">
+         @if (User.Identity.IsAuthenticated)
+         {<a href="/">Моя сторінка</a>}
+      </div>
+   </div>
+   <div id="allTeachers_wrap">
+      @foreach (PrepodPortal.Models.UserProfile teacher in Model)
+      {
+         if (teacher.UserId != C.GetMyId(User))
+         {
+            if (string.IsNullOrEmpty(teacher.Name)) { teacher.Name = "Ім`я викладача"; }
+            <div class="teacher_block">
+               <div class="teacher_name">@Html.ActionLink(teacher.Name, "Index", new { id = teacher.UserId })</div>
+               <div class="teacher_avatar">
+                  <a href="@teacher.AvatarImg" class="flipLightBox" style="cursor: -moz-zoom-in">
+                     <img src="@teacher.AvatarImg?rnd=@myRandom.Next(1,1000)" alt="Avatar img" />
+                  </a>
+               </div>
+               <div class="teacher_mainInf">
+                  @if (teacher.Town.IsEmpty() && teacher.WorkPlaceMain.IsEmpty() && teacher.AcademicTitle.IsEmpty() && teacher.ScienceDegree.IsEmpty())
+                  {
+                     <div style="margin-top:35px;color:#777">Інформація відсутня</div>
+                  }
+                  else
+                  {
+                     <div>
+                        <span>Поточне місто: </span>
+                        @if (!string.IsNullOrEmpty(teacher.Town))
+                        {
+                           @teacher.Town
+                        }
+                        else
+                        {
+                           <text>Інформація відсутня</text>
+                        }
+                     </div>
+                     <div>
+                        <span>Поточне місце роботи: </span>
+                        @if (!string.IsNullOrEmpty(teacher.WorkPlaceMain))
+                        {
+                           @teacher.WorkPlaceMain
+                        }
+                        else
+                        {
+                           <text>Інформація відсутня</text>
+                        }
+                     </div>
+                           <div>
+                              <span>Учене звання: </span>
+                              @if (!string.IsNullOrEmpty(teacher.AcademicTitle))
+                              {
+                                 @teacher.AcademicTitle
+                              }
+                              else
+                              {
+                                 <text>Інформація відсутня</text>
+                              }
+                           </div>
+                           <div>
+                              <span>Науковий ступінь: </span>
+                              @if (!string.IsNullOrEmpty(teacher.ScienceDegree))
+                              {
+                                 @teacher.ScienceDegree
+                              }
+                              else
+                              {
+                                 <text>Інформація відсутня</text>
+                              }
+                           </div>
+                  }
+               </div>
+            </div>
+         }
+      }
+   </div>
+   <script type="text/javascript" src="/Scripts/fliplightbox.min.js"></script>
+   <script type="text/javascript">
+      $('body').flipLightBox
+         ({
+            lightbox_border_width: 1,
+            lightbox_flip_speed: 400,
+            lightbox_border_color: 'white',
+            lightbox_text_style: 'font-family: Arial, Helvetica, sans-serif; font-size: 16px; line-height: 1.4; color: #333333; text-align: center;',
+            lightbox_text_area_position: 'top',
+            back_image_text: '&lsaquo;&lsaquo; Prev',
+            next_and_back_image_text_style: 'font-weight: bold; color: #0078CA; font-size: 16px; text-decoration: none;'
+         });
+   </script>
+}
+
+@section footer
+{
+   <div id="copyright">
+      © 2014 - @DateTime.Now.Year Prepod Network
+      <br />
+      Сайт розроблений <a href="http://sadlogic.com">Sadlogic Inc.</a>, <a href="http://silv.pp.ua">Bogdan De George</a>
+   </div>
+   <div id="f_links">
+      <a href="/About/">Про проєкт</a>
+   </div>
+}

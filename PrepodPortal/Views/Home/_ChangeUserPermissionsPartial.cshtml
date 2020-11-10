@@ -1,0 +1,17 @@
+﻿@model PrepodPortal.Models.ChangeUserPermissions
+
+@if (C.GetMyId(User) != Model.UserId && User.IsInRole("admin"))
+{
+   using (Ajax.BeginForm("ChangeUserPermissions", new { userId = Model.UserId  } ,new AjaxOptions() { UpdateTargetId = "tempScriptsChUP", HttpMethod = "Put" }))
+   {
+      @Html.AntiForgeryToken()
+      <div class="settingsItemTitle">Права користувача</div>
+      @Html.ValidationSummary(false,"", new { @id = "ChUPErrCont" })
+      <div class="settingsInput">@Html.LabelFor(m => m.AllowAddUsers) <div style="padding-top:10px">@Html.EditorFor(m => m.AllowAddUsers)</div></div>
+      <div class="settingsInput" style="margin-top:15px">
+          <div style="opacity: 0;" id="changeUserPermissionsAlert" class="successAlert">Зміни збережено</div>
+         <button class="button blue small" type="submit" onclick="$('#ChUPErrCont').css('display', 'block');" style="font-size:small">Змінити</button>
+         <div id="tempScriptsChUP"></div>
+      </div>
+   }
+}

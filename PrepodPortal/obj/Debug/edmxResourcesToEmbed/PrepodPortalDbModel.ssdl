@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="degeorge_prepodNetworkModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Article">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="500" />
+    <Property Name="NumOfPages" Type="nvarchar" MaxLength="500" />
+    <Property Name="Publisher" Type="nvarchar" MaxLength="500" />
+    <Property Name="IsProf" Type="bit" />
+    <Property Name="WhichSciences" Type="nvarchar" MaxLength="500" />
+    <Property Name="ArtLang" Type="nvarchar" MaxLength="500" />
+    <Property Name="IsForeign" Type="bit" />
+    <Property Name="FilePath" Type="nvarchar" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="AuthCertificate">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="WorkType" Type="varchar" MaxLength="255" />
+    <Property Name="WorkTitle" Type="varchar" MaxLength="255" />
+    <Property Name="Date" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Conversation">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="500" />
+    <Property Name="DateHeld" Type="nvarchar" MaxLength="100" />
+    <Property Name="Organizer" Type="nvarchar" MaxLength="100" />
+    <Property Name="WhereHeld" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsHeld" Type="bit" />
+    <Property Name="DateHeld_long" Type="bigint" />
+    <Property Name="DateUpdated_long" Type="bigint" />
+  </EntityType>
+  <EntityType Name="Patent">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="255" />
+    <Property Name="Owner" Type="nvarchar" MaxLength="255" />
+    <Property Name="Date" Type="nvarchar" MaxLength="100" />
+    <Property Name="Patent_Num" Type="nvarchar" MaxLength="100" />
+    <Property Name="Date_Long" Type="bigint" />
+  </EntityType>
+  <EntityType Name="Publication">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Type" Type="nvarchar" MaxLength="255" />
+    <Property Name="Title" Type="nvarchar" MaxLength="255" />
+    <Property Name="AuthorsName" Type="nvarchar" MaxLength="255" />
+    <Property Name="NumOfPages" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="UserProfile">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Town" Type="nvarchar" MaxLength="100" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="100" />
+    <Property Name="BirthDate" Type="nvarchar" MaxLength="100" />
+    <Property Name="WorkPlacePosition" Type="nvarchar" MaxLength="100" />
+    <Property Name="WorkPlaceMain" Type="nvarchar" MaxLength="100" />
+    <Property Name="InstDone" Type="nvarchar" MaxLength="100" />
+    <Property Name="InstDoneWhen" Type="nvarchar" MaxLength="100" />
+    <Property Name="InstDoneSpec" Type="nvarchar" MaxLength="100" />
+    <Property Name="InstDoneQual" Type="nvarchar" MaxLength="100" />
+    <Property Name="ResearchStage" Type="nvarchar" MaxLength="100" />
+    <Property Name="CipherTtlResearchSpec" Type="nvarchar" MaxLength="100" />
+    <Property Name="AcdmTtl" Type="nvarchar" MaxLength="100" />
+    <Property Name="WhrAssigned" Type="nvarchar" MaxLength="100" />
+    <Property Name="DissertTheme" Type="nvarchar" MaxLength="100" />
+    <Property Name="Subjects" Type="nvarchar" MaxLength="100" />
+    <Property Name="MainPublics" Type="nvarchar" MaxLength="100" />
+    <Property Name="ScienceWorks" Type="nvarchar" MaxLength="100" />
+    <Property Name="PartInConvs" Type="nvarchar" MaxLength="100" />
+    <Property Name="WorkWithGradts" Type="nvarchar" MaxLength="100" />
+    <Property Name="RunStudScienceWork" Type="nvarchar" MaxLength="100" />
+    <Property Name="IncrQualInst" Type="nvarchar" MaxLength="100" />
+    <Property Name="IncrQualDocType" Type="nvarchar" MaxLength="100" />
+    <Property Name="IncrQualDocTheme" Type="nvarchar" MaxLength="100" />
+    <Property Name="IncrQualRecieveDate" Type="nvarchar" MaxLength="100" />
+    <Property Name="AvatarImg" Type="nvarchar" MaxLength="200" />
+    <Property Name="HomeTown" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <Association Name="FK_Articles_UserProfile">
+    <End Role="UserProfile" Type="Self.UserProfile" Multiplicity="1" />
+    <End Role="Article" Type="Self.Article" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserProfile">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Article">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AuthCertificates_UserProfile">
+    <End Role="UserProfile" Type="Self.UserProfile" Multiplicity="1" />
+    <End Role="AuthCertificate" Type="Self.AuthCertificate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserProfile">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="AuthCertificate">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Conversations_UserProfile">
+    <End Role="UserProfile" Type="Self.UserProfile" Multiplicity="1" />
+    <End Role="Conversation" Type="Self.Conversation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserProfile">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Conversation">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Patents_UserProfile">
+    <End Role="UserProfile" Type="Self.UserProfile" Multiplicity="1" />
+    <End Role="Patent" Type="Self.Patent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserProfile">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Patent">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Publications_UserProfile">
+    <End Role="UserProfile" Type="Self.UserProfile" Multiplicity="1" />
+    <End Role="Publication" Type="Self.Publication" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserProfile">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Publication">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="degeorge_prepodNetworkModelStoreContainer">
+    <EntitySet Name="Article" EntityType="Self.Article" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AuthCertificate" EntityType="Self.AuthCertificate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Conversation" EntityType="Self.Conversation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Patent" EntityType="Self.Patent" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Publication" EntityType="Self.Publication" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserProfile" EntityType="Self.UserProfile" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Articles_UserProfile" Association="Self.FK_Articles_UserProfile">
+      <End Role="UserProfile" EntitySet="UserProfile" />
+      <End Role="Article" EntitySet="Article" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AuthCertificates_UserProfile" Association="Self.FK_AuthCertificates_UserProfile">
+      <End Role="UserProfile" EntitySet="UserProfile" />
+      <End Role="AuthCertificate" EntitySet="AuthCertificate" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Conversations_UserProfile" Association="Self.FK_Conversations_UserProfile">
+      <End Role="UserProfile" EntitySet="UserProfile" />
+      <End Role="Conversation" EntitySet="Conversation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Patents_UserProfile" Association="Self.FK_Patents_UserProfile">
+      <End Role="UserProfile" EntitySet="UserProfile" />
+      <End Role="Patent" EntitySet="Patent" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Publications_UserProfile" Association="Self.FK_Publications_UserProfile">
+      <End Role="UserProfile" EntitySet="UserProfile" />
+      <End Role="Publication" EntitySet="Publication" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

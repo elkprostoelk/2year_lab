@@ -1,0 +1,125 @@
+﻿@model PrepodPortal.Models.Publication
+
+@Scripts.Render("~/bundles/jqueryval")
+
+@using (Ajax.BeginForm("AddPublication", new AjaxOptions() { HttpMethod = "Post", LoadingElementId = "ajax_loader_publications", UpdateTargetId = "publs_body", InsertionMode = InsertionMode.Replace }))
+{
+   @Html.ValidationSummary(true)
+   @Html.AntiForgeryToken()
+
+   <input type="hidden" name="UserId" value="@Model.UserId" />
+   <input type="hidden" name="Type" value="@Model.Type" />
+   <input type="hidden" name="Article.Type" id="ArticleType" value="" />
+
+   <div class="puSection first">
+      @Html.LabelFor(model => model.Article.AuthorNameList, htmlAttributes: new { @class = "control-label col-md-2" })
+      @Html.ListBoxFor(m => m.Article.AuthorNameList,
+    new MultiSelectList(C.GetPrepodNameList()),
+    new { style = "height:auto; max-height:100px;" })
+      <div>Затисніть Ctrl щоб обрати</div>
+      @Html.ValidationMessageFor(model => model.Article.AuthorNameList, "", new { @class = "text-danger" })
+   </div>
+
+   <div class="puSection">
+      @Html.LabelFor(model => model.Article.Title, htmlAttributes: new { @class = "control-label col-md-2" })
+      @Html.EditorFor(model => model.Article.Title, new { htmlAttributes = new { @class = "form-control" } })
+      @Html.ValidationMessageFor(model => model.Article.Title, "", new { @class = "text-danger" })
+   </div>
+
+   <div class="puSection">
+      @Html.LabelFor(model => model.Article.EditionName, htmlAttributes: new { @class = "control-label col-md-2" })
+      @Html.EditorFor(model => model.Article.EditionName, new { htmlAttributes = new { @class = "form-control" } })
+      @Html.ValidationMessageFor(model => model.Article.EditionName, "", new { @class = "text-danger" })
+   </div>
+
+   <div class="puSection">
+      @Html.LabelFor(model => model.Article.Number, htmlAttributes: new { @class = "control-label col-md-2" })
+      @Html.EditorFor(model => model.Article.Number, new { htmlAttributes = new { @class = "form-control" } })
+      @Html.ValidationMessageFor(model => model.Article.Number, "", new { @class = "text-danger" })
+   </div>
+
+   <div class="puSection">
+      @Html.LabelFor(model => model.Article.Issue, htmlAttributes: new { @class = "control-label col-md-2" })
+      @Html.EditorFor(model => model.Article.Issue, new { htmlAttributes = new { @class = "form-control" } })
+      @Html.ValidationMessageFor(model => model.Article.Issue, "", new { @class = "text-danger" })
+   </div>
+
+   <div class="puSection">
+      @Html.LabelFor(model => model.Article.Tome, htmlAttributes: new { @class = "control-label col-md-2" })
+      @Html.EditorFor(model => model.Article.Tome, new { htmlAttributes = new { @class = "form-control" } })
+      @Html.ValidationMessageFor(model => model.Article.Tome, "", new { @class = "text-danger" })
+   </div>
+
+   <div class="puSection">
+      @Html.LabelFor(model => model.Article.PublishedLocation, htmlAttributes: new { @class = "control-label col-md-2" })
+      @Html.EditorFor(model => model.Article.PublishedLocation, new { htmlAttributes = new { @class = "form-control" } })
+      @Html.ValidationMessageFor(model => model.Article.PublishedLocation, "", new { @class = "text-danger" })
+   </div>
+
+   <div class="puSection">
+      @Html.LabelFor(model => model.Article.ISSN, htmlAttributes: new { @class = "control-label col-md-2" })
+      @Html.EditorFor(model => model.Article.ISSN, new { htmlAttributes = new { @class = "form-control" } })
+      @Html.ValidationMessageFor(model => model.Article.ISSN, "", new { @class = "text-danger" })
+   </div>
+
+   <div class="puSection">
+      @Html.LabelFor(model => model.Article.PublishedYear, htmlAttributes: new { @class = "control-label col-md-2" })
+      @Html.EditorFor(model => model.Article.PublishedYear, new { htmlAttributes = new { @class = "form-control" } })
+      @Html.ValidationMessageFor(model => model.Article.PublishedYear, "", new { @class = "text-danger" })
+   </div>
+
+   <div class="puSection">
+      @Html.LabelFor(model => model.Article.PageNumbers, htmlAttributes: new { @class = "control-label col-md-2" })
+      @Html.EditorFor(model => model.Article.PageNumbers, new { htmlAttributes = new { @class = "form-control" } })
+      @Html.ValidationMessageFor(model => model.Article.PageNumbers, "", new { @class = "text-danger" })
+   </div>
+
+   <div class="puSection">
+      @Html.LabelFor(model => model.Article.URL, htmlAttributes: new { @class = "control-label col-md-2" })
+      @Html.EditorFor(model => model.Article.URL, new { htmlAttributes = new { @class = "form-control" } })
+      @Html.ValidationMessageFor(model => model.Article.URL, "", new { @class = "text-danger" })
+   </div>
+
+   <div class="puSection" id="FieldScientometricDB">
+      @Html.LabelFor(model => model.Article.ScientometricDB, htmlAttributes: new { @class = "control-label col-md-2" })
+      @Html.EditorFor(model => model.Article.ScientometricDB, new { htmlAttributes = new { @class = "form-control" } })
+      @Html.ValidationMessageFor(model => model.Article.ScientometricDB, "", new { @class = "text-danger" })
+   </div>
+
+   <div class="puSection" id="FieldSNIPIndex">
+      @Html.LabelFor(model => model.Article.SNIPIndex, htmlAttributes: new { @class = "control-label col-md-2" })
+      @Html.EditorFor(model => model.Article.SNIPIndex, new { htmlAttributes = new { @class = "form-control" } })
+      @Html.ValidationMessageFor(model => model.Article.SNIPIndex, "", new { @class = "text-danger" })
+   </div>
+
+   <div class="puSection">
+      @Html.LabelFor(model => model.Article.NumPagesTotal, htmlAttributes: new { @class = "control-label col-md-2" })
+      @Html.EditorFor(model => model.Article.NumPagesTotal, new { htmlAttributes = new { @class = "form-control" } })
+      @Html.ValidationMessageFor(model => model.Article.NumPagesTotal, "", new { @class = "text-danger" })
+   </div>
+
+   <div class="puSection">
+      @Html.LabelFor(model => model.Article.NumPagesByAuthor, htmlAttributes: new { @class = "control-label col-md-2" })
+      @Html.EditorFor(model => model.Article.NumPagesByAuthor, new { htmlAttributes = new { @class = "form-control" } })
+      @Html.ValidationMessageFor(model => model.Article.NumPagesByAuthor, "", new { @class = "text-danger" })
+   </div>
+
+   <div class="puSection">
+      @Html.LabelFor(model => model.Article.NumPrintedPagesTotal, htmlAttributes: new { @class = "control-label col-md-2" })
+      @Html.EditorFor(model => model.Article.NumPrintedPagesTotal, new { htmlAttributes = new { @class = "form-control" } })
+      @Html.ValidationMessageFor(model => model.Article.NumPrintedPagesTotal, "", new { @class = "text-danger" })
+   </div>
+
+   <div class="puSection">
+      @Html.LabelFor(model => model.Article.NumPrintedPagesByAuthor, htmlAttributes: new { @class = "control-label col-md-2" })
+      @Html.EditorFor(model => model.Article.NumPrintedPagesByAuthor, new { htmlAttributes = new { @class = "form-control" } })
+      @Html.ValidationMessageFor(model => model.Article.NumPrintedPagesByAuthor, "", new { @class = "text-danger" })
+   </div>
+
+   <div class="puSection last">
+      <button class="button blue" title="Додати" type="submit" href="javascript:void(0)">
+         Додати
+      </button>
+   </div>
+}
+

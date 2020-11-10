@@ -1,0 +1,35 @@
+﻿@model PrepodPortal.Models.ChangeEmailModel
+
+@if (C.GetMyId(User) == Model.UserId)
+{
+    using (Html.BeginForm("ChangeEmail", "Home", new { CurrentEmail = Model.CurrentEmail, userId = Model.UserId }, FormMethod.Post, null))
+    {
+        @Html.AntiForgeryToken()
+        <div class="settingsItemTitle">Зміна адреси ел. пошти <small>(використовується при вході в систему)</small></div>
+        @Html.ValidationSummary(false, "", new { @id = "ChEmlErrCont" })
+        <div class="settingsInput">@Html.LabelFor(m => m.CurrentEmail) <div id="currEmail">@Html.DisplayTextFor(m => m.CurrentEmail)</div></div>
+        <div class="settingsInput">@Html.LabelFor(m => m.NewEmail) @Html.EditorFor(m => m.NewEmail)</div>
+        <div class="settingsInput">
+            <div style="opacity: 0" id="changeEmailAlert" class="successAlert">Зміни збережено</div>
+            <button class="button blue small" style="font-size:small">Змінити</button>
+            <div id="tempScriptsChE"></div>
+        </div>
+    }
+}
+else
+{
+    using (Ajax.BeginForm("ChangeEmail", "Home", new { CurrentEmail = Model.CurrentEmail, userId = Model.UserId }, new AjaxOptions() { UpdateTargetId = "tempScriptsChE", HttpMethod = "Post" } , null))
+    {
+        @Html.AntiForgeryToken()
+        <div class="settingsItemTitle">Зміна адреси ел. пошти <small>(використовується при вході в систему)</small></div>
+        @Html.ValidationSummary()
+        <div class="settingsInput">@Html.LabelFor(m => m.CurrentEmail) <div id="currEmail">@Html.DisplayTextFor(m => m.CurrentEmail)</div></div>
+        <div class="settingsInput">@Html.LabelFor(m => m.NewEmail) @Html.EditorFor(m => m.NewEmail)</div>
+        <div class="settingsInput">
+            <div style="opacity: 0" id="changeEmailAlert" class="successAlert">Зміни збережено</div>
+            <button type="reset" id="ChEmlResetForm" hidden="hidden" />
+            <button class="button blue small" style="font-size:small">Змінити</button>
+            <div id="tempScriptsChE"></div>
+        </div>
+    }
+}

@@ -1,0 +1,284 @@
+﻿@model IEnumerable<PrepodPortal.Models.UserProfile>
+
+@{
+   bool isAdmin = User.IsInRole("admin");
+   Random myRandom = new Random();
+   ViewBag.Title = "Створити звіт про викладачів";
+}
+
+@section scripts
+   {
+   <link type="text/css" rel="stylesheet" href="/Content/default.css" />
+   <link type="text/css" rel="stylesheet" href="~/Content/allTeachers.css" />
+   <script type="text/javascript">
+      $(function () {
+         $("#science_tabs").tabs();
+         $("#scrdocs_tabs").tabs();
+         $("#publications_tabs").tabs();
+         $('#get_arts_all').trigger('click');
+         $(".jqDatePicker").datepicker();
+      });
+   </script>
+}
+
+@section head
+{
+   <div id="head">
+      <div id="logo">
+      </div>
+      <div id="right_side">
+         <div id="search_wrap">
+            <div id="search">
+               <form id="search_form">
+                  <input type="text" name="search" id="search_inp" placeholder="Пошук по сайту" /><button type="submit" id="search_sbm"></button>
+               </form>
+            </div>
+         </div>
+         <div id="all_prepods">
+            <a href="@Url.Action("PrepodsList","Home")" class="button blue">Список викладачів</a>
+            @if (isAdmin || User.IsInRole("profiles creator"))
+            {
+               <a href="/NewTeacher/" class="button green">Додати викладача (+)</a>
+            }
+            @if (!User.Identity.IsAuthenticated)
+            {
+               <a href="/" class="button green">Авторизуватися</a>
+            }
+         </div>
+      </div>
+   </div>
+}
+
+@section body
+{
+   <div id="allTeachers_ttl">
+      <h1>@ViewBag.Title</h1>
+      <div id="ttl_side_links">
+         @if (User.Identity.IsAuthenticated)
+         {<a href="/">Моя сторінка</a>}
+      </div>
+   </div>
+   <div id="allTeachers_wrap">
+
+      <div id="science_tabs" class="tabs">
+         <ul>
+            <li><a href="#science-publications" id="science_tab1" style="cursor: pointer !important" onclick="$('#get_arts_all').trigger('click'); $('#filterListArts div a').css('font-weight', 'normal'); $('#get_arts_all').css('font-weight', 'bold');">Публікації</a></li>
+            <li><a href="#science-convs" id="science_tab2" style="cursor: pointer !important" onclick="$('#get_convs_all').trigger('click'); $('#filterListConvs div a').css('font-weight', 'normal'); $('#get_convs_all').css('font-weight', 'bold');">Конференції</a></li>
+            <li><a href="#science-scrdocs" id="science_tab3" style="cursor: pointer !important" onclick="$('#get_patents_all').trigger('click'); $('#filterListPatents div a').css('font-weight', 'normal'); $('#get_patents_all').css('font-weight', 'bold');">Охоронні документи</a></li>
+         </ul>
+
+         <div id="science-publications" style="width:auto !Important">
+            <div class="scienceTab_body_wrap">
+               <div id="publications_body">
+                  <div id="publications_tabs" class="tabs">
+                     <ul>
+                        <li><a href="#publications_articles" id="publications_tab1" style="cursor: pointer !important" onclick="$('#get_arts_all').trigger('click'); $('#filterBy').val('All'); $('#filterListArts div a').css('font-weight', 'normal'); $('#get_arts_all').css('font-weight', 'bold');">Статті</a></li>
+                        <li><a href="#publications_otherPublications" id="publications_tab2" style="cursor: pointer !important" onclick="$('#get_publs_all').trigger('click'); $('#filterListPublications div a').css('font-weight', 'normal'); $('#get_publs_all').css('font-weight', 'bold');">Інші публікації</a></li>
+                     </ul>
+                     <div id="publications_articles" style="width:auto !Important">
+                        <div class="scienceTab_header">
+                           <div style="position: relative;display: inline-block;">
+                              <a href="javascript:" class="showToolTip2" style="text-decoration: none" onclick="showToolTip('filterListArts');" title="Фільтр">Фільтр</a>
+                              @using (Ajax.BeginForm("FilterArticles2", new AjaxOptions() { HttpMethod = "Get", LoadingElementId = "ajax_loader_arts", UpdateTargetId = "arts_body", InsertionMode = InsertionMode.Replace }))
+                              {
+                                 for (int i = 0; i < Model.ToArray().Length; i++)
+                                 {
+                                    var userProfile = Model.ToArray()[i];
+                                    <input type="hidden" name="model[@i].UserId" value="@userProfile.UserId" />
+                                 }
+                                 <input id="filterBy" name="filterBy" value="" type="hidden" />
+                                 <input type="submit" id="FilterArticlesSubmit" style="display:none" />
+                              }
+                              <div id="filterListArts" class="toolTip2 tooltipCustom">
+                                 <div><a href="javascript:" id="get_arts_all" style="font-weight: bold" onclick="$('#filterBy').val('All'); $('#filterListArts div a').css('font-weight', 'normal'); $(this).css('font-weight', 'bold'); $('#FilterArticlesSubmit').trigger('click');">Показати все</a></div>
+                                 <div><a href="javascript:" onclick="$('#filterBy').val('Foreign'); $('#filterListArts div a').css('font-weight', 'normal'); $(this).css('font-weight', 'bold'); $('#FilterArticlesSubmit').trigger('click');">Зарубіжні</a></div>
+                                 <div><a href="javascript:" onclick="$('#filterBy').val('NotForeign'); $('#filterListArts div a').css('font-weight', 'normal'); $(this).css('font-weight', 'bold'); $('#FilterArticlesSubmit').trigger('click');">Не зарубіжні</a></div>
+                                 <div><a href="javascript:" onclick="$('#filterBy').val('Prof'); $('#filterListArts div a').css('font-weight', 'normal'); $(this).css('font-weight', 'bold'); $('#FilterArticlesSubmit').trigger('click');">Професійні</a></div>
+                                 <div><a href="javascript:" onclick="$('#filterBy').val('NotProf'); $('#filterListArts div a').css('font-weight', 'normal'); $(this).css('font-weight', 'bold'); $('#FilterArticlesSubmit').trigger('click');">Не професійні</a></div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="scienceTab_body_wrap">
+                           <div id="ajax_loader_arts" class="ajax_loader"></div>
+                           <div id="arts_body">
+                           </div>
+                        </div>
+                     </div>
+
+
+                     <div id="publications_otherPublications" style="width:auto !Important">
+                        <div class="scienceTab_header">
+                           <div style="position: relative;display: inline-block;">
+                              <a href="javascript:" class="showToolTip2" style="text-decoration: none" onclick="showToolTip('filterListPublications')" title="Фільтр">Фільтр</a>
+                              @using (Ajax.BeginForm("FilterPublications2", new AjaxOptions() { HttpMethod = "Get", LoadingElementId = "ajax_loader_publications", UpdateTargetId = "otherPublications_body", InsertionMode = InsertionMode.Replace }))
+                              {
+                                 for (int i = 0; i < Model.ToArray().Length; i++)
+                                 {
+                                    var userProfile = Model.ToArray()[i];
+                                    <input type="hidden" name="model[@i].UserId" value="@userProfile.UserId" />
+                                 }
+                                 <input id="filterBy1" name="filterBy" value="" type="hidden" />
+                                 <input type="submit" id="FilterPublicationsSubmit" style="display:none" />
+                              }
+                              <div id="filterListPublications" class="toolTip2 tooltipCustom">
+                                 <div><a href="javascript:" id="get_publs_all" style="font-weight: bold" onclick="$('#filterBy1').val('All'); $('#filterListPublications div a').css('font-weight', 'normal'); $(this).css('font-weight', 'bold'); $('#FilterPublicationsSubmit').trigger('click');">Показати все</a></div>
+                                 <div><a href="javascript:" onclick="$('#filterBy1').val('Books'); $('#filterListPublications div a').css('font-weight', 'normal'); $(this).css('font-weight', 'bold'); $('#FilterPublicationsSubmit').trigger('click');">Книги</a></div>
+                                 <div><a href="javascript:" onclick="$('#filterBy1').val('Monographs'); $('#filterListPublications div a').css('font-weight', 'normal'); $(this).css('font-weight', 'bold'); $('#FilterPublicationsSubmit').trigger('click');">Монографії</a></div>
+                                 <div><a href="javascript:" onclick="$('#filterBy1').val('Guidelines'); $('#filterListPublications div a').css('font-weight', 'normal'); $(this).css('font-weight', 'bold'); $('#FilterPublicationsSubmit').trigger('click');">Методич. рекомендації</a></div>
+                                 <div><a href="javascript:" onclick="$('#filterBy1').val('Aids'); $('#filterListPublications div a').css('font-weight', 'normal'); $(this).css('font-weight', 'bold'); $('#FilterPublicationsSubmit').trigger('click');">Посібники</a></div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="scienceTab_body_wrap">
+                           <div id="ajax_loader_publications" class="ajax_loader"></div>
+                           <div id="otherPublications_body">
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+
+         <div id="science-convs" style="width:auto !Important">
+            <div class="scienceTab_header">
+               <div style="position: relative;display: inline-block;">
+                  <a href="javascript:" class="showToolTip2" style="text-decoration: none" onclick="showToolTip('filterListConvs');" title="Фильтр">Фильтр</a>
+                  @using (Ajax.BeginForm("FilterConversations2", new AjaxOptions() { HttpMethod = "Get", LoadingElementId = "ajax_loader_conversations", UpdateTargetId = "convs_body", InsertionMode = InsertionMode.Replace }))
+                  {
+                     for (int i = 0; i < Model.ToArray().Length; i++)
+                     {
+                        var userProfile = Model.ToArray()[i];
+                        <input type="hidden" name="model[@i].UserId" value="@userProfile.UserId" />
+                     }
+                     <input id="filterBy2" name="filterBy" value="" type="hidden" />
+                     <input type="submit" id="FilterConversationsSubmit" style="display:none" />
+                  }
+                  <div id="filterListConvs" class="toolTip2 tooltipCustom">
+                     <div><a href="javascript:" id="get_convs_all" style="font-weight: bold" onclick="$('#filterBy2').val('All'); $('#filterListConvs div a').css('font-weight', 'normal'); $(this).css('font-weight', 'bold'); $('#FilterConversationsSubmit').trigger('click');">Показати все</a></div>
+                     <div><a href="javascript:" onclick="$('#filterBy2').val('Helded'); $('#filterListConvs div a').css('font-weight', 'normal'); $(this).css('font-weight', 'bold'); $('#FilterConversationsSubmit').trigger('click');;">Проведенні</a></div>
+                     <div><a href="javascript:" onclick="$('#filterBy2').val('UnHelded'); $('#filterListConvs div a').css('font-weight', 'normal'); $(this).css('font-weight', 'bold'); $('#FilterConversationsSubmit').trigger('click');">Не проведені</a></div>
+                     <div><a href="javascript:" onclick="$('#filterBy2').val('DateUp'); $('#filterListConvs div a').css('font-weight', 'normal'); $(this).css('font-weight', 'bold'); $('#FilterConversationsSubmit').trigger('click');">За датою ↑</a></div>
+                     <div><a href="javascript:" onclick="$('#filterBy2').val('DateDown'); $('#filterListConvs div a').css('font-weight', 'normal'); $(this).css('font-weight', 'bold'); $('#FilterConversationsSubmit').trigger('click');">За датою ↓</a></div>
+                  </div>
+               </div>
+            </div>
+            <div class="scienceTab_body_wrap">
+               <div class="puSection" style="margin-top:10px;margin-bottom:10px">
+                  @using (Ajax.BeginForm("FilterConversations3", new AjaxOptions() { HttpMethod = "Get", LoadingElementId = "ajax_loader_conversations", UpdateTargetId = "convs_body", InsertionMode = InsertionMode.Replace }))
+                  {
+                     for (int i = 0; i < Model.ToArray().Length; i++)
+                     {
+                        var userProfile = Model.ToArray()[i];
+                        <input type="hidden" name="model[@i].UserId" value="@userProfile.UserId" />
+                     }
+                     <label style="display:inline-block">С: </label> <input type="text" name="dateRange1" class="jqDatePicker" />
+                     <label style="display:inline-block">По: </label> <input type="text" name="dateRange2" class="jqDatePicker" />
+                     <button type="submit" style="font-size:small" class="button blue">Шукати</button>
+                  }
+               </div>
+               <div id="ajax_loader_conversations" class="ajax_loader"></div>
+               <div id="convs_body">
+               </div>
+            </div>
+         </div>
+
+
+
+         <div id="science-scrdocs" style="width:auto !Important">
+            <div class="scienceTab_body_wrap">
+               <div id="scrDocs_body">
+                  <div id="scrdocs_tabs" class="tabs">
+                     <ul>
+                        <li><a href="#scrdocs-patents" id="scrdocs_tab1" style="cursor: pointer !important" onclick="$('#get_patents_all').trigger('click'); $('#filterListPatents div a').css('font-weight', 'normal'); $('#get_patents_all').css('font-weight', 'bold');">Патенти</a></li>
+                        <li><a href="#scrdocs-authcerts" id="scrdocs_tab2" style="cursor: pointer !important" onclick="$('#get_authCerts_all').trigger('click'); $('#filterListAuthCerts div a').css('font-weight', 'normal'); $('#get_authCerts_all').css('font-weight', 'bold');">Права на власність</a></li>
+                     </ul>
+                     <div id="scrdocs-patents" class="ui-tabs-panel ui-widget-content ui-corner-bottom" style="width:auto !Important">
+                        <div class="scienceTab_header">
+                           <a href="javascript:" class="showToolTip2" style="text-decoration: none" onclick="showToolTip('filterListPatents')" title="Фільтр">Фільтр</a>
+                           @using (Ajax.BeginForm("FilterPatents2", new AjaxOptions() { HttpMethod = "Get", LoadingElementId = "ajax_loader_patents", UpdateTargetId = "patents_body", InsertionMode = InsertionMode.Replace }))
+                           {
+                              for (int i = 0; i < Model.ToArray().Length; i++)
+                              {
+                                 var userProfile = Model.ToArray()[i];
+                                 <input type="hidden" name="model[@i].UserId" value="@userProfile.UserId" />
+                              }
+                              <input id="filterBy3" name="filterBy" value="" type="hidden" />
+                              <input type="submit" id="FilterPatentsSubmit" style="display:none" />
+                           }
+                           <div id="filterListPatents" class="toolTip2 tooltipCustom">
+                              <div><a href="javascript:" id="get_patents_all" style="font-weight: bold" onclick="$('#filterBy3').val('All'); $('#filterListPatents div a').css('font-weight', 'normal'); $(this).css('font-weight', 'bold'); $('#FilterPatentsSubmit').trigger('click');">Показати все</a></div>
+                              <div><a href="javascript:" onclick="$('#filterBy3').val('DateDown'); $('#filterListPatents div a').css('font-weight', 'normal'); $(this).css('font-weight', 'bold'); $('#FilterPatentsSubmit').trigger('click');">За датою ↓</a></div>
+                              <div><a href="javascript:" onclick="$('#filterBy3').val('DateUp'); $('#filterListPatents div a').css('font-weight', 'normal'); $(this).css('font-weight', 'bold'); $('#FilterPatentsSubmit').trigger('click');">За датою ↑</a></div>
+                           </div>
+                        </div>
+                        <div class="scienceTab_body_wrap">
+                           <div id="ajax_loader_patents" class="ajax_loader"></div>
+                           <div id="patents_body">
+                           </div>
+                        </div>
+                     </div>
+
+                     <div id="scrdocs-authcerts" class="ui-tabs-panel ui-widget-content ui-corner-bottom" style="width:auto !Important">
+                        <div class="scienceTab_header">
+                           <div style="position: relative;display: inline-block;">
+                              <a href="javascript:" class="showToolTip2" style="text-decoration: none" onclick="showToolTip('filterListAuthCerts')" title="Фільтр">Фільтр</a>
+                              @using (Ajax.BeginForm("FilterAuthCerts2", new AjaxOptions() { HttpMethod = "Get", LoadingElementId = "ajax_loader_authCertificates", UpdateTargetId = "authCertificates_body", InsertionMode = InsertionMode.Replace }))
+                              {
+                                 for (int i = 0; i < Model.ToArray().Length; i++)
+                                 {
+                                    var userProfile = Model.ToArray()[i];
+                                    <input type="hidden" name="model[@i].UserId" value="@userProfile.UserId" />
+                                 }
+                                 <input id="filterBy4" name="filterBy" value="" type="hidden" />
+                                 <input type="submit" id="FilterAuthCertsSubmit" style="display:none" />
+                              }
+                              <div id="filterListAuthCerts" class="toolTip2 tooltipCustom">
+                                 <div><a href="javascript:" id="get_authCerts_all" style="font-weight: bold" onclick="$('#filterBy4').val('All'); $('#filterListAuthCerts div a').css('font-weight', 'normal'); $(this).css('font-weight', 'bold'); $('#FilterAuthCertsSubmit').trigger('click');">Показати все</a></div>
+                                 <div><a href="javascript:" onclick="$('#filterBy4').val('DateDown'); $('#filterListAuthCerts div a').css('font-weight', 'normal'); $(this).css('font-weight', 'bold'); $('#FilterAuthCertsSubmit').trigger('click');">За датою ↓</a></div>
+                                 <div><a href="javascript:" onclick="$('#filterBy4').val('DateUp'); $('#filterListAuthCerts div a').css('font-weight', 'normal'); $(this).css('font-weight', 'bold'); $('#FilterAuthCertsSubmit').trigger('click');">За датою ↑</a></div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="scienceTab_body_wrap">
+                           <div id="ajax_loader_authCertificates" class="ajax_loader"></div>
+                           <div id="authCertificates_body">
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <script type="text/javascript" src="/Scripts/fliplightbox.min.js"></script>
+   <script type="text/javascript">
+      $('body').flipLightBox
+         ({
+            lightbox_border_width: 1,
+            lightbox_flip_speed: 400,
+            lightbox_border_color: 'white',
+            lightbox_text_style: 'font-family: Arial, Helvetica, sans-serif; font-size: 16px; line-height: 1.4; color: #333333; text-align: center;',
+            lightbox_text_area_position: 'top',
+            back_image_text: '&lsaquo;&lsaquo; Prev',
+            next_and_back_image_text_style: 'font-weight: bold; color: #0078CA; font-size: 16px; text-decoration: none;'
+         });
+   </script>
+}
+
+@section footer
+{
+   <div id="copyright">
+      © 2014 - @DateTime.Now.Year Prepod Network
+      <br />
+      Сайт розроблений <a href="http://sadlogic.com">Sadlogic Inc.</a>, <a href="http://silv.pp.ua">Bogdan De George</a>
+   </div>
+   <div id="f_links">
+      <a href="/About/">Про проєкт</a>
+   </div>
+}
+
+

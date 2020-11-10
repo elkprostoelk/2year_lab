@@ -1,0 +1,35 @@
+﻿@model PrepodPortal.Models.AcademicDegree
+
+@Scripts.Render("~/bundles/jqueryval")
+
+@using (Ajax.BeginForm("AddAcademicDegree", new AjaxOptions() { HttpMethod = "Post", UpdateTargetId = "changeAcademicDegreeWrap", InsertionMode = InsertionMode.Replace }))
+{
+   @Html.ValidationSummary(true)
+   @Html.AntiForgeryToken()
+
+   <input type="hidden" name="UserId" value="@Model.UserId" />
+   <input type="hidden" name="Type" id="AcademicDegreeType" value="" />
+
+
+   <div class="puSection first">
+      @Html.LabelFor(model => model.ReceiveDiplomaDate, htmlAttributes: new { @class = "control-label col-md-2" })
+      <div class="col-md-10">
+         @Html.EditorFor(model => model.ReceiveDiplomaDate, new { htmlAttributes = new { @class = "form-control" } })
+         @Html.ValidationMessageFor(model => model.ReceiveDiplomaDate, "", new { @class = "text-danger" })
+      </div>
+   </div>
+
+   <div class="puSection">
+      @Html.LabelFor(model => model.DiplomaNumber, htmlAttributes: new { @class = "control-label col-md-2" })
+      <div class="col-md-10">
+         @Html.EditorFor(model => model.DiplomaNumber, new { htmlAttributes = new { @class = "form-control" } })
+         @Html.ValidationMessageFor(model => model.DiplomaNumber, "", new { @class = "text-danger" })
+      </div>
+   </div>
+
+   <div class="puSection last">
+      <button class="button blue" title="Додати" type="submit" href="javascript:void(0)">
+         Додати
+      </button>
+   </div>
+}

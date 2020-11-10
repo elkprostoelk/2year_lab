@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="degeorge_prepodNetworkModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="PrepodPortalDbContext" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Articles" EntityType="degeorge_prepodNetworkModel.Article" />
+    <EntitySet Name="AuthCertificates" EntityType="degeorge_prepodNetworkModel.AuthCertificate" />
+    <EntitySet Name="Conversations" EntityType="degeorge_prepodNetworkModel.Conversation" />
+    <EntitySet Name="Patents" EntityType="degeorge_prepodNetworkModel.Patent" />
+    <EntitySet Name="Publications" EntityType="degeorge_prepodNetworkModel.Publication" />
+    <EntitySet Name="UserProfiles" EntityType="degeorge_prepodNetworkModel.UserProfile" />
+    <AssociationSet Name="FK_Articles_UserProfile" Association="degeorge_prepodNetworkModel.FK_Articles_UserProfile">
+      <End Role="UserProfile" EntitySet="UserProfiles" />
+      <End Role="Article" EntitySet="Articles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AuthCertificates_UserProfile" Association="degeorge_prepodNetworkModel.FK_AuthCertificates_UserProfile">
+      <End Role="UserProfile" EntitySet="UserProfiles" />
+      <End Role="AuthCertificate" EntitySet="AuthCertificates" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Conversations_UserProfile" Association="degeorge_prepodNetworkModel.FK_Conversations_UserProfile">
+      <End Role="UserProfile" EntitySet="UserProfiles" />
+      <End Role="Conversation" EntitySet="Conversations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Patents_UserProfile" Association="degeorge_prepodNetworkModel.FK_Patents_UserProfile">
+      <End Role="UserProfile" EntitySet="UserProfiles" />
+      <End Role="Patent" EntitySet="Patents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Publications_UserProfile" Association="degeorge_prepodNetworkModel.FK_Publications_UserProfile">
+      <End Role="UserProfile" EntitySet="UserProfiles" />
+      <End Role="Publication" EntitySet="Publications" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Article">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Title" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="NumOfPages" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Publisher" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="IsProf" Type="Boolean" />
+    <Property Name="WhichSciences" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="ArtLang" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="IsForeign" Type="Boolean" />
+    <Property Name="FilePath" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="UserProfile" Relationship="degeorge_prepodNetworkModel.FK_Articles_UserProfile" FromRole="Article" ToRole="UserProfile" />
+  </EntityType>
+  <EntityType Name="AuthCertificate">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="WorkType" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="WorkTitle" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Date" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="UserProfile" Relationship="degeorge_prepodNetworkModel.FK_AuthCertificates_UserProfile" FromRole="AuthCertificate" ToRole="UserProfile" />
+  </EntityType>
+  <EntityType Name="Conversation">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Title" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="DateHeld" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Organizer" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="WhereHeld" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="IsHeld" Type="Boolean" />
+    <Property Name="DateHeld_long" Type="Int64" />
+    <Property Name="DateUpdated_long" Type="Int64" />
+    <NavigationProperty Name="UserProfile" Relationship="degeorge_prepodNetworkModel.FK_Conversations_UserProfile" FromRole="Conversation" ToRole="UserProfile" />
+  </EntityType>
+  <EntityType Name="Patent">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Owner" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Patent_Num" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Date_Long" Type="Int64" />
+    <NavigationProperty Name="UserProfile" Relationship="degeorge_prepodNetworkModel.FK_Patents_UserProfile" FromRole="Patent" ToRole="UserProfile" />
+  </EntityType>
+  <EntityType Name="Publication">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="PublType" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="AuthorsName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="NumOfPages" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="UserProfile" Relationship="degeorge_prepodNetworkModel.FK_Publications_UserProfile" FromRole="Publication" ToRole="UserProfile" />
+  </EntityType>
+  <EntityType Name="UserProfile">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Town" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="BirthDate" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="WorkPlacePosition" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="WorkPlaceMain" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="InstDone" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="InstDoneWhen" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="InstDoneSpec" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="InstDoneQual" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ResearchStage" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CipherTtlResearchSpec" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="AcdmTtl" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="WhrAssigned" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DissertTheme" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Subjects" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="MainPublics" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ScienceWorks" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PartInConvs" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="WorkWithGradts" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="RunStudScienceWork" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="IncrQualInst" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="IncrQualDocType" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="IncrQualDocTheme" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="IncrQualRecieveDate" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="AvatarImg" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="HomeTown" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Articles" Relationship="degeorge_prepodNetworkModel.FK_Articles_UserProfile" FromRole="UserProfile" ToRole="Article" />
+    <NavigationProperty Name="AuthCertificates" Relationship="degeorge_prepodNetworkModel.FK_AuthCertificates_UserProfile" FromRole="UserProfile" ToRole="AuthCertificate" />
+    <NavigationProperty Name="Conversations" Relationship="degeorge_prepodNetworkModel.FK_Conversations_UserProfile" FromRole="UserProfile" ToRole="Conversation" />
+    <NavigationProperty Name="Patents" Relationship="degeorge_prepodNetworkModel.FK_Patents_UserProfile" FromRole="UserProfile" ToRole="Patent" />
+    <NavigationProperty Name="Publications" Relationship="degeorge_prepodNetworkModel.FK_Publications_UserProfile" FromRole="UserProfile" ToRole="Publication" />
+  </EntityType>
+  <Association Name="FK_Articles_UserProfile">
+    <End Type="degeorge_prepodNetworkModel.UserProfile" Role="UserProfile" Multiplicity="1" />
+    <End Type="degeorge_prepodNetworkModel.Article" Role="Article" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserProfile">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Article">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AuthCertificates_UserProfile">
+    <End Type="degeorge_prepodNetworkModel.UserProfile" Role="UserProfile" Multiplicity="1" />
+    <End Type="degeorge_prepodNetworkModel.AuthCertificate" Role="AuthCertificate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserProfile">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="AuthCertificate">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Conversations_UserProfile">
+    <End Type="degeorge_prepodNetworkModel.UserProfile" Role="UserProfile" Multiplicity="1" />
+    <End Type="degeorge_prepodNetworkModel.Conversation" Role="Conversation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserProfile">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Conversation">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Patents_UserProfile">
+    <End Type="degeorge_prepodNetworkModel.UserProfile" Role="UserProfile" Multiplicity="1" />
+    <End Type="degeorge_prepodNetworkModel.Patent" Role="Patent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserProfile">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Patent">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Publications_UserProfile">
+    <End Type="degeorge_prepodNetworkModel.UserProfile" Role="UserProfile" Multiplicity="1" />
+    <End Type="degeorge_prepodNetworkModel.Publication" Role="Publication" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserProfile">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Publication">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

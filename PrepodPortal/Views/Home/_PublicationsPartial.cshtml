@@ -1,0 +1,156 @@
+﻿@model IEnumerable<PrepodPortal.Models.Publication>
+
+@{
+   bool isAdmin = User.IsInRole("admin");
+}
+
+@if (TempData["closeForm"] != null)
+{
+   <script>
+      closeForm();
+   </script>
+}
+
+@foreach (var publ in Model)
+{
+
+   <div class="scienceBlock">
+
+      @if (User.Identity.IsAuthenticated && C.GetMyId(User) == publ.UserId || isAdmin)
+      {
+         using (Ajax.BeginForm("DeletePublication", new AjaxOptions() { HttpMethod = "Delete", LoadingElementId = "ajax_loader_publications", UpdateTargetId = "publs_body", InsertionMode = InsertionMode.Replace }))
+         {
+            @Html.AntiForgeryToken()
+            <input type="hidden" name="Id" value="@publ.Id" />
+            <input type="hidden" name="Type" value="@publ.Type" />
+            <input type="submit" id="DeletePublicationSubmit_@publ.Id" style="display:none" />
+         }
+
+         <div class="remove_scienceBlock" onclick="if(confirm('Ви дійсно бажаєте видалити обрану публікацію?')){$('#DeletePublicationSubmit_@publ.Id').trigger('click')}"></div>
+      }
+
+      @switch ((Enums.PublicationTypes)publ.Type)
+      {
+
+         case Enums.PublicationTypes.Article:
+
+            PrepodPortal.Models.Article article = publ.Article;
+
+            <div class="scienceBlock_title">@article.Title</div>
+            <div class="scienceBlock_mainInf">
+
+               <div><span>Publication type: </span>@Enum.GetName(typeof(Enums.PublicationTypes), publ.Type)</div>
+               <div><span>@Html.DisplayNameFor(model => model.Article.Type): </span> @Enum.GetName(typeof(Enums.ArticleTypes), article.Type)</div>
+               <div><span>@Html.DisplayNameFor(model => model.Article.AuthorNames): </span>@Html.DisplayFor(model => article.AuthorNames)</div>
+               <div><span>@Html.DisplayNameFor(model => model.Article.EditionName): </span>@Html.DisplayFor(model => article.EditionName)</div>
+               <div><span>@Html.DisplayNameFor(model => model.Article.Number): </span>@Html.DisplayFor(model => article.Number)</div>
+               <div><span>@Html.DisplayNameFor(model => model.Article.Issue): </span>@Html.DisplayFor(model => article.Issue)</div>
+               <div><span>@Html.DisplayNameFor(model => model.Article.Tome): </span>@Html.DisplayFor(model => article.Tome)</div>
+               <div><span>@Html.DisplayNameFor(model => model.Article.PublishedLocation): </span>@Html.DisplayFor(model => article.PublishedLocation)</div>
+               <div><span>@Html.DisplayNameFor(model => model.Article.PublishedYear): </span>@Html.DisplayFor(model => article.PublishedYear)</div>
+               <div><span>@Html.DisplayNameFor(model => model.Article.PageNumbers): </span>@Html.DisplayFor(model => article.PageNumbers)</div>
+               <div><span>@Html.DisplayNameFor(model => model.Article.URL): </span>@Html.DisplayFor(model => article.URL)</div>
+
+               @switch ((Enums.ArticleTypes)article.Type)
+               {
+
+                  case Enums.ArticleTypes.WoSOrScopusSNIPIndexHigher04:
+                  case Enums.ArticleTypes.WoSOrScopusSNIPIndexLess04:
+
+                     <div><span>@Html.DisplayNameFor(model => model.Article.ScientometricDB): </span>@Html.DisplayFor(model => publ.Article.ScientometricDB)</div>
+                     <div><span>@Html.DisplayNameFor(model => model.Article.SNIPIndex): </span>@Html.DisplayFor(model => publ.Article.SNIPIndex)</div>
+
+                     break;
+               }
+
+               <div><span>@Html.DisplayNameFor(model => model.Article.NumPagesTotal): </span>@Html.DisplayFor(model => article.NumPagesTotal)</div>
+               <div><span>@Html.DisplayNameFor(model => model.Article.NumPagesByAuthor): </span>@Html.DisplayFor(model => article.NumPagesByAuthor)</div>
+               <div><span>@Html.DisplayNameFor(model => model.Article.NumPrintedPagesTotal): </span>@Html.DisplayFor(model => article.NumPrintedPagesTotal)</div>
+               <div><span>@Html.DisplayNameFor(model => model.Article.NumPrintedPagesByAuthor): </span>@Html.DisplayFor(model => article.NumPrintedPagesByAuthor)</div>
+
+            </div>
+            break;
+
+         case Enums.PublicationTypes.Guideline:
+         case Enums.PublicationTypes.SchoolBook:
+         case Enums.PublicationTypes.Tutorial:
+
+            PrepodPortal.Models.SchoolBook schoolBook = publ.SchoolBook;
+
+            <div class="scienceBlock_title">@schoolBook.Title</div>
+            <div class="scienceBlock_mainInf">
+
+               <div><span>Publication type: </span>@Enum.GetName(typeof(Enums.PublicationTypes), publ.Type)</div>
+               <div><span>@Html.DisplayNameFor(model => model.SchoolBook.Type): </span> @Enum.GetName(typeof(Enums.SchoolBookTypes), schoolBook.Type)</div>
+               @if ((Enums.SchoolBookTypes)schoolBook.Type == Enums.SchoolBookTypes.GryphMOHOfUkraine)
+               { <div><span>@Html.DisplayNameFor(model => model.SchoolBook.GryphType): </span>@Enum.GetName(typeof(Enums.MOHGryphTypes), schoolBook.GryphType)</div>}
+               <div><span>@Html.DisplayNameFor(model => model.SchoolBook.AuthorNames): </span>@Html.DisplayFor(model => schoolBook.AuthorNames)</div>
+               <div><span>@Html.DisplayNameFor(model => model.SchoolBook.ISBN): </span>@Html.DisplayFor(model => schoolBook.ISBN)</div>
+               <div><span>@Html.DisplayNameFor(model => model.SchoolBook.OrderNum): </span>@Html.DisplayFor(model => schoolBook.OrderNum)</div>
+               <div><span>@Html.DisplayNameFor(model => model.SchoolBook.OrderDate): </span>@Html.DisplayFor(model => schoolBook.OrderDate)</div>
+               <div><span>@Html.DisplayNameFor(model => model.SchoolBook.PublishedLocation): </span>@Html.DisplayFor(model => schoolBook.PublishedLocation)</div>
+               <div><span>@Html.DisplayNameFor(model => model.SchoolBook.PublisherName): </span>@Html.DisplayFor(model => schoolBook.PublisherName)</div>
+               <div><span>@Html.DisplayNameFor(model => model.SchoolBook.PublishedYear): </span>@Html.DisplayFor(model => schoolBook.PublishedYear)</div>
+               <div><span>@Html.DisplayNameFor(model => model.SchoolBook.NumPagesTotal): </span>@Html.DisplayFor(model => schoolBook.NumPagesTotal)</div>
+               <div><span>@Html.DisplayNameFor(model => model.SchoolBook.NumPagesByAuthor): </span>@Html.DisplayFor(model => schoolBook.NumPagesByAuthor)</div>
+               <div><span>@Html.DisplayNameFor(model => model.SchoolBook.NumPrintedPagesTotal): </span>@Html.DisplayFor(model => schoolBook.NumPrintedPagesTotal)</div>
+               <div><span>@Html.DisplayNameFor(model => model.SchoolBook.NumPrintedPagesByAuthor): </span>@Html.DisplayFor(model => schoolBook.NumPrintedPagesByAuthor)</div>
+
+            </div>
+
+            break;
+
+         case Enums.PublicationTypes.Monograph:
+
+            PrepodPortal.Models.Monograph monograph = publ.Monograph;
+
+            <div class="scienceBlock_title">@monograph.Title</div>
+            <div class="scienceBlock_mainInf">
+
+               <div><span>Publication type: </span>@Enum.GetName(typeof(Enums.PublicationTypes), publ.Type)</div>
+               <div><span>@Html.DisplayNameFor(model => model.Monograph.Type): </span>@Enum.GetName(typeof(Enums.MonographTypes), monograph.Type)</div>
+               <div><span>@Html.DisplayNameFor(model => model.Monograph.AuthorNames): </span>@Html.DisplayFor(model => monograph.AuthorNames)</div>
+               <div><span>@Html.DisplayNameFor(model => model.Monograph.ISBN): </span>@Html.DisplayFor(model => monograph.ISBN)</div>
+               <div><span>@Html.DisplayNameFor(model => model.Monograph.PublishedLocation): </span>@Html.DisplayFor(model => monograph.PublishedLocation)</div>
+               <div><span>@Html.DisplayNameFor(model => model.Monograph.PublisherName): </span>@Html.DisplayFor(model => monograph.PublisherName)</div>
+               <div><span>@Html.DisplayNameFor(model => model.Monograph.PublishedYear): </span>@Html.DisplayFor(model => monograph.PublishedYear)</div>
+               <div><span>@Html.DisplayNameFor(model => model.Monograph.NumPagesTotal): </span>@Html.DisplayFor(model => monograph.NumPagesTotal)</div>
+               <div><span>@Html.DisplayNameFor(model => model.Monograph.NumPagesByAuthor): </span>@Html.DisplayFor(model => monograph.NumPagesByAuthor)</div>
+               <div><span>@Html.DisplayNameFor(model => model.Monograph.NumPrintedPagesTotal): </span>@Html.DisplayFor(model => monograph.NumPrintedPagesTotal)</div>
+               <div><span>@Html.DisplayNameFor(model => model.Monograph.NumPrintedPagesByAuthor): </span>@Html.DisplayFor(model => monograph.NumPrintedPagesByAuthor)</div>
+
+            </div>
+
+            break;
+
+         case Enums.PublicationTypes.LectureTheses:
+
+            PrepodPortal.Models.LectureThes lectureThes = publ.LectureThes;
+
+            <div class="scienceBlock_title">@lectureThes.Title</div>
+            <div class="scienceBlock_mainInf">
+
+               <div><span>Publication type: </span>@Enum.GetName(typeof(Enums.PublicationTypes), publ.Type)</div>
+               <div><span>@Html.DisplayNameFor(model => model.LectureThes.AuthorNames): </span>@Html.DisplayFor(model => lectureThes.AuthorNames)</div>
+               <div><span>@Html.DisplayNameFor(model => model.LectureThes.EditionTitle): </span>@Html.DisplayFor(model => lectureThes.EditionTitle)</div>
+               <div><span>@Html.DisplayNameFor(model => model.LectureThes.Number): </span>@Html.DisplayFor(model => lectureThes.Number)</div>
+               <div><span>@Html.DisplayNameFor(model => model.LectureThes.Issue): </span>@Html.DisplayFor(model => lectureThes.Issue)</div>
+               <div><span>@Html.DisplayNameFor(model => model.LectureThes.Tome): </span>@Html.DisplayFor(model => lectureThes.Tome)</div>
+               <div><span>@Html.DisplayNameFor(model => model.LectureThes.PublishedLocation): </span>@Html.DisplayFor(model => lectureThes.PublishedLocation)</div>
+               <div><span>@Html.DisplayNameFor(model => model.LectureThes.PublishedYear): </span>@Html.DisplayFor(model => lectureThes.PublishedYear)</div>
+               <div><span>@Html.DisplayNameFor(model => model.LectureThes.PageNumbers): </span>@Html.DisplayFor(model => lectureThes.PageNumbers)</div>
+               <div><span>@Html.DisplayNameFor(model => model.LectureThes.URL): </span>@Html.DisplayFor(model => lectureThes.URL)</div>
+               <div><span>@Html.DisplayNameFor(model => model.LectureThes.NumPagesTotal): </span>@Html.DisplayFor(model => lectureThes.NumPagesTotal)</div>
+               <div><span>@Html.DisplayNameFor(model => model.LectureThes.NumPagesByAuthor): </span>@Html.DisplayFor(model => lectureThes.NumPagesByAuthor)</div>
+               <div><span>@Html.DisplayNameFor(model => model.LectureThes.NumPrintedPagesTotal): </span>@Html.DisplayFor(model => lectureThes.NumPrintedPagesTotal)</div>
+               <div><span>@Html.DisplayNameFor(model => model.LectureThes.NumPrintedPagesByAuthor): </span>@Html.DisplayFor(model => lectureThes.NumPrintedPagesByAuthor)</div>
+
+            </div>
+
+            break;
+
+      }
+
+   </div>
+
+}

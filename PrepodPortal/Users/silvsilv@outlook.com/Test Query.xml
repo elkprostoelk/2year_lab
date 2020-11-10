@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<?qbxml version="8.0"?>
+<QBXML>
+<QBXMLMsgsRq onError = "continueOnError">
+<CompanyActivityQueryRq requestID = "0"/>
+</QBXMLMsgsRq>
+</QBXML>

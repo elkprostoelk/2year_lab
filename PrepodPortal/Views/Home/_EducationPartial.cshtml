@@ -1,0 +1,43 @@
+﻿@model IEnumerable<PrepodPortal.Models.Education>
+
+@if (TempData["closeForm"] != null)
+{
+   <script>
+      closeForm();
+   </script>
+}
+
+@{
+   bool isAdmin = User.IsInRole("admin");
+   //bool isMe = C.GetMyId(User) == Model.FirstOrDefault;
+}
+
+@foreach (var education in Model)
+{
+   <div class="scienceBlock">
+      @{
+         if (User.Identity.IsAuthenticated && C.GetMyId(User) == education.UserId || isAdmin)
+         {
+            using (Ajax.BeginForm("DeleteEducation", new AjaxOptions() { HttpMethod = "Delete", UpdateTargetId = "changeEducationWrap", InsertionMode = InsertionMode.Replace }))
+            {
+               @Html.AntiForgeryToken()
+               <input type="hidden" name="Id" value="@education.Id" />
+               <input type="submit" id="DeleteEducationSubmit_@education.Id" style="display:none" />
+            }
+
+            <div class="remove_scienceBlock" onclick="if(confirm('Ви дійсно хочете видалити обраний запис?')){$('#DeleteEducationSubmit_@education.Id').trigger('click')}"></div>
+         }
+      }
+
+      <div class="scienceBlock_title">
+         @Html.DisplayFor(model => education.Institution)
+      </div>
+      <div class="scienceBlock_mainInf">
+         <div><span>@Html.DisplayNameFor(model => model.QualificationByDiploma): </span>@Html.DisplayFor(model => education.QualificationByDiploma)</div>
+         <div><span>@Html.DisplayNameFor(model => model.Specialty): </span>@Html.DisplayFor(model => education.Specialty)</div>
+         <div><span>@Html.DisplayNameFor(model => model.StartYear): </span>@Html.DisplayFor(model => education.StartYear)</div>
+         <div><span>@Html.DisplayNameFor(model => model.EndYear): </span>@Html.DisplayFor(model => education.EndYear)</div>
+      </div>
+   </div>
+ }
+

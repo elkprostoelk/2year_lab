@@ -1,0 +1,611 @@
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\System.Web.WebPages.xml
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\Antlr3.Runtime.dll
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\EntityFramework.dll
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\EntityFramework.SqlServer.dll
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.dll
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Security.dll
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\Microsoft.Web.Helpers.dll
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\Newtonsoft.Json.dll
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\Owin.dll
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\System.Web.Mvc.dll
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\System.Web.Optimization.dll
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\System.Web.Razor.dll
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\System.Web.WebPages.Razor.dll
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\WebGrease.dll
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\System.Web.WebPages.dll
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\Antlr3.Runtime.pdb
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\Newtonsoft.Json.xml
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\System.Web.Mvc.xml
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\System.Web.Optimization.xml
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\System.Web.Razor.xml
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\System.Web.WebPages.Razor.xml
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\EntityFramework.xml
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\EntityFramework.SqlServer.xml
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.xml
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Security.xml
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\obj\Debug\PrepodPortal.dll
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\obj\Debug\PrepodPortal.pdb
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\roslyn\csc.exe
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\roslyn\csc.exe.config
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\roslyn\csc.rsp
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\roslyn\csi.exe
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\roslyn\csi.rsp
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\roslyn\System.AppContext.dll
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\roslyn\System.Console.dll
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\roslyn\vbc.exe
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\roslyn\vbc.exe.config
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\roslyn\vbc.rsp
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\roslyn\VBCSCompiler.exe
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\PrepodPortal.dll.config
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\PrepodPortal.dll
+C:\Users\Silv\Documents\Visual Studio 2015\Projects\PrepodPortal\PrepodPortal\bin\PrepodPortal.pdb
+D:\myProjects\PrepodPortal\PrepodPortal\bin\roslyn\csc.exe
+D:\myProjects\PrepodPortal\PrepodPortal\bin\roslyn\csc.exe.config
+D:\myProjects\PrepodPortal\PrepodPortal\bin\roslyn\csc.rsp
+D:\myProjects\PrepodPortal\PrepodPortal\bin\roslyn\csi.exe
+D:\myProjects\PrepodPortal\PrepodPortal\bin\roslyn\csi.rsp
+D:\myProjects\PrepodPortal\PrepodPortal\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\myProjects\PrepodPortal\PrepodPortal\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\myProjects\PrepodPortal\PrepodPortal\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\myProjects\PrepodPortal\PrepodPortal\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\myProjects\PrepodPortal\PrepodPortal\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\myProjects\PrepodPortal\PrepodPortal\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\myProjects\PrepodPortal\PrepodPortal\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\myProjects\PrepodPortal\PrepodPortal\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\myProjects\PrepodPortal\PrepodPortal\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\myProjects\PrepodPortal\PrepodPortal\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\myProjects\PrepodPortal\PrepodPortal\bin\roslyn\System.AppContext.dll
+D:\myProjects\PrepodPortal\PrepodPortal\bin\roslyn\System.Collections.Immutable.dll
+D:\myProjects\PrepodPortal\PrepodPortal\bin\roslyn\System.Console.dll
+D:\myProjects\PrepodPortal\PrepodPortal\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\myProjects\PrepodPortal\PrepodPortal\bin\roslyn\System.IO.FileSystem.dll
+D:\myProjects\PrepodPortal\PrepodPortal\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\myProjects\PrepodPortal\PrepodPortal\bin\roslyn\System.Reflection.Metadata.dll
+D:\myProjects\PrepodPortal\PrepodPortal\bin\roslyn\vbc.exe
+D:\myProjects\PrepodPortal\PrepodPortal\bin\roslyn\vbc.exe.config
+D:\myProjects\PrepodPortal\PrepodPortal\bin\roslyn\vbc.rsp
+D:\myProjects\PrepodPortal\PrepodPortal\bin\roslyn\VBCSCompiler.exe
+D:\myProjects\PrepodPortal\PrepodPortal\bin\roslyn\VBCSCompiler.exe.config
+D:\myProjects\PrepodPortal\PrepodPortal\bin\PrepodPortal.dll.config
+D:\myProjects\PrepodPortal\PrepodPortal\bin\PrepodPortal.dll
+D:\myProjects\PrepodPortal\PrepodPortal\bin\PrepodPortal.pdb
+D:\myProjects\PrepodPortal\PrepodPortal\bin\Antlr3.Runtime.dll
+D:\myProjects\PrepodPortal\PrepodPortal\bin\EntityFramework.dll
+D:\myProjects\PrepodPortal\PrepodPortal\bin\EntityFramework.SqlServer.dll
+D:\myProjects\PrepodPortal\PrepodPortal\bin\Microsoft.AspNet.Identity.Core.dll
+D:\myProjects\PrepodPortal\PrepodPortal\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\myProjects\PrepodPortal\PrepodPortal\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\myProjects\PrepodPortal\PrepodPortal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\myProjects\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.dll
+D:\myProjects\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\myProjects\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Security.Cookies.dll
+D:\myProjects\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Security.dll
+D:\myProjects\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Security.Facebook.dll
+D:\myProjects\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Security.Google.dll
+D:\myProjects\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\myProjects\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Security.OAuth.dll
+D:\myProjects\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Security.Twitter.dll
+D:\myProjects\PrepodPortal\PrepodPortal\bin\Microsoft.Web.Helpers.dll
+D:\myProjects\PrepodPortal\PrepodPortal\bin\Microsoft.Web.Infrastructure.dll
+D:\myProjects\PrepodPortal\PrepodPortal\bin\Newtonsoft.Json.dll
+D:\myProjects\PrepodPortal\PrepodPortal\bin\Owin.dll
+D:\myProjects\PrepodPortal\PrepodPortal\bin\System.Web.Mvc.dll
+D:\myProjects\PrepodPortal\PrepodPortal\bin\System.Web.Optimization.dll
+D:\myProjects\PrepodPortal\PrepodPortal\bin\System.Web.Razor.dll
+D:\myProjects\PrepodPortal\PrepodPortal\bin\System.Web.WebPages.Deployment.dll
+D:\myProjects\PrepodPortal\PrepodPortal\bin\System.Web.WebPages.Razor.dll
+D:\myProjects\PrepodPortal\PrepodPortal\bin\WebGrease.dll
+D:\myProjects\PrepodPortal\PrepodPortal\bin\System.Web.WebPages.dll
+D:\myProjects\PrepodPortal\PrepodPortal\bin\Antlr3.Runtime.pdb
+D:\myProjects\PrepodPortal\PrepodPortal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\myProjects\PrepodPortal\PrepodPortal\bin\Newtonsoft.Json.xml
+D:\myProjects\PrepodPortal\PrepodPortal\bin\System.Web.Mvc.xml
+D:\myProjects\PrepodPortal\PrepodPortal\bin\System.Web.Optimization.xml
+D:\myProjects\PrepodPortal\PrepodPortal\bin\System.Web.Razor.xml
+D:\myProjects\PrepodPortal\PrepodPortal\bin\System.Web.WebPages.Deployment.xml
+D:\myProjects\PrepodPortal\PrepodPortal\bin\System.Web.WebPages.Razor.xml
+D:\myProjects\PrepodPortal\PrepodPortal\bin\EntityFramework.xml
+D:\myProjects\PrepodPortal\PrepodPortal\bin\EntityFramework.SqlServer.xml
+D:\myProjects\PrepodPortal\PrepodPortal\bin\Microsoft.AspNet.Identity.Core.xml
+D:\myProjects\PrepodPortal\PrepodPortal\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\myProjects\PrepodPortal\PrepodPortal\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\myProjects\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.xml
+D:\myProjects\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\myProjects\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Security.xml
+D:\myProjects\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Security.Facebook.xml
+D:\myProjects\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Security.Cookies.xml
+D:\myProjects\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Security.OAuth.xml
+D:\myProjects\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Security.Google.xml
+D:\myProjects\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Security.Twitter.xml
+D:\myProjects\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\myProjects\PrepodPortal\PrepodPortal\bin\System.Web.WebPages.xml
+D:\myProjects\PrepodPortal\PrepodPortal\obj\Debug\PrepodPortal.dll
+D:\myProjects\PrepodPortal\PrepodPortal\obj\Debug\PrepodPortal.pdb
+D:\myProjects\PrepodPortal\PrepodPortal\obj\Debug\PrepodPortal.csprojResolveAssemblyReference.cache
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\roslyn\csc.exe
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\roslyn\csc.exe.config
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\roslyn\csc.rsp
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\roslyn\csi.exe
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\roslyn\csi.rsp
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\roslyn\System.AppContext.dll
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\roslyn\System.Collections.Immutable.dll
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\roslyn\System.Console.dll
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\roslyn\System.IO.FileSystem.dll
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\roslyn\System.Reflection.Metadata.dll
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\roslyn\vbc.exe
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\roslyn\vbc.exe.config
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\roslyn\vbc.rsp
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\roslyn\VBCSCompiler.exe
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\roslyn\VBCSCompiler.exe.config
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\PrepodPortal.dll.config
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\PrepodPortal.dll
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\PrepodPortal.pdb
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\Antlr3.Runtime.dll
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\EntityFramework.dll
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\EntityFramework.SqlServer.dll
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\Microsoft.AspNet.Identity.Core.dll
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\Microsoft.Owin.dll
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\Microsoft.Owin.Security.Cookies.dll
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\Microsoft.Owin.Security.dll
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\Microsoft.Owin.Security.Facebook.dll
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\Microsoft.Owin.Security.Google.dll
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\Microsoft.Owin.Security.OAuth.dll
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\Microsoft.Owin.Security.Twitter.dll
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\Microsoft.Web.Helpers.dll
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\Microsoft.Web.Infrastructure.dll
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\Newtonsoft.Json.dll
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\Owin.dll
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\System.Web.Mvc.dll
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\System.Web.Optimization.dll
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\System.Web.Razor.dll
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\System.Web.WebPages.Deployment.dll
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\System.Web.WebPages.Razor.dll
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\WebGrease.dll
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\System.Web.WebPages.dll
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\Antlr3.Runtime.pdb
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\Newtonsoft.Json.xml
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\System.Web.Mvc.xml
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\System.Web.Optimization.xml
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\System.Web.Razor.xml
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\System.Web.WebPages.Deployment.xml
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\System.Web.WebPages.Razor.xml
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\EntityFramework.xml
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\EntityFramework.SqlServer.xml
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\Microsoft.AspNet.Identity.Core.xml
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\Microsoft.Owin.xml
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\Microsoft.Owin.Security.xml
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\Microsoft.Owin.Security.Facebook.xml
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\Microsoft.Owin.Security.Cookies.xml
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\Microsoft.Owin.Security.OAuth.xml
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\Microsoft.Owin.Security.Google.xml
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\Microsoft.Owin.Security.Twitter.xml
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\bin\System.Web.WebPages.xml
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\obj\Debug\PrepodPortal.csprojResolveAssemblyReference.cache
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\obj\Debug\PrepodPortal.dll
+D:\myProjects\PrepodPortal -old - Copy\PrepodPortal\obj\Debug\PrepodPortal.pdb
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\obj\Debug\PrepodPortal.dll
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\obj\Debug\PrepodPortal.csprojResolveAssemblyReference.cache
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\obj\Debug\PrepodPortal.csproj.CoreCompileInputs.cache
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\roslyn\csc.exe
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\roslyn\csc.exe.config
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\roslyn\csc.rsp
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\roslyn\csi.exe
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\roslyn\csi.rsp
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\roslyn\System.AppContext.dll
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\roslyn\System.Collections.Immutable.dll
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\roslyn\System.Console.dll
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\roslyn\System.IO.FileSystem.dll
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\roslyn\System.Reflection.Metadata.dll
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\roslyn\vbc.exe
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\roslyn\vbc.exe.config
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\roslyn\vbc.rsp
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\roslyn\VBCSCompiler.exe
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\roslyn\VBCSCompiler.exe.config
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\PrepodPortal.dll.config
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\PrepodPortal.dll
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\PrepodPortal.pdb
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\Antlr3.Runtime.dll
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\EntityFramework.dll
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\EntityFramework.SqlServer.dll
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\Microsoft.AspNet.Identity.Core.dll
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\Microsoft.Owin.dll
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\Microsoft.Owin.Security.Cookies.dll
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\Microsoft.Owin.Security.dll
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\Microsoft.Owin.Security.Facebook.dll
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\Microsoft.Owin.Security.Google.dll
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\Microsoft.Owin.Security.OAuth.dll
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\Microsoft.Owin.Security.Twitter.dll
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\Microsoft.Web.Helpers.dll
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\Microsoft.Web.Infrastructure.dll
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\Newtonsoft.Json.dll
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\Owin.dll
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\System.Web.Mvc.dll
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\System.Web.Optimization.dll
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\System.Web.Razor.dll
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\System.Web.WebPages.Deployment.dll
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\System.Web.WebPages.Razor.dll
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\WebGrease.dll
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\System.Web.WebPages.dll
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\Antlr3.Runtime.pdb
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\Newtonsoft.Json.xml
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\System.Web.Mvc.xml
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\System.Web.Optimization.xml
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\System.Web.Razor.xml
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\System.Web.WebPages.Deployment.xml
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\System.Web.WebPages.Razor.xml
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\EntityFramework.xml
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\EntityFramework.SqlServer.xml
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\Microsoft.AspNet.Identity.Core.xml
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\Microsoft.Owin.xml
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\Microsoft.Owin.Security.xml
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\Microsoft.Owin.Security.Facebook.xml
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\Microsoft.Owin.Security.Cookies.xml
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\Microsoft.Owin.Security.OAuth.xml
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\Microsoft.Owin.Security.Google.xml
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\Microsoft.Owin.Security.Twitter.xml
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\System.Web.WebPages.xml
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\obj\Debug\PrepodPortal.pdb
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\System.Net.Http.Formatting.dll
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\System.Web.Http.dll
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\System.Web.Http.WebHost.dll
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\System.Net.Http.Formatting.xml
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\System.Web.Http.xml
+D:\myProjects\PrepodPortal 2.0\PrepodPortal\bin\System.Web.Http.WebHost.xml
+D:\Files\Desktop\PrepodPortal\PrepodPortal\obj\Debug\PrepodPortal.csprojAssemblyReference.cache
+D:\Files\Desktop\PrepodPortal\PrepodPortal\obj\Debug\PrepodPortal.csproj.CoreCompileInputs.cache
+D:\Files\Desktop\PrepodPortal\PrepodPortal\obj\Debug\PrepodPortal.dll
+D:\Files\Desktop\PrepodPortal\PrepodPortal\obj\Debug\PrepodPortal.pdb
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\roslyn\csc.exe
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\roslyn\csc.exe.config
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\roslyn\csc.rsp
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\roslyn\csi.exe
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\roslyn\csi.rsp
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\roslyn\System.AppContext.dll
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\roslyn\System.Collections.Immutable.dll
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\roslyn\System.Console.dll
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\roslyn\System.IO.FileSystem.dll
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\roslyn\System.Reflection.Metadata.dll
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\roslyn\vbc.exe
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\roslyn\vbc.exe.config
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\roslyn\vbc.rsp
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\roslyn\VBCSCompiler.exe
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\roslyn\VBCSCompiler.exe.config
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\PrepodPortal.dll.config
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\PrepodPortal.dll
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\PrepodPortal.pdb
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\Antlr3.Runtime.dll
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\EntityFramework.dll
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\EntityFramework.SqlServer.dll
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.dll
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Security.dll
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Security.Google.dll
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\Microsoft.Web.Helpers.dll
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\Microsoft.Web.Infrastructure.dll
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\Newtonsoft.Json.dll
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\Owin.dll
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\System.Net.Http.Formatting.dll
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\System.Web.Http.dll
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\System.Web.Http.WebHost.dll
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\System.Web.Mvc.dll
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\System.Web.Optimization.dll
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\System.Web.Razor.dll
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\System.Web.WebPages.Deployment.dll
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\System.Web.WebPages.Razor.dll
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\WebGrease.dll
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\System.Web.WebPages.dll
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\Antlr3.Runtime.pdb
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\Newtonsoft.Json.xml
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\System.Net.Http.Formatting.xml
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\System.Web.Http.xml
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\System.Web.Http.WebHost.xml
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\System.Web.Mvc.xml
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\System.Web.Optimization.xml
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\System.Web.Razor.xml
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\System.Web.WebPages.Deployment.xml
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\System.Web.WebPages.Razor.xml
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\EntityFramework.xml
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\EntityFramework.SqlServer.xml
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.xml
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Security.xml
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Security.Google.xml
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Files\Desktop\PrepodPortal\PrepodPortal\bin\System.Web.WebPages.xml
+D:\Files\Desktop\PrepodPortal\PrepodPortal\obj\Debug\PrepodPortal.csproj.CopyComplete
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\roslyn\csc.exe
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\roslyn\csc.exe.config
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\roslyn\csc.rsp
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\roslyn\csi.exe
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\roslyn\csi.rsp
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\roslyn\System.AppContext.dll
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\roslyn\System.Console.dll
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\roslyn\vbc.exe
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\roslyn\vbc.exe.config
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\roslyn\vbc.rsp
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\roslyn\VBCSCompiler.exe
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\PrepodPortal.dll.config
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\PrepodPortal.dll
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\PrepodPortal.pdb
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\Antlr3.Runtime.dll
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\EntityFramework.dll
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\EntityFramework.SqlServer.dll
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.dll
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Security.dll
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\Microsoft.Web.Helpers.dll
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\Newtonsoft.Json.dll
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\Owin.dll
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\System.Net.Http.Formatting.dll
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\System.Web.Http.dll
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\System.Web.Http.WebHost.dll
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\System.Web.Mvc.dll
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\System.Web.Optimization.dll
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\System.Web.Razor.dll
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\System.Web.WebPages.Razor.dll
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\WebGrease.dll
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\System.Web.WebPages.dll
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\Antlr3.Runtime.pdb
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\Newtonsoft.Json.xml
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\System.Net.Http.Formatting.xml
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\System.Web.Http.xml
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\System.Web.Http.WebHost.xml
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\System.Web.Mvc.xml
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\System.Web.Optimization.xml
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\System.Web.Razor.xml
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\System.Web.WebPages.Razor.xml
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\EntityFramework.xml
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\EntityFramework.SqlServer.xml
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.xml
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Security.xml
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\bin\System.Web.WebPages.xml
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\obj\Debug\PrepodPortal.csprojAssemblyReference.cache
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\obj\Debug\PrepodPortal.csproj.CoreCompileInputs.cache
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\obj\Debug\PrepodPortal.csproj.CopyComplete
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\obj\Debug\PrepodPortal.dll
+C:\Users\Mikhail Novikov\Desktop\PrepodPortal\PrepodPortal\obj\Debug\PrepodPortal.pdb
+C:\PrepodPortal\PrepodPortal\bin\roslyn\csc.exe
+C:\PrepodPortal\PrepodPortal\bin\roslyn\csc.exe.config
+C:\PrepodPortal\PrepodPortal\bin\roslyn\csc.rsp
+C:\PrepodPortal\PrepodPortal\bin\roslyn\csi.exe
+C:\PrepodPortal\PrepodPortal\bin\roslyn\csi.rsp
+C:\PrepodPortal\PrepodPortal\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\PrepodPortal\PrepodPortal\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\PrepodPortal\PrepodPortal\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\PrepodPortal\PrepodPortal\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\PrepodPortal\PrepodPortal\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\PrepodPortal\PrepodPortal\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\PrepodPortal\PrepodPortal\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\PrepodPortal\PrepodPortal\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\PrepodPortal\PrepodPortal\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\PrepodPortal\PrepodPortal\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\PrepodPortal\PrepodPortal\bin\roslyn\System.AppContext.dll
+C:\PrepodPortal\PrepodPortal\bin\roslyn\System.Collections.Immutable.dll
+C:\PrepodPortal\PrepodPortal\bin\roslyn\System.Console.dll
+C:\PrepodPortal\PrepodPortal\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\PrepodPortal\PrepodPortal\bin\roslyn\System.IO.FileSystem.dll
+C:\PrepodPortal\PrepodPortal\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\PrepodPortal\PrepodPortal\bin\roslyn\System.Reflection.Metadata.dll
+C:\PrepodPortal\PrepodPortal\bin\roslyn\vbc.exe
+C:\PrepodPortal\PrepodPortal\bin\roslyn\vbc.exe.config
+C:\PrepodPortal\PrepodPortal\bin\roslyn\vbc.rsp
+C:\PrepodPortal\PrepodPortal\bin\roslyn\VBCSCompiler.exe
+C:\PrepodPortal\PrepodPortal\bin\roslyn\VBCSCompiler.exe.config
+C:\PrepodPortal\PrepodPortal\bin\PrepodPortal.dll.config
+C:\PrepodPortal\PrepodPortal\bin\PrepodPortal.dll
+C:\PrepodPortal\PrepodPortal\bin\PrepodPortal.pdb
+C:\PrepodPortal\PrepodPortal\bin\Antlr3.Runtime.dll
+C:\PrepodPortal\PrepodPortal\bin\EntityFramework.dll
+C:\PrepodPortal\PrepodPortal\bin\EntityFramework.SqlServer.dll
+C:\PrepodPortal\PrepodPortal\bin\Microsoft.AspNet.Identity.Core.dll
+C:\PrepodPortal\PrepodPortal\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\PrepodPortal\PrepodPortal\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\PrepodPortal\PrepodPortal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.dll
+C:\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Security.Cookies.dll
+C:\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Security.dll
+C:\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Security.Facebook.dll
+C:\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Security.Google.dll
+C:\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Security.OAuth.dll
+C:\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Security.Twitter.dll
+C:\PrepodPortal\PrepodPortal\bin\Microsoft.Web.Helpers.dll
+C:\PrepodPortal\PrepodPortal\bin\Microsoft.Web.Infrastructure.dll
+C:\PrepodPortal\PrepodPortal\bin\Newtonsoft.Json.dll
+C:\PrepodPortal\PrepodPortal\bin\Owin.dll
+C:\PrepodPortal\PrepodPortal\bin\System.Net.Http.Formatting.dll
+C:\PrepodPortal\PrepodPortal\bin\System.Web.Http.dll
+C:\PrepodPortal\PrepodPortal\bin\System.Web.Http.WebHost.dll
+C:\PrepodPortal\PrepodPortal\bin\System.Web.Mvc.dll
+C:\PrepodPortal\PrepodPortal\bin\System.Web.Optimization.dll
+C:\PrepodPortal\PrepodPortal\bin\System.Web.Razor.dll
+C:\PrepodPortal\PrepodPortal\bin\System.Web.WebPages.Deployment.dll
+C:\PrepodPortal\PrepodPortal\bin\System.Web.WebPages.Razor.dll
+C:\PrepodPortal\PrepodPortal\bin\WebGrease.dll
+C:\PrepodPortal\PrepodPortal\bin\System.Web.WebPages.dll
+C:\PrepodPortal\PrepodPortal\bin\Antlr3.Runtime.pdb
+C:\PrepodPortal\PrepodPortal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\PrepodPortal\PrepodPortal\bin\Newtonsoft.Json.xml
+C:\PrepodPortal\PrepodPortal\bin\System.Net.Http.Formatting.xml
+C:\PrepodPortal\PrepodPortal\bin\System.Web.Http.xml
+C:\PrepodPortal\PrepodPortal\bin\System.Web.Http.WebHost.xml
+C:\PrepodPortal\PrepodPortal\bin\System.Web.Mvc.xml
+C:\PrepodPortal\PrepodPortal\bin\System.Web.Optimization.xml
+C:\PrepodPortal\PrepodPortal\bin\System.Web.Razor.xml
+C:\PrepodPortal\PrepodPortal\bin\System.Web.WebPages.Deployment.xml
+C:\PrepodPortal\PrepodPortal\bin\System.Web.WebPages.Razor.xml
+C:\PrepodPortal\PrepodPortal\bin\EntityFramework.xml
+C:\PrepodPortal\PrepodPortal\bin\EntityFramework.SqlServer.xml
+C:\PrepodPortal\PrepodPortal\bin\Microsoft.AspNet.Identity.Core.xml
+C:\PrepodPortal\PrepodPortal\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\PrepodPortal\PrepodPortal\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.xml
+C:\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Security.xml
+C:\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Security.Facebook.xml
+C:\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Security.Cookies.xml
+C:\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Security.OAuth.xml
+C:\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Security.Google.xml
+C:\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Security.Twitter.xml
+C:\PrepodPortal\PrepodPortal\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\PrepodPortal\PrepodPortal\bin\System.Web.WebPages.xml
+C:\PrepodPortal\PrepodPortal\obj\Debug\PrepodPortal.csprojAssemblyReference.cache
+C:\PrepodPortal\PrepodPortal\obj\Debug\PrepodPortal.csproj.CoreCompileInputs.cache
+C:\PrepodPortal\PrepodPortal\obj\Debug\PrepodPortal.csproj.CopyComplete
+C:\PrepodPortal\PrepodPortal\obj\Debug\PrepodPortal.dll
+C:\PrepodPortal\PrepodPortal\obj\Debug\PrepodPortal.pdb

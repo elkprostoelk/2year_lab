@@ -1,0 +1,76 @@
+﻿@model PrepodPortal.Models.WelcomeModel
+
+@{
+    ViewBag.Title = "Welcome on the Prepod Network";
+}
+
+@section scripts{
+    @Styles.Render("~/Content/welcome.css")
+}
+
+@section head{
+    <div id="head">
+        <div id="logo">
+        </div>
+        <div id="right_side">
+            <div id="search_wrap">
+                <div id="search">
+                    <form id="search_form">
+                        <input type="text" name="search" id="search_inp" placeholder="Пошук по сайту" /><button type="submit" id="search_sbm"></button>
+                    </form>
+                </div>
+            </div>
+            <div id="all_prepods">
+                <a href="/Home/PrepodsList/" class="button blue">Список всіх викладачів</a>
+            </div>
+        </div>
+    </div>
+}
+
+@section body{
+    <div id="welcome">
+        <h1>Ласкаво просимо на Prepod Network.</h1>
+        <br />
+        <h2>
+            Увійдіть до свого облікового запису.
+        </h2>
+    </div>
+    <div id="login_form_wrap">
+        @using (Html.BeginForm("Index", "Welcome", FormMethod.Post, new { role = "form" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary("Авторизацію не виконано. Виправте помилки й спробуйте знову.")
+            <div class="login_form_block">
+                @Html.LabelFor(model => model.UserName)
+                <br/>
+                @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @tabindex = "10", @placeholder = "викладач@ksu.ks.ua" } })             
+            </div>
+
+            <div class="login_form_block">
+                @Html.LabelFor(model => model.Password)
+                <br/>
+                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @tabindex = "20" } })
+            </div>
+
+            <div class="login_form_block" id="sign_in_helpers">
+                @Html.EditorFor(model => model.RememberMe, new { htmlAttributes = new { @checked = "checked", @id = "RememberMe", @value = true, @tabindex = "30" } })
+                @Html.LabelFor(model => model.RememberMe)                      
+            </div>
+
+            <div class="login_form_block" style="margin-top: 10px;">
+                <button type="submit" tabindex="40" style="font-size:14px" class="button blue">Увійти</button>
+            </div>
+        }
+    </div>
+}
+
+@section footer{
+    <div id="copyright">
+        © 2014 - @DateTime.Now.Year Prepod Network
+        <br />
+        Сайт розроблений <a href="http://sadlogic.com">Sadlogic Inc.</a>, <a href="http://silv.pp.ua">Bogdan De George</a>
+    </div>
+    <div id="f_links">
+        <a href="/About/">Про проєкт</a>
+    </div>
+}

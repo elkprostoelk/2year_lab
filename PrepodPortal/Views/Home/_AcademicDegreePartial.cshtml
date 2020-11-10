@@ -1,0 +1,48 @@
+﻿@model IEnumerable<PrepodPortal.Models.AcademicDegree>
+
+@if (TempData["closeForm"] != null)
+{
+   <script>
+      closeForm();
+   </script>
+}
+
+@{
+   bool isAdmin = User.IsInRole("admin");
+   //bool isMe = C.GetMyId(User) == Model.FirstOrDefault;
+}
+
+@foreach (var academicDegree in Model)
+{
+   <div class="scienceBlock">
+      @{
+         if (User.Identity.IsAuthenticated && C.GetMyId(User) == academicDegree.UserId || isAdmin)
+         {
+            using (Ajax.BeginForm("DeleteAcademicDegree", new AjaxOptions() { HttpMethod = "Delete", UpdateTargetId = "changeAcademicDegreeWrap", InsertionMode = InsertionMode.Replace }))
+            {
+               @Html.AntiForgeryToken()
+               <input type="hidden" name="Id" value="@academicDegree.Id" />
+               <input type="submit" id="DeleteAcademicDegreeSubmit_@academicDegree.Id" style="display:none" />
+            }
+
+            <div class="remove_scienceBlock" onclick="if(confirm('Ви дійсно бажаєте видалити обраний запис?')){$('#DeleteAcademicDegreeSubmit_@academicDegree.Id').trigger('click')}"></div>
+         }
+      }
+
+      <div class="scienceBlock_title">
+         @if (academicDegree.Type == (int)Enums.AcademicDegreeGainTypes.Professor)
+         {
+            <text>Отримання звання Професора</text>
+         }
+         else if (academicDegree.Type == (int)Enums.AcademicDegreeGainTypes.AssistantProfessor)
+         {
+            <text>Отримання звання Доцента</text>
+         }
+      </div>
+      <div class="scienceBlock_mainInf">
+         <div><span>@Html.DisplayNameFor(model => model.DiplomaNumber): </span>@Html.DisplayFor(model => academicDegree.DiplomaNumber)</div>
+         @if (academicDegree.ReceiveDiplomaDate.HasValue)
+         {<div><span>@Html.DisplayNameFor(model => model.ReceiveDiplomaDate): </span>@Html.DisplayFor(model => academicDegree.ReceiveDiplomaDate)</div>}
+      </div>
+   </div>
+         }
