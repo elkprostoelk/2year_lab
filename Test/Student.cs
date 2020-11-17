@@ -6,10 +6,10 @@ namespace Test
 {
     public class Student : Person
     {
-        public bool isState { get; set; }
-        public float Scholarship { get; set; }
-        public float AverageBall { get; set; }
-        public CourseWork courseWork { get; set; }
+        private bool isState;
+        private float Scholarship;
+        private float AverageBall;
+        private CourseWork courseWork;
         public Student() : base()
         {
             isState = false;
@@ -25,6 +25,14 @@ namespace Test
             AverageBall = averball;
             this.courseWork = courseWork;
         }
+        public bool getIsState() { return this.isState; }
+        public void setIsState(bool isState) { this.isState = isState; }
+        public float getScholarship() { return this.Scholarship; }
+        public void setScholarship(float Scholarship) { this.Scholarship = Scholarship; }
+        public float getAverageBall() { return this.AverageBall; }
+        public void setAverageBall(float AverageBall) { this.AverageBall = AverageBall; }
+        public CourseWork getCourseWork() { return this.courseWork; }
+        public void setCourseWork(CourseWork courseWork) { this.courseWork = courseWork; }
         public override string ToString()
         {
             string result = base.ToString();
@@ -34,14 +42,6 @@ namespace Test
             result += AverageBall + "|";
             result += courseWork.ToString();
             return result;
-        }
-        public static bool operator ==(Student a, Student b)
-        {
-            return (Person)a == (Person)b && a.isState == b.isState && a.Scholarship == b.Scholarship && a.AverageBall == b.AverageBall && a.courseWork == b.courseWork;
-        }
-        public static bool operator !=(Student a, Student b)
-        {
-            return (Person)a != (Person)b || a.isState != b.isState || a.Scholarship != b.Scholarship || a.AverageBall != b.AverageBall || a.courseWork != b.courseWork;
         }
     }
 }

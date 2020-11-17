@@ -40,7 +40,7 @@ namespace Test
         {
             PersonList found = new PersonList();
             foreach (var item in People)
-                if (item.Name.Contains(name)) found.AddPerson(item);
+                if (item.getName().Contains(name)) found.AddPerson(item);
             return found;
         }
         public void ExportInTxt()
@@ -63,7 +63,7 @@ namespace Test
                           new AddressField(current[2]), sal, int.Parse(current[4]), current[5], current[6]);
                     foreach (var item in current[7].Split('&'))
                         for (int i = 0; i < FindPersonByName(item).People.Count; i++)
-                            t.CourseWorkStudents.Add((Student)FindPersonByName(item).People[i]);
+                            t.getCourseWorkStudents().Add((Student)FindPersonByName(item).People[i]);
                     this.AddPerson(t);
                 }
                 else this.AddPerson(new Student(current[0], int.Parse(current[1]), new AddressField(current[2]),
@@ -84,9 +84,9 @@ namespace Test
                 XmlElement name = xmlDocument.CreateElement("Name");
                 XmlElement age = xmlDocument.CreateElement("Age");
                 XmlElement address = xmlDocument.CreateElement("AddressField");
-                XmlText nameTxt = xmlDocument.CreateTextNode(People[i].Name);
-                XmlText ageTxt = xmlDocument.CreateTextNode(People[i].Age.ToString());
-                XmlText addressTxt = xmlDocument.CreateTextNode(People[i].Address.ToString());
+                XmlText nameTxt = xmlDocument.CreateTextNode(People[i].getName());
+                XmlText ageTxt = xmlDocument.CreateTextNode(People[i].getAge().ToString());
+                XmlText addressTxt = xmlDocument.CreateTextNode(People[i].getAddress().ToString());
                 current.AppendChild(name);
                 current.AppendChild(age);
                 current.AppendChild(address);
@@ -102,10 +102,10 @@ namespace Test
                             XmlElement Scholarship = xmlDocument.CreateElement("Scholarship");
                             XmlElement AverageBall = xmlDocument.CreateElement("AverageBall");
                             XmlElement courseWork = xmlDocument.CreateElement("courseWork");
-                            XmlText isStateTxt = xmlDocument.CreateTextNode(student.isState.ToString());
-                            XmlText ScholarshipTxt = xmlDocument.CreateTextNode(student.Scholarship.ToString());
-                            XmlText AverageBallTxt = xmlDocument.CreateTextNode(student.AverageBall.ToString());
-                            XmlText courseWorkTxt = xmlDocument.CreateTextNode(student.courseWork.ToString());
+                            XmlText isStateTxt = xmlDocument.CreateTextNode(student.getIsState().ToString());
+                            XmlText ScholarshipTxt = xmlDocument.CreateTextNode(student.getScholarship().ToString());
+                            XmlText AverageBallTxt = xmlDocument.CreateTextNode(student.getAverageBall().ToString());
+                            XmlText courseWorkTxt = xmlDocument.CreateTextNode(student.getCourseWork().ToString());
                             current.AppendChild(isState);
                             current.AppendChild(Scholarship);
                             current.AppendChild(AverageBall);
@@ -124,13 +124,13 @@ namespace Test
                             XmlElement AcademicDegree = xmlDocument.CreateElement("AcademicDegree");
                             XmlElement Title = xmlDocument.CreateElement("Title");
                             XmlElement CourseWorkStudents = xmlDocument.CreateElement("CourseWorkStudents");
-                            XmlText SalaryTxt = xmlDocument.CreateTextNode(teacher.Salary.ToString());
-                            XmlText MaxNumberOfCourseWorksTxt = xmlDocument.CreateTextNode(teacher.MaxNumberOfCourseWorks.ToString());
-                            XmlText AcademicDegreeTxt = xmlDocument.CreateTextNode(teacher.AcademicDegree);
-                            XmlText TitleTxt = xmlDocument.CreateTextNode(teacher.Title);
+                            XmlText SalaryTxt = xmlDocument.CreateTextNode(teacher.getSalary().ToString());
+                            XmlText MaxNumberOfCourseWorksTxt = xmlDocument.CreateTextNode(teacher.getMaxNumberOfCourseWorks().ToString());
+                            XmlText AcademicDegreeTxt = xmlDocument.CreateTextNode(teacher.getAcademicDegree());
+                            XmlText TitleTxt = xmlDocument.CreateTextNode(teacher.getTitle());
                             string courseworkers = "";
-                            foreach (var student in teacher.CourseWorkStudents)
-                                courseworkers += student.Name + "&";
+                            foreach (var student in teacher.getCourseWorkStudents())
+                                courseworkers += student.getName() + "&";
                             courseworkers=courseworkers.Remove(courseworkers.LastIndexOf('&'));
                             XmlText courseWorkStudentsTxt = xmlDocument.CreateTextNode(courseworkers);
                             current.AppendChild(salary);
@@ -163,13 +163,12 @@ namespace Test
                     case "Student":
                         {
                             Student student = new Student();
-                            student.Name = element.ChildNodes[0].InnerText;
-                            student.Age = int.Parse(element.ChildNodes[1].InnerText);
-                            student.Address = new AddressField(element.ChildNodes[2].InnerText);
-                            student.isState = bool.Parse(element.ChildNodes[3].InnerText);
-                            student.Scholarship = float.Parse(element.ChildNodes[4].InnerText);
-                            student.AverageBall = float.Parse(element.ChildNodes[5].InnerText);
-                            student.courseWork = new CourseWork(element.ChildNodes[6].InnerText.Split('$')[0], element.ChildNodes[6].InnerText.Split('$')[1]);
+                            student.setName(element.ChildNodes[0].InnerText);
+                            student.setAge(int.Parse(element.ChildNodes[1].InnerText));
+                            student.setAddress(new AddressField(element.ChildNodes[2].InnerText));
+                            student.setIsState(bool.Parse(element.ChildNodes[3].InnerText));
+                            student.setScholarship(float.Parse(element.ChildNodes[5].InnerText));
+                            student.setCourseWork(new CourseWork(element.ChildNodes[6].InnerText.Split('$')[0], element.ChildNodes[6].InnerText.Split('$')[1]));
                             People.Add(student);
                             break;
                         }

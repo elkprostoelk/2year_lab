@@ -6,13 +6,13 @@ namespace Test
 {
     public class AddressField
     {
-        public string Country { get; set; }
-        public string Oblast { get; set; }
-        public string Region { get; set; }
-        public string City { get; set; }
-        public string Street { get; set; }
-        public string HomeNumber { get; set; }
-        public int Apartment { get; set; }
+        private string Country;
+        private string Oblast;
+        private string Region;
+        private string City;
+        private string Street;
+        private string HomeNumber;
+        private int Apartment;
         public AddressField()
         {
             Country = "Ukraine";
@@ -55,6 +55,20 @@ namespace Test
             HomeNumber = homenum;
             Apartment = apartment;
         }
+        public string getCountry() { return this.Country; }
+        public void setCountry(string Country) { this.Country = Country; }
+        public string getOblast() { return this.Oblast; }
+        public void setOblast(string Oblast) { this.Oblast = Oblast; }
+        public string getRegion() { return this.Region; }
+        public void setRegion(string Region) { this.Region = Region; }
+        public string getCity() { return this.City; }
+        public void setCity(string City) { this.City = City; }
+        public string getStreet() { return this.Street; }
+        public void setStreet(string Street) { this.Street = Street; }
+        public string getHomeNumber() { return this.HomeNumber; }
+        public void setHomeNumber(string HomeNumber) { this.HomeNumber = HomeNumber; }
+        public int getApartment() { return this.Apartment; }
+        public void setApartment(int Apartment) { this.Apartment = Apartment; }
         public override string ToString()
         {
             string address = "";
@@ -66,14 +80,6 @@ namespace Test
             address += Street + " ";
             address += Apartment;
             return address;
-        }
-        public static bool operator ==(AddressField a, AddressField b)
-        {
-            return a.Country == b.Country && a.Oblast == b.Oblast && a.Region == b.Region && a.City == b.City && a.Street == b.Street && a.HomeNumber == b.HomeNumber && a.Apartment == b.Apartment;
-        }
-        public static bool operator !=(AddressField a, AddressField b)
-        {
-            return a.Country != b.Country || a.Oblast != b.Oblast || a.Region != b.Region || a.City != b.City || a.Street != b.Street || a.HomeNumber != b.HomeNumber || a.Apartment != b.Apartment;
         }
     }
 }

@@ -15,7 +15,7 @@
     <Salary>4000</Salary>
     <MaxNumberOfCourseWorks>3</MaxNumberOfCourseWorks>
     <AcademicDegree>Candidate of Sciences</AcademicDegree>
-    <Title>Assistant</Title>
+    <Title>Docent</Title>
     <CourseWorkStudents>Ivan Ivanov</CourseWorkStudents>
   </Teacher>
 </People>

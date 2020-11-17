@@ -6,8 +6,8 @@ namespace Test
 {
     public class CourseWork
     {
-        public string Title { get; set; }
-        public string Description { get; set; }
+        private string Title { get; set; }
+        private string Description { get; set; }
         public CourseWork()
         {
             Title = "";
@@ -18,6 +18,10 @@ namespace Test
             Title = title;
             Description = description;
         }
+        public string getTitle() { return this.Title; }
+        public void setTitle(string Title) { this.Title = Title; }
+        public string getDescription() { return this.Description; }
+        public void setDescription(string Description) { this.Description = Description; }
         public override string ToString()
         {
             return Title + "$" + Description;

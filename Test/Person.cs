@@ -6,9 +6,15 @@ namespace Test
 {
     public abstract class Person
     {
-        public string Name { get; set; }
-        public int Age { get; set; }
-        public AddressField Address { get; set; }
+        protected string Name;
+        protected int Age;
+        protected AddressField Address;
+        public string getName() { return this.Name; }
+        public void setName(string Name) { this.Name = Name; }
+        public int getAge() { return this.Age; }
+        public void setAge(int Age) { this.Age = Age; }
+        public AddressField getAddress() { return this.Address; }
+        public void setAddress(AddressField Address) { this.Address = Address; }
         protected Person()
         {
             Name = "xxx";
@@ -24,14 +30,6 @@ namespace Test
         public override string ToString()
         {
             return Name + "|" + Age + "|" + Address.ToString();
-        }
-        public static bool operator ==(Person a, Person b)
-        {
-            return a.Name == b.Name && a.Age == b.Age && a.Address == b.Address;
-        }
-        public static bool operator !=(Person a, Person b)
-        {
-            return a.Name != b.Name || a.Age != b.Age || a.Address != b.Address;
         }
     }
 }
