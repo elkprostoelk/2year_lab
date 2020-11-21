@@ -1,0 +1,11 @@
+C:\Users\Mikhail Novikov\Desktop\Test_2\bin\Debug\Test_2.exe.config
+C:\Users\Mikhail Novikov\Desktop\Test_2\bin\Debug\Test_2.exe
+C:\Users\Mikhail Novikov\Desktop\Test_2\bin\Debug\Test_2.pdb
+C:\Users\Mikhail Novikov\Desktop\Test_2\obj\Debug\Test_2.csprojAssemblyReference.cache
+C:\Users\Mikhail Novikov\Desktop\Test_2\obj\Debug\Test_2.MainForm.resources
+C:\Users\Mikhail Novikov\Desktop\Test_2\obj\Debug\Test_2.Properties.Resources.resources
+C:\Users\Mikhail Novikov\Desktop\Test_2\obj\Debug\Test_2.csproj.GenerateResource.cache
+C:\Users\Mikhail Novikov\Desktop\Test_2\obj\Debug\Test_2.csproj.CoreCompileInputs.cache
+C:\Users\Mikhail Novikov\Desktop\Test_2\obj\Debug\Test_2.exe
+C:\Users\Mikhail Novikov\Desktop\Test_2\obj\Debug\Test_2.pdb
+C:\Users\Mikhail Novikov\Desktop\Test_2\obj\Debug\Test_2.AddingPeople.StudentForm.resources
