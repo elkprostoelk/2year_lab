@@ -32,8 +32,12 @@ namespace Test_2
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.addStudentButton = new System.Windows.Forms.ToolStripButton();
+            this.editStudentButton = new System.Windows.Forms.ToolStripButton();
+            this.addTeacherButton = new System.Windows.Forms.ToolStripButton();
+            this.editTeacherButton = new System.Windows.Forms.ToolStripButton();
             this.studentDataGridView = new System.Windows.Forms.DataGridView();
             this.teacherDataGridView = new System.Windows.Forms.DataGridView();
+            this.SId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SAge = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,7 +47,7 @@ namespace Test_2
             this.Scholarship = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AverageBall = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CourseWork = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.editStudentButton = new System.Windows.Forms.ToolStripButton();
+            this.TId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TAge = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,8 +56,6 @@ namespace Test_2
             this.AcademicDegree = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Title = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CourseWorkStudents = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addTeacherButton = new System.Windows.Forms.ToolStripButton();
-            this.editTeacherButton = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studentDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.teacherDataGridView)).BeginInit();
@@ -69,7 +71,7 @@ namespace Test_2
             this.editTeacherButton});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1261, 31);
+            this.toolStrip1.Size = new System.Drawing.Size(1380, 27);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -79,9 +81,39 @@ namespace Test_2
             this.addStudentButton.Image = ((System.Drawing.Image)(resources.GetObject("addStudentButton.Image")));
             this.addStudentButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.addStudentButton.Name = "addStudentButton";
-            this.addStudentButton.Size = new System.Drawing.Size(29, 28);
+            this.addStudentButton.Size = new System.Drawing.Size(29, 24);
             this.addStudentButton.Text = "Добавить студента";
             this.addStudentButton.Click += new System.EventHandler(this.addStudentButton_Click);
+            // 
+            // editStudentButton
+            // 
+            this.editStudentButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.editStudentButton.Image = ((System.Drawing.Image)(resources.GetObject("editStudentButton.Image")));
+            this.editStudentButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.editStudentButton.Name = "editStudentButton";
+            this.editStudentButton.Size = new System.Drawing.Size(29, 24);
+            this.editStudentButton.Text = "Редактировать студента";
+            this.editStudentButton.Click += new System.EventHandler(this.editStudentButton_Click);
+            // 
+            // addTeacherButton
+            // 
+            this.addTeacherButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.addTeacherButton.Image = ((System.Drawing.Image)(resources.GetObject("addTeacherButton.Image")));
+            this.addTeacherButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.addTeacherButton.Name = "addTeacherButton";
+            this.addTeacherButton.Size = new System.Drawing.Size(29, 24);
+            this.addTeacherButton.Text = "Добавить преподавателя";
+            this.addTeacherButton.Click += new System.EventHandler(this.addTeacherButton_Click);
+            // 
+            // editTeacherButton
+            // 
+            this.editTeacherButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.editTeacherButton.Image = ((System.Drawing.Image)(resources.GetObject("editTeacherButton.Image")));
+            this.editTeacherButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.editTeacherButton.Name = "editTeacherButton";
+            this.editTeacherButton.Size = new System.Drawing.Size(29, 24);
+            this.editTeacherButton.Text = "Редактировать преподавателя";
+            this.editTeacherButton.Click += new System.EventHandler(this.editTeacherButton_Click);
             // 
             // studentDataGridView
             // 
@@ -89,6 +121,7 @@ namespace Test_2
             this.studentDataGridView.AllowUserToDeleteRows = false;
             this.studentDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.studentDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.SId,
             this.SName,
             this.SAge,
             this.SAddress,
@@ -103,7 +136,7 @@ namespace Test_2
             this.studentDataGridView.ReadOnly = true;
             this.studentDataGridView.RowHeadersWidth = 51;
             this.studentDataGridView.RowTemplate.Height = 24;
-            this.studentDataGridView.Size = new System.Drawing.Size(1204, 150);
+            this.studentDataGridView.Size = new System.Drawing.Size(1330, 150);
             this.studentDataGridView.TabIndex = 1;
             // 
             // teacherDataGridView
@@ -112,6 +145,7 @@ namespace Test_2
             this.teacherDataGridView.AllowUserToDeleteRows = false;
             this.teacherDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.teacherDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.TId,
             this.TName,
             this.TAge,
             this.TAddress,
@@ -125,8 +159,16 @@ namespace Test_2
             this.teacherDataGridView.ReadOnly = true;
             this.teacherDataGridView.RowHeadersWidth = 51;
             this.teacherDataGridView.RowTemplate.Height = 24;
-            this.teacherDataGridView.Size = new System.Drawing.Size(1204, 150);
+            this.teacherDataGridView.Size = new System.Drawing.Size(1330, 150);
             this.teacherDataGridView.TabIndex = 2;
+            // 
+            // SId
+            // 
+            this.SId.HeaderText = "ID";
+            this.SId.MinimumWidth = 6;
+            this.SId.Name = "SId";
+            this.SId.ReadOnly = true;
+            this.SId.Width = 125;
             // 
             // SName
             // 
@@ -200,15 +242,13 @@ namespace Test_2
             this.CourseWork.ReadOnly = true;
             this.CourseWork.Width = 125;
             // 
-            // editStudentButton
+            // TId
             // 
-            this.editStudentButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.editStudentButton.Image = ((System.Drawing.Image)(resources.GetObject("editStudentButton.Image")));
-            this.editStudentButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.editStudentButton.Name = "editStudentButton";
-            this.editStudentButton.Size = new System.Drawing.Size(29, 28);
-            this.editStudentButton.Text = "Редактировать студента";
-            this.editStudentButton.Click += new System.EventHandler(this.editStudentButton_Click);
+            this.TId.HeaderText = "ID";
+            this.TId.MinimumWidth = 6;
+            this.TId.Name = "TId";
+            this.TId.ReadOnly = true;
+            this.TId.Width = 125;
             // 
             // TName
             // 
@@ -274,31 +314,11 @@ namespace Test_2
             this.CourseWorkStudents.ReadOnly = true;
             this.CourseWorkStudents.Width = 125;
             // 
-            // addTeacherButton
-            // 
-            this.addTeacherButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.addTeacherButton.Image = ((System.Drawing.Image)(resources.GetObject("addTeacherButton.Image")));
-            this.addTeacherButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.addTeacherButton.Name = "addTeacherButton";
-            this.addTeacherButton.Size = new System.Drawing.Size(29, 28);
-            this.addTeacherButton.Text = "Добавить преподавателя";
-            this.addTeacherButton.Click += new System.EventHandler(this.addTeacherButton_Click);
-            // 
-            // editTeacherButton
-            // 
-            this.editTeacherButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.editTeacherButton.Image = ((System.Drawing.Image)(resources.GetObject("editTeacherButton.Image")));
-            this.editTeacherButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.editTeacherButton.Name = "editTeacherButton";
-            this.editTeacherButton.Size = new System.Drawing.Size(29, 28);
-            this.editTeacherButton.Text = "Редактировать преподавателя";
-            this.editTeacherButton.Click += new System.EventHandler(this.editTeacherButton_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1261, 551);
+            this.ClientSize = new System.Drawing.Size(1380, 551);
             this.Controls.Add(this.teacherDataGridView);
             this.Controls.Add(this.studentDataGridView);
             this.Controls.Add(this.toolStrip1);
@@ -319,6 +339,10 @@ namespace Test_2
         private System.Windows.Forms.ToolStripButton addStudentButton;
         private System.Windows.Forms.DataGridView studentDataGridView;
         private System.Windows.Forms.DataGridView teacherDataGridView;
+        private System.Windows.Forms.ToolStripButton editStudentButton;
+        private System.Windows.Forms.ToolStripButton addTeacherButton;
+        private System.Windows.Forms.ToolStripButton editTeacherButton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SId;
         private System.Windows.Forms.DataGridViewTextBoxColumn SName;
         private System.Windows.Forms.DataGridViewTextBoxColumn SAge;
         private System.Windows.Forms.DataGridViewTextBoxColumn SAddress;
@@ -328,7 +352,7 @@ namespace Test_2
         private System.Windows.Forms.DataGridViewTextBoxColumn Scholarship;
         private System.Windows.Forms.DataGridViewTextBoxColumn AverageBall;
         private System.Windows.Forms.DataGridViewTextBoxColumn CourseWork;
-        private System.Windows.Forms.ToolStripButton editStudentButton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TId;
         private System.Windows.Forms.DataGridViewTextBoxColumn TName;
         private System.Windows.Forms.DataGridViewTextBoxColumn TAge;
         private System.Windows.Forms.DataGridViewTextBoxColumn TAddress;
@@ -337,8 +361,6 @@ namespace Test_2
         private System.Windows.Forms.DataGridViewTextBoxColumn AcademicDegree;
         private System.Windows.Forms.DataGridViewTextBoxColumn Title;
         private System.Windows.Forms.DataGridViewTextBoxColumn CourseWorkStudents;
-        private System.Windows.Forms.ToolStripButton addTeacherButton;
-        private System.Windows.Forms.ToolStripButton editTeacherButton;
     }
 }
 

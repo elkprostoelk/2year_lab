@@ -10,14 +10,18 @@ namespace Test
         private int MaxNumberOfCourseWorks;
         private List<Student> CourseWorkStudents;
         private AcademicDegrees AcademicDegree;
-        private Ranks Title;
+        private Titles Title;
         public float getSalary() { return this.Salary; }
         public void setSalary(float Salary) { this.Salary = Salary; }
         public int getMaxNumberOfCourseWorks() { return this.MaxNumberOfCourseWorks; }
         public void setMaxNumberOfCourseWorks(int maxNum) { this.MaxNumberOfCourseWorks = maxNum; }
         public List<Student> getCourseWorkStudents() { return this.CourseWorkStudents; }
         public void setCourseWorkStudents(List<Student> students) { this.CourseWorkStudents = students; }
-        public void setAcademicDegree(string acaddegree)
+        public AcademicDegrees getAcademicDegree() { return this.AcademicDegree; }
+        public void setAcademicDegree(AcademicDegrees academicDegree) { this.AcademicDegree = academicDegree; }
+        public Titles getTitle() { return this.Title; }
+        public void setTitle(Titles title) { this.Title = title; }
+        public void setAcademicDegreeStr(string acaddegree)
         {
             switch (acaddegree)
             {
@@ -33,7 +37,7 @@ namespace Test
                     { this.AcademicDegree = AcademicDegrees.Bachelors; break; }
             }
         }
-        public string getAcademicDegree()
+        public string getAcademicDegreeStr()
         {
             switch (AcademicDegree)
             {
@@ -49,52 +53,52 @@ namespace Test
                     return string.Empty;
             }
         }
-        public string getTitle()
+        public string getTitleStr()
         {
             switch (this.Title)
             {
-                case Ranks.Professor:
+                case Titles.Professor:
                     return "Professor";
-                case Ranks.Docent:
+                case Titles.Docent:
                     return "Docent";
-                case Ranks.ElderTeacher:
+                case Titles.ElderTeacher:
                     return "Elder Teacher";
-                case Ranks.Teacher:
+                case Titles.Teacher:
                     return "Teacher";
-                case Ranks.Assistant:
+                case Titles.Assistant:
                     return "Assistant";
                 default:
                     return string.Empty;
             }
         }
-        public void setTitle(string title)
+        public void setTitleStr(string title)
         {
             switch (title)
             {
                 case "Professor":
-                    { this.Title = Ranks.Professor; break; }
+                    { this.Title = Titles.Professor; break; }
                 case "Docent":
-                    { this.Title = Ranks.Docent; break; }
+                    { this.Title = Titles.Docent; break; }
                 case "Elder Teacher":
-                    { this.Title = Ranks.ElderTeacher; break; }
+                    { this.Title = Titles.ElderTeacher; break; }
                 case "Teacher":
-                    { this.Title = Ranks.Teacher; break; }
+                    { this.Title = Titles.Teacher; break; }
                 case "Assistant":
-                    { this.Title = Ranks.Assistant; break; }
+                    { this.Title = Titles.Assistant; break; }
                 default:
-                    { this.Title = Ranks.Assistant; break; }
+                    { this.Title = Titles.Assistant; break; }
             }
         }
         public enum AcademicDegrees
         {
-            DoctorOfSсiences = 1,
+            DoctorOfSсiences,
             CandidateOfSciences,
             Masters,
             Bachelors
         }
-        public enum Ranks
+        public enum Titles
         {
-            Professor = 1,
+            Professor,
             Docent,
             ElderTeacher,
             Teacher,
@@ -104,15 +108,15 @@ namespace Test
         {
             Salary = 0f;
             AcademicDegree = AcademicDegrees.Masters;
-            Title = Ranks.Teacher;
+            Title = Titles.Teacher;
             MaxNumberOfCourseWorks = 1;
             CourseWorkStudents = new List<Student>(MaxNumberOfCourseWorks);
         }
-        public Teacher(string name, int age, AddressField address, float salary, int maxnumofcourseworks, string acaddegree, string title) : base(name, age, address)
+        public Teacher(int id, string name, int age, AddressField address, float salary, int maxnumofcourseworks, string acaddegree, string title) : base(id, name, age, address)
         {
             Salary = salary;
-            this.setAcademicDegree(acaddegree);
-            this.setTitle(title);
+            this.setAcademicDegreeStr(acaddegree);
+            this.setTitleStr(title);
             MaxNumberOfCourseWorks = maxnumofcourseworks;
             CourseWorkStudents = new List<Student>(MaxNumberOfCourseWorks);
         }
@@ -128,7 +132,7 @@ namespace Test
         }
         public override string ToString()
         {
-            string result = base.ToString() + "|";
+            string result = this.GetType().Name + "|" + base.ToString() + "|";
             result += this.Salary + "|";
             result += this.MaxNumberOfCourseWorks + "|";
             result += this.AcademicDegree + "|";

@@ -1,5 +1,7 @@
-﻿using Microsoft.Owin;
+﻿using Microsoft.AspNet.Identity;
+using Microsoft.Owin;
 using Owin;
+using PrepodPortal.Models;
 
 [assembly: OwinStartupAttribute(typeof(PrepodPortal.Startup))]
 namespace PrepodPortal
@@ -9,6 +11,7 @@ namespace PrepodPortal
       public void Configuration(IAppBuilder app)
       {
          ConfigureAuth(app);
-      }
+            //await C.RoleManager.CreateAsync(new Microsoft.AspNet.Identity.EntityFramework.IdentityRole("profiles creator"));
+        }
    }
 }

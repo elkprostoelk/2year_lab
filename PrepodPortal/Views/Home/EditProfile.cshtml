@@ -87,7 +87,7 @@
             <li><a href="#tabs-2">Кар'єра</a></li>
             <li><a href="#tabs-3">Освіта</a></li>
             <li><a href="#tabs-4">Наук. зван.</a></li>
-            <li><a href="#tabs-5">Зах. дисер.</a></li>
+            <li><a href="#tabs-5">Зах. дисерт.</a></li>
             <li><a href="#tabs-6">Предмети</a></li>
             <li><a href="#tabs-7">Проф. в науком. базі</a></li>
          </ul>
@@ -101,7 +101,7 @@
                   @Html.HiddenFor(model => model.UserId)
                   <div class="editInput">@Html.LabelFor(model => model.Name, "ПІБ : ") @Html.EditorFor(model => model.Name)</div>
                   <div class="editInput">@Html.LabelFor(model => model.HomeTown, "Місце народження : ") @Html.EditorFor(model => model.HomeTown)</div>
-                  <div class="editInput">@Html.LabelFor(model => model.Town, "Поточне місце перебування : ") @Html.EditorFor(model => model.Town)</div>
+                  <div class="editInput">@Html.LabelFor(model => model.Town, "Поточне місце проживання : ") @Html.EditorFor(model => model.Town)</div>
                   <div class="editInput">
                      <label for="changeGender">Стать : </label>
                      <select class="changeGenderField" id="changeGender" name="Gender">

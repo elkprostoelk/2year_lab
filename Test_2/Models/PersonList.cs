@@ -45,32 +45,45 @@ namespace Test
         }
         public void ExportInTxt()
         {
-            StreamWriter sw = new StreamWriter(FileName["TXT"]);
-            foreach (var item in People)
-                sw.WriteLine(item.ToString());
-            sw.Close();
+            using (StreamWriter sw = new StreamWriter(FileName["TXT"]))
+            {
+                foreach (var item in People)
+                    sw.WriteLine(item.ToString());
+            }
         }
         public void ImportFromTxt()
         {
             People.Clear();
-            StreamReader sr = new StreamReader(FileName["TXT"]);
-            while (!sr.EndOfStream)
-            {
-                string[] current = sr.ReadLine().Split('|');
-                if (float.TryParse(current[3], out float sal))
+            using (StreamReader sr = new StreamReader(FileName["TXT"]))
+            { 
+                while (!sr.EndOfStream)
                 {
-                    Teacher t= new Teacher(current[0], int.Parse(current[1]),
-                          new AddressField(current[2]), sal, int.Parse(current[4]), current[5], current[6]);
-                    foreach (var item in current[7].Split('&'))
-                        for (int i = 0; i < FindPersonByName(item).People.Count; i++)
-                            t.getCourseWorkStudents().Add((Student)FindPersonByName(item).People[i]);
-                    this.AddPerson(t);
+                    string[] current = sr.ReadLine().Split('|');
+                    switch(current[0])
+                    {
+                        case "Teacher":
+                        {
+                            Teacher t = new Teacher(int.Parse(current[1]),current[2], int.Parse(current[3]),
+                                    new AddressField(current[4]), float.Parse(current[5]), int.Parse(current[6]), current[7], current[8]);
+                            foreach (var item in current[9].Split('&'))
+                                for (int i = 0; i < FindPersonByName(item).People.Count; i++)
+                                    t.getCourseWorkStudents().Add((Student)FindPersonByName(item).People[i]);
+                            this.AddPerson(t);
+                            break;
+                        }
+                        case "Student":
+                        {
+                            Student s = new Student(int.Parse(current[1]), current[2], int.Parse(current[3]), new AddressField(current[4]),
+                            current[5], current[6], current[7], float.Parse(current[8]), float.Parse(current[9]),
+                            new CourseWork(current[10].Split('$')[0], current[10].Split('$')[1]));
+                            this.AddPerson(s);
+                            break;
+                        }
+                        default: break;
+                    }
+                    
                 }
-                else this.AddPerson(new Student(current[0], int.Parse(current[1]), new AddressField(current[2]),
-                        current[3], current[4], current[5], float.Parse(current[4]), float.Parse(current[5]),
-                        new CourseWork(current[6].Split('$')[0], current[6].Split('$')[1])));
             }
-            sr.Close();
         }
         public void ExportInXml()
         {
@@ -81,18 +94,48 @@ namespace Test
             {
                 XmlElement current = xmlDocument.CreateElement(People[i].GetType().Name);
                 rootelement.AppendChild(current);
+                XmlElement id = xmlDocument.CreateElement("Id");
                 XmlElement name = xmlDocument.CreateElement("Name");
                 XmlElement age = xmlDocument.CreateElement("Age");
                 XmlElement address = xmlDocument.CreateElement("AddressField");
+                XmlElement country = xmlDocument.CreateElement("Country");
+                XmlElement oblast = xmlDocument.CreateElement("Oblast");
+                XmlElement region = xmlDocument.CreateElement("Region");
+                XmlElement city = xmlDocument.CreateElement("City");
+                XmlElement street = xmlDocument.CreateElement("Street");
+                XmlElement homenumber = xmlDocument.CreateElement("HomeNumber");
+                XmlElement apartment = xmlDocument.CreateElement("Apartment");
+                XmlText idTxt = xmlDocument.CreateTextNode(People[i].getId().ToString());
                 XmlText nameTxt = xmlDocument.CreateTextNode(People[i].getName());
                 XmlText ageTxt = xmlDocument.CreateTextNode(People[i].getAge().ToString());
-                XmlText addressTxt = xmlDocument.CreateTextNode(People[i].getAddress().ToString());
+                XmlText countryTxt = xmlDocument.CreateTextNode(People[i].getAddress().getCountry());
+                XmlText oblastTxt = xmlDocument.CreateTextNode(People[i].getAddress().getOblast());
+                XmlText regionTxt = xmlDocument.CreateTextNode(People[i].getAddress().getRegion());
+                XmlText cityTxt = xmlDocument.CreateTextNode(People[i].getAddress().getCity());
+                XmlText streetTxt = xmlDocument.CreateTextNode(People[i].getAddress().getStreet());
+                XmlText homeNumberTxt = xmlDocument.CreateTextNode(People[i].getAddress().getHomeNumber());
+                XmlText apartmentTxt = xmlDocument.CreateTextNode(People[i].getAddress().getApartment().ToString());
+                current.AppendChild(id);
                 current.AppendChild(name);
                 current.AppendChild(age);
                 current.AppendChild(address);
+                id.AppendChild(idTxt);
                 name.AppendChild(nameTxt);
                 age.AppendChild(ageTxt);
-                address.AppendChild(addressTxt);
+                address.AppendChild(country);
+                address.AppendChild(oblast);
+                address.AppendChild(region);
+                address.AppendChild(city);
+                address.AppendChild(street);
+                address.AppendChild(homenumber);
+                address.AppendChild(apartment);
+                country.AppendChild(countryTxt);
+                oblast.AppendChild(oblastTxt);
+                region.AppendChild(regionTxt);
+                city.AppendChild(cityTxt);
+                street.AppendChild(streetTxt);
+                homenumber.AppendChild(homeNumberTxt);
+                apartment.AppendChild(apartmentTxt);
                 switch (People[i].GetType().Name)
                 {
                     case "Student":
@@ -134,8 +177,8 @@ namespace Test
                             XmlElement CourseWorkStudents = xmlDocument.CreateElement("CourseWorkStudents");
                             XmlText SalaryTxt = xmlDocument.CreateTextNode(teacher.getSalary().ToString());
                             XmlText MaxNumberOfCourseWorksTxt = xmlDocument.CreateTextNode(teacher.getMaxNumberOfCourseWorks().ToString());
-                            XmlText AcademicDegreeTxt = xmlDocument.CreateTextNode(teacher.getAcademicDegree());
-                            XmlText TitleTxt = xmlDocument.CreateTextNode(teacher.getTitle());
+                            XmlText AcademicDegreeTxt = xmlDocument.CreateTextNode(teacher.getAcademicDegreeStr());
+                            XmlText TitleTxt = xmlDocument.CreateTextNode(teacher.getTitleStr());
                             string courseworkers = "";
                             foreach (var student in teacher.getCourseWorkStudents())
                                 courseworkers += student.getName() + "&";
@@ -171,27 +214,31 @@ namespace Test
                     case "Student":
                         {
                             Student student = new Student();
-                            student.setName(element.ChildNodes[0].InnerText);
-                            student.setAge(int.Parse(element.ChildNodes[1].InnerText));
-                            student.setAddress(new AddressField(element.ChildNodes[2].InnerText));
-                            student.setFaculty(element.ChildNodes[3].InnerText);
-                            student.setGroup(element.ChildNodes[4].InnerText);
-                            student.setIsState(bool.Parse(element.ChildNodes[5].InnerText));
-                            student.setScholarship(float.Parse(element.ChildNodes[6].InnerText));
-                            student.setCourseWork(new CourseWork(element.ChildNodes[7].InnerText.Split('$')[0], element.ChildNodes[6].InnerText.Split('$')[1]));
+                            student.setId(int.Parse(element.ChildNodes[0].InnerText));
+                            student.setName(element.ChildNodes[1].InnerText);
+                            student.setAge(int.Parse(element.ChildNodes[2].InnerText));
+                            student.setAddress(new AddressField(element.ChildNodes[3].ChildNodes[0].InnerText, element.ChildNodes[3].ChildNodes[1].InnerText,
+                                element.ChildNodes[3].ChildNodes[2].InnerText, element.ChildNodes[3].ChildNodes[3].InnerText, element.ChildNodes[3].ChildNodes[4].InnerText,
+                                element.ChildNodes[3].ChildNodes[5].InnerText, int.Parse(element.ChildNodes[3].ChildNodes[6].InnerText)));
+                            student.setFaculty(element.ChildNodes[4].InnerText);
+                            student.setGroup(element.ChildNodes[5].InnerText);
+                            student.setIsState(bool.Parse(element.ChildNodes[6].InnerText));
+                            student.setScholarship(float.Parse(element.ChildNodes[7].InnerText));
+                            student.setCourseWork(new CourseWork(element.ChildNodes[8].InnerText.Split('$')[0], element.ChildNodes[8].InnerText.Split('$')[1]));
                             People.Add(student);
                             break;
                         }
                     case "Teacher":
                         {
-                            Teacher teacher = new Teacher(element.ChildNodes[0].InnerText,
-                                int.Parse(element.ChildNodes[1].InnerText),
-                                new AddressField(element.ChildNodes[2].InnerText),
-                                float.Parse(element.ChildNodes[3].InnerText),
-                                int.Parse(element.ChildNodes[4].InnerText),
-                                element.ChildNodes[5].InnerText,
-                                element.ChildNodes[6].InnerText);
-                            foreach (var item in element.ChildNodes[7].InnerText.Split('&'))
+                            Teacher teacher = new Teacher(int.Parse(element.ChildNodes[0].InnerText),
+                                element.ChildNodes[1].InnerText,
+                                int.Parse(element.ChildNodes[2].InnerText),
+                                new AddressField(element.ChildNodes[3].InnerText),
+                                float.Parse(element.ChildNodes[4].InnerText),
+                                int.Parse(element.ChildNodes[5].InnerText),
+                                element.ChildNodes[6].InnerText,
+                                element.ChildNodes[7].InnerText);
+                            foreach (var item in element.ChildNodes[8].InnerText.Split('&'))
                                 foreach (Student stud in FindPersonByName(item).getList())
                                     teacher.AddCourseWorkStudent(stud);
                             People.Add(teacher);

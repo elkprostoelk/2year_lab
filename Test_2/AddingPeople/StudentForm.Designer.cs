@@ -31,11 +31,9 @@ namespace Test_2.AddingPeople
         {
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.ageTextBox = new System.Windows.Forms.TextBox();
-            this.addressTextBox = new System.Windows.Forms.TextBox();
             this.submitStudentButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.scholarshipTextBox = new System.Windows.Forms.TextBox();
@@ -44,11 +42,26 @@ namespace Test_2.AddingPeople
             this.label7 = new System.Windows.Forms.Label();
             this.isStateComboBox = new System.Windows.Forms.ComboBox();
             this.courseWorksComboBox = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.facultyTextBox = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.groupTextBox = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.apartmentTextBox = new System.Windows.Forms.TextBox();
+            this.homeNumberTextBox = new System.Windows.Forms.TextBox();
+            this.streetTextBox = new System.Windows.Forms.TextBox();
+            this.cityTextBox = new System.Windows.Forms.TextBox();
+            this.regionTextBox = new System.Windows.Forms.TextBox();
+            this.oblastTextBox = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.countryTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // nameTextBox
@@ -64,13 +77,6 @@ namespace Test_2.AddingPeople
             this.ageTextBox.Name = "ageTextBox";
             this.ageTextBox.Size = new System.Drawing.Size(64, 22);
             this.ageTextBox.TabIndex = 1;
-            // 
-            // addressTextBox
-            // 
-            this.addressTextBox.Location = new System.Drawing.Point(249, 207);
-            this.addressTextBox.Name = "addressTextBox";
-            this.addressTextBox.Size = new System.Drawing.Size(436, 22);
-            this.addressTextBox.TabIndex = 2;
             // 
             // submitStudentButton
             // 
@@ -99,15 +105,6 @@ namespace Test_2.AddingPeople
             this.label2.Size = new System.Drawing.Size(66, 17);
             this.label2.TabIndex = 5;
             this.label2.Text = "Возраст:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(191, 210);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 17);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Адрес:";
             // 
             // label4
             // 
@@ -181,16 +178,6 @@ namespace Test_2.AddingPeople
             this.courseWorksComboBox.Size = new System.Drawing.Size(321, 24);
             this.courseWorksComboBox.TabIndex = 15;
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label8.Location = new System.Drawing.Point(12, 9);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(739, 44);
-            this.label8.TabIndex = 16;
-            this.label8.Text = "Добавление/редактирование студента";
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -204,7 +191,7 @@ namespace Test_2.AddingPeople
             // 
             this.facultyTextBox.Location = new System.Drawing.Point(250, 268);
             this.facultyTextBox.Name = "facultyTextBox";
-            this.facultyTextBox.Size = new System.Drawing.Size(162, 22);
+            this.facultyTextBox.Size = new System.Drawing.Size(305, 22);
             this.facultyTextBox.TabIndex = 18;
             // 
             // label10
@@ -223,11 +210,157 @@ namespace Test_2.AddingPeople
             this.groupTextBox.Size = new System.Drawing.Size(100, 22);
             this.groupTextBox.TabIndex = 20;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label8.Location = new System.Drawing.Point(12, 9);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(739, 44);
+            this.label8.TabIndex = 16;
+            this.label8.Text = "Добавление/редактирование студента";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(1050, 191);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(71, 17);
+            this.label16.TabIndex = 70;
+            this.label16.Text = "Квартира";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(942, 191);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(36, 17);
+            this.label15.TabIndex = 69;
+            this.label15.Text = "Дом";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(814, 191);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(49, 17);
+            this.label14.TabIndex = 68;
+            this.label14.Text = "Улица";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(683, 191);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(48, 17);
+            this.label13.TabIndex = 67;
+            this.label13.Text = "Город";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(556, 191);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(49, 17);
+            this.label12.TabIndex = 66;
+            this.label12.Text = "Район";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(389, 191);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(64, 17);
+            this.label11.TabIndex = 65;
+            this.label11.Text = "Область";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(268, 191);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(56, 17);
+            this.label17.TabIndex = 64;
+            this.label17.Text = "Страна";
+            // 
+            // apartmentTextBox
+            // 
+            this.apartmentTextBox.Location = new System.Drawing.Point(1038, 217);
+            this.apartmentTextBox.Name = "apartmentTextBox";
+            this.apartmentTextBox.Size = new System.Drawing.Size(100, 22);
+            this.apartmentTextBox.TabIndex = 63;
+            // 
+            // homeNumberTextBox
+            // 
+            this.homeNumberTextBox.Location = new System.Drawing.Point(907, 217);
+            this.homeNumberTextBox.Name = "homeNumberTextBox";
+            this.homeNumberTextBox.Size = new System.Drawing.Size(100, 22);
+            this.homeNumberTextBox.TabIndex = 62;
+            // 
+            // streetTextBox
+            // 
+            this.streetTextBox.Location = new System.Drawing.Point(786, 217);
+            this.streetTextBox.Name = "streetTextBox";
+            this.streetTextBox.Size = new System.Drawing.Size(100, 22);
+            this.streetTextBox.TabIndex = 61;
+            // 
+            // cityTextBox
+            // 
+            this.cityTextBox.Location = new System.Drawing.Point(654, 217);
+            this.cityTextBox.Name = "cityTextBox";
+            this.cityTextBox.Size = new System.Drawing.Size(100, 22);
+            this.cityTextBox.TabIndex = 60;
+            // 
+            // regionTextBox
+            // 
+            this.regionTextBox.Location = new System.Drawing.Point(533, 217);
+            this.regionTextBox.Name = "regionTextBox";
+            this.regionTextBox.Size = new System.Drawing.Size(100, 22);
+            this.regionTextBox.TabIndex = 59;
+            // 
+            // oblastTextBox
+            // 
+            this.oblastTextBox.Location = new System.Drawing.Point(356, 217);
+            this.oblastTextBox.Name = "oblastTextBox";
+            this.oblastTextBox.Size = new System.Drawing.Size(148, 22);
+            this.oblastTextBox.TabIndex = 58;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(171, 220);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(52, 17);
+            this.label18.TabIndex = 57;
+            this.label18.Text = "Адрес:";
+            // 
+            // countryTextBox
+            // 
+            this.countryTextBox.Location = new System.Drawing.Point(247, 217);
+            this.countryTextBox.Name = "countryTextBox";
+            this.countryTextBox.Size = new System.Drawing.Size(90, 22);
+            this.countryTextBox.TabIndex = 56;
+            // 
             // StudentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(763, 700);
+            this.ClientSize = new System.Drawing.Size(1168, 700);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.apartmentTextBox);
+            this.Controls.Add(this.homeNumberTextBox);
+            this.Controls.Add(this.streetTextBox);
+            this.Controls.Add(this.cityTextBox);
+            this.Controls.Add(this.regionTextBox);
+            this.Controls.Add(this.oblastTextBox);
+            this.Controls.Add(this.label18);
+            this.Controls.Add(this.countryTextBox);
             this.Controls.Add(this.groupTextBox);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.facultyTextBox);
@@ -241,11 +374,9 @@ namespace Test_2.AddingPeople
             this.Controls.Add(this.scholarshipTextBox);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.submitStudentButton);
-            this.Controls.Add(this.addressTextBox);
             this.Controls.Add(this.ageTextBox);
             this.Controls.Add(this.nameTextBox);
             this.MinimizeBox = false;
@@ -262,11 +393,9 @@ namespace Test_2.AddingPeople
 
         private System.Windows.Forms.TextBox nameTextBox;
         private System.Windows.Forms.TextBox ageTextBox;
-        private System.Windows.Forms.TextBox addressTextBox;
         private System.Windows.Forms.Button submitStudentButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox scholarshipTextBox;
@@ -275,10 +404,25 @@ namespace Test_2.AddingPeople
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox isStateComboBox;
         private System.Windows.Forms.ComboBox courseWorksComboBox;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox facultyTextBox;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox groupTextBox;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox apartmentTextBox;
+        private System.Windows.Forms.TextBox homeNumberTextBox;
+        private System.Windows.Forms.TextBox streetTextBox;
+        private System.Windows.Forms.TextBox cityTextBox;
+        private System.Windows.Forms.TextBox regionTextBox;
+        private System.Windows.Forms.TextBox oblastTextBox;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox countryTextBox;
     }
 }

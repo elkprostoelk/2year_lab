@@ -165,7 +165,7 @@
                   }
                   @if (User.IsInRole("admin") || C.GetMyId(User) == Model.UserId)
                   {
-                     @Html.ActionLink("Редактировать", "EditProfile", new { id = Model.UserId })
+                     @Html.ActionLink("Редагувати", "EditProfile", new { id = Model.UserId })
                   }
                   @if (C.GetMyId(User) == Model.UserId)
                   {

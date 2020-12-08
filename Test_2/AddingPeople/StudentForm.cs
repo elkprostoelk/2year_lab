@@ -23,7 +23,13 @@ namespace Test_2.AddingPeople
             {
                 nameTextBox.Text = student.getName();
                 ageTextBox.Text = student.getAge().ToString();
-                addressTextBox.Text = student.getAddress().ToString();
+                countryTextBox.Text = student.getAddress().getCountry();
+                oblastTextBox.Text = student.getAddress().getOblast();
+                regionTextBox.Text = student.getAddress().getRegion();
+                cityTextBox.Text = student.getAddress().getCity();
+                streetTextBox.Text = student.getAddress().getStreet();
+                homeNumberTextBox.Text = student.getAddress().getHomeNumber();
+                apartmentTextBox.Text = student.getAddress().getApartment().ToString();
                 facultyTextBox.Text = student.getFaculty();
                 groupTextBox.Text = student.getGroup();
                 if (student.getIsState()) isStateComboBox.SelectedItem = isStateComboBox.Items[0];
@@ -37,7 +43,8 @@ namespace Test_2.AddingPeople
         {
             student.setName(nameTextBox.Text);
             student.setAge(int.Parse(ageTextBox.Text));
-            student.setAddress(new AddressField(addressTextBox.Text));
+            student.setAddress(new AddressField(countryTextBox.Text, oblastTextBox.Text, regionTextBox.Text,
+                cityTextBox.Text, streetTextBox.Text, homeNumberTextBox.Text, int.Parse(apartmentTextBox.Text)));
             student.setFaculty(facultyTextBox.Text);
             student.setGroup(groupTextBox.Text);
             if (isStateComboBox.SelectedIndex == 0) student.setIsState(true);

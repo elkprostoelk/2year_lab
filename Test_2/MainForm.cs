@@ -14,7 +14,7 @@ namespace Test_2
 {
     public partial class MainForm : Form
     {
-        public PersonList personList;
+        public static PersonList personList;
         public MainForm()
         {
             InitializeComponent();
@@ -27,6 +27,7 @@ namespace Test_2
             foreach (Student item in personList.getList())
             {
                 studentDataGridView.Rows.Add(1);
+                studentDataGridView.Rows[i].Cells["SId"].Value = item.getId().ToString();
                 studentDataGridView.Rows[i].Cells["SName"].Value = item.getName();
                 studentDataGridView.Rows[i].Cells["SAge"].Value = item.getAge();
                 studentDataGridView.Rows[i].Cells["SAddress"].Value = item.getAddress().ToString();
@@ -48,15 +49,16 @@ namespace Test_2
             foreach (Teacher item in personList.getList())
             {
                 teacherDataGridView.Rows.Add(1);
-                teacherDataGridView.Rows[i].Cells["SName"].Value = item.getName();
-                teacherDataGridView.Rows[i].Cells["SAge"].Value = item.getAge();
-                teacherDataGridView.Rows[i].Cells["SAddress"].Value = item.getAddress().ToString();
+                teacherDataGridView.Rows[i].Cells["TId"].Value = item.getId().ToString();
+                teacherDataGridView.Rows[i].Cells["TName"].Value = item.getName();
+                teacherDataGridView.Rows[i].Cells["TAge"].Value = item.getAge();
+                teacherDataGridView.Rows[i].Cells["TAddress"].Value = item.getAddress().ToString();
                 teacherDataGridView.Rows[i].Cells["Salary"].Value = item.getSalary();
                 teacherDataGridView.Rows[i].Cells["MaxNumberOfCourseWorks"].Value = item.getMaxNumberOfCourseWorks();
                 foreach (var st in item.getCourseWorkStudents())
                     teacherDataGridView.Rows[i].Cells["CourseWorkStudents"].Value += item.getName() + ", ";
                 teacherDataGridView.Rows[i].Cells["CourseWorkStudents"].Value = teacherDataGridView.Rows[i].Cells["CourseWorkStudents"].Value.ToString().Remove(teacherDataGridView.Rows[i].Cells["CourseWorkStudents"].Value.ToString().LastIndexOf(", "));
-                teacherDataGridView.Rows[i].Cells["AcademicDegree"].Value = item.getAcademicDegree();
+                teacherDataGridView.Rows[i].Cells["AcademicDegree"].Value = item.getAcademicDegreeStr();
                 teacherDataGridView.Rows[i].Cells["Title"].Value = item.getTitle();
                 i++;
             }
