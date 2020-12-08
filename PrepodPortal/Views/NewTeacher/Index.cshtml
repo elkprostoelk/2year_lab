@@ -49,7 +49,7 @@
          <input type="hidden" id="prepodPageLink" value="@TempData["UserId"]" />
          <script>
             $(document).ready(function () {
-               if (confirm("викладач був успішно зареєстрований на Prepod Portal.\nЛист з даними для входу надіслано за вказаною адресою ел. пошти.\nБажаєте перейти на його сторінку?")) {
+                if (confirm("викладач був успішно зареєстрований на еНауковаДекларація.\nЛист з даними для входу надіслано за вказаною адресою ел. пошти.\nБажаєте перейти на його сторінку?")) {
                   window.location.href = "/?id=" + $("#prepodPageLink").val();
                }
             });
@@ -84,11 +84,11 @@
 
 @section footer
 {
-   <div id="copyright">
-      © 2014 - @DateTime.Now.Year Prepod Network
-      <br />
-      Сайт розроблений <a href="http://sadlogic.com">Sadlogic Inc.</a>, <a href="http://silv.pp.ua">Bogdan De George</a>
-   </div>
+    <div id="copyright">
+        © 2014 - @DateTime.Now.Year еНауковаДекларація
+        <br />
+        Сайт розроблений <a href="http://sadlogic.com">Sadlogic Inc.</a>, <a href="http://silv.pp.ua">Bogdan De George</a>
+    </div>
    <div id="f_links">
       <a href="/About/">Про проєкт</a>
    </div>

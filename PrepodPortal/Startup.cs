@@ -11,7 +11,7 @@ namespace PrepodPortal
       public void Configuration(IAppBuilder app)
       {
          ConfigureAuth(app);
-            //await C.RoleManager.CreateAsync(new Microsoft.AspNet.Identity.EntityFramework.IdentityRole("profiles creator"));
+            //await C.RoleManager.CreateAsync(new Microsoft.AspNet.Identity.EntityFramework.IdentityRole("superuser"));
         }
    }
 }

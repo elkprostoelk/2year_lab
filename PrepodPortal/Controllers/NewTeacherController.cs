@@ -57,8 +57,8 @@ namespace PrepodPortal.Controllers
 
          MailMessage mail = new MailMessage() { From = new MailAddress("mpoltorackiy@gmail.com") };
          mail.To.Add(new MailAddress(email));
-         mail.Subject = "Ласкаво просимо на Prepod Portal " + name;
-         mail.Body = string.Format("Вітаємо, {0}. Вас зареєстрував на Prepod Portal працівник кафедри. Ваші дані для входу : 1)Ім'я користувача: {1} ; 2)Пароль: {2} http://pn.sadlogic.com", name, email, password);
+         mail.Subject = "Ласкаво просимо на еНауковаДекларація " + name;
+         mail.Body = string.Format("Вітаємо, {0}. Вас зареєстрував на еНауковаДекларація працівник кафедри. Ваші дані для входу : 1)Ім'я користувача: {1} ; 2)Пароль: {2} http://pn.sadlogic.com", name, email, password);
          try
          {
             smtpClient.Send(mail);
