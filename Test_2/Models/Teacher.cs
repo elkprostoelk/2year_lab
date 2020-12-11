@@ -112,7 +112,7 @@ namespace Test
             MaxNumberOfCourseWorks = 1;
             CourseWorkStudents = new List<Student>(MaxNumberOfCourseWorks);
         }
-        public Teacher(int id, string name, int age, AddressField address, float salary, int maxnumofcourseworks, string acaddegree, string title) : base(id, name, age, address)
+        public Teacher(string name, int age, AddressField address, float salary, int maxnumofcourseworks, string acaddegree, string title) : base(name, age, address)
         {
             Salary = salary;
             this.setAcademicDegreeStr(acaddegree);

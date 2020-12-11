@@ -21,7 +21,7 @@ namespace Test
             AverageBall = 0f;
             courseWork = null;
         }
-        public Student(int id, string name, int age, AddressField address, string faculty, string group, string isstate, float scholarship, float averball, CourseWork courseWork) : base(id, name, age, address)
+        public Student(string name, int age, AddressField address, string faculty, string group, string isstate, float scholarship, float averball, CourseWork courseWork) : base(name, age, address)
         {
             Faculty = faculty;
             Group = group;

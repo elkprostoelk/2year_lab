@@ -1,0 +1,2 @@
+Student|Ivan Ivanov|20|Ukraine Khersonska Kherson 126 Universitetska 11|State|1300|87,4|Student-teacher app creating$App for student-teacher conversation
+Teacher|Petr Petrov|49|Ukraine Khersonska Kherson 25 200YearOfKherson 10|4000|3|CandidateOfSciences|Docent|Ivan Ivanov

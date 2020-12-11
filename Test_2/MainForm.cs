@@ -27,7 +27,6 @@ namespace Test_2
             foreach (Student item in personList.getList())
             {
                 studentDataGridView.Rows.Add(1);
-                studentDataGridView.Rows[i].Cells["SId"].Value = item.getId().ToString();
                 studentDataGridView.Rows[i].Cells["SName"].Value = item.getName();
                 studentDataGridView.Rows[i].Cells["SAge"].Value = item.getAge();
                 studentDataGridView.Rows[i].Cells["SAddress"].Value = item.getAddress().ToString();
@@ -49,7 +48,6 @@ namespace Test_2
             foreach (Teacher item in personList.getList())
             {
                 teacherDataGridView.Rows.Add(1);
-                teacherDataGridView.Rows[i].Cells["TId"].Value = item.getId().ToString();
                 teacherDataGridView.Rows[i].Cells["TName"].Value = item.getName();
                 teacherDataGridView.Rows[i].Cells["TAge"].Value = item.getAge();
                 teacherDataGridView.Rows[i].Cells["TAddress"].Value = item.getAddress().ToString();
@@ -132,6 +130,46 @@ namespace Test_2
                         MessageBox.Show("Выбрано более 1 позиции. Для редактирования выберите ОДНУ позицию.", "Ошибка");
                         break;
                     }
+            }
+        }
+
+        private void exportButton_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Куда вы хотите экспортировать данные? Да-в текстовый файл, Нет - в XML", "ВЫберите вариант", MessageBoxButtons.YesNoCancel);
+            switch (dialogResult)
+            {
+                case DialogResult.Yes:
+                    {
+                        personList.ExportInTxt();
+                        break;
+                    }
+                case DialogResult.No:
+                    {
+                        personList.ExportInXml();
+                        break;
+                    }
+                default:
+                    break;
+            }
+        }
+
+        private void importButton_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Откуда вы хотите импортировать данные? Да-из текстового файла, Нет - из XML", "ВЫберите вариант", MessageBoxButtons.YesNoCancel);
+            switch (dialogResult)
+            {
+                case DialogResult.Yes:
+                    {
+                        personList.ImportFromTxt();
+                        break;
+                    }
+                case DialogResult.No:
+                    {
+                        personList.ImportFromXml();
+                        break;
+                    }
+                default:
+                    break;
             }
         }
     }
