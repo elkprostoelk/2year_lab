@@ -27,6 +27,7 @@ namespace Test_2
             foreach (Student item in personList.getList())
             {
                 studentDataGridView.Rows.Add(1);
+                studentDataGridView.Rows[i].Cells["SId"].Value = item.getId().ToString();
                 studentDataGridView.Rows[i].Cells["SName"].Value = item.getName();
                 studentDataGridView.Rows[i].Cells["SAge"].Value = item.getAge();
                 studentDataGridView.Rows[i].Cells["SAddress"].Value = item.getAddress().ToString();
@@ -48,6 +49,7 @@ namespace Test_2
             foreach (Teacher item in personList.getList())
             {
                 teacherDataGridView.Rows.Add(1);
+                teacherDataGridView.Rows[i].Cells["TId"].Value = item.getId().ToString();
                 teacherDataGridView.Rows[i].Cells["TName"].Value = item.getName();
                 teacherDataGridView.Rows[i].Cells["TAge"].Value = item.getAge();
                 teacherDataGridView.Rows[i].Cells["TAddress"].Value = item.getAddress().ToString();
@@ -67,8 +69,7 @@ namespace Test_2
             Student student = new Student();
             StudentForm addStudentForm = new StudentForm(ref student);
             addStudentForm.ShowDialog();
-            if(student.getName()!="xxx")
-                personList.AddPerson(student);
+            if(student.getName()!="xxx") personList.AddPerson(student);
             StudentListToDataGrid();
         }
 
@@ -170,6 +171,36 @@ namespace Test_2
                     }
                 default:
                     break;
+            }
+        }
+
+        private void deleteStudentButton_Click(object sender, EventArgs e)
+        {
+            switch (studentDataGridView.SelectedRows.Count)
+            {
+                case 0:
+                    {
+                        MessageBox.Show("Не выбрано ни одной позиции для удаления!", "Ошибка");
+                        break;
+                    }
+                case 1:
+                    {
+                        if (MessageBox.Show($"Вы действительно хотите удалить студента {studentDataGridView.SelectedRows[0].Cells["SName"].Value}?", "Подтверждение", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                        {
+                            MessageBox.Show($"Студент {studentDataGridView.SelectedRows[0].Cells["SName"].Value} успешно удален.", "Успех");
+                            personList.RemovePerson(int.Parse(studentDataGridView.SelectedRows[0].Cells["SId"].Value.ToString()));
+                        }
+                        break;
+                    }
+                default:
+                    {
+                        if (MessageBox.Show("Вы действительно хотите удалить выбранных студентов?", "Подтверждение", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                        {
+                            MessageBox.Show($"Студент {studentDataGridView.SelectedRows[0].Cells["SName"].Value} успешно удален.", "Успех");
+                            personList.RemovePerson(int.Parse(studentDataGridView.SelectedRows[0].Cells["SId"].Value.ToString()));
+                        }
+                        break;
+                    }
             }
         }
     }

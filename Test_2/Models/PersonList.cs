@@ -20,6 +20,11 @@ namespace Test
         {
             return People;
         }
+        /*public void RecountIds()
+        {
+            for (int i = 0; i < People.Count; i++)
+                People[i].setId(i);
+        }*/
         public int AddPerson(Person p)
         {
             People.Add(p);
