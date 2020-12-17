@@ -20,26 +20,26 @@ namespace Test
         {
             return People;
         }
-        /*public void RecountIds()
+        public void RecountIds()
         {
             for (int i = 0; i < People.Count; i++)
                 People[i].setId(i);
-        }*/
-        public int AddPerson(Person p)
+        }
+        public void AddPerson(Person p)
         {
             People.Add(p);
-            return People.IndexOf(p);
+            RecountIds();
         }
-        public int[] AddPersonRange(params Person[] people)
+        public void AddPersonRange(params Person[] people)
         {
-            int[] indexes = new int[people.Length];
             foreach (var item in people)
                 this.AddPerson(item);
-            return indexes;
+            RecountIds();
         }
         public void RemovePerson(int index)
         {
             People.RemoveAt(index);
+            RecountIds();
         }
         public PersonList FindPersonByName(string name)
         {
@@ -56,7 +56,7 @@ namespace Test
                     sw.WriteLine(item.ToString());
             }
         }
-        public void ImportFromTxt()
+        public void ImportStudentsFromTxt()
         {
             People.Clear();
             using (StreamReader sr = new StreamReader(FileName["TXT"]))
@@ -66,16 +66,7 @@ namespace Test
                     string[] current = sr.ReadLine().Split('|');
                     switch(current[0])
                     {
-                        case "Teacher":
-                        {
-                            Teacher t = new Teacher(current[1], int.Parse(current[2]),
-                                    new AddressField(current[3]), float.Parse(current[4]), int.Parse(current[5]), current[6], current[7]);
-                            foreach (var item in current[8].Split('&'))
-                                for (int i = 0; i < FindPersonByName(item).People.Count; i++)
-                                    t.getCourseWorkStudents().Add((Student)FindPersonByName(item).People[i]);
-                            this.AddPerson(t);
-                            break;
-                        }
+                        case "Teacher": break;
                         case "Student":
                         {
                             Student s = new Student(current[1], int.Parse(current[2]), new AddressField(current[3]),
@@ -87,6 +78,32 @@ namespace Test
                         default: break;
                     }
                     
+                }
+            }
+        }
+        public void ImportTeachersFromTxt()
+        {
+            People.Clear();
+            using (StreamReader sr = new StreamReader(FileName["TXT"]))
+            {
+                while (!sr.EndOfStream)
+                {
+                    string[] current = sr.ReadLine().Split('|');
+                    switch (current[0])
+                    {
+                        case "Teacher":
+                            {
+                                Teacher t = new Teacher(current[1], int.Parse(current[2]),
+                                        new AddressField(current[3]), float.Parse(current[4]), int.Parse(current[5]), current[6], current[7]);
+                                foreach (var item in current[8].Split('&'))
+                                    for (int i = 0; i < FindPersonByName(item).People.Count; i++)
+                                        t.getCourseWorkStudents().Add((Student)FindPersonByName(item).People[i]);
+                                this.AddPerson(t);
+                                break;
+                            }
+                        case "Student": break;
+                        default: break;
+                    }
                 }
             }
         }
@@ -203,7 +220,7 @@ namespace Test
             }
             xmlDocument.Save(FileName["XML"]);
         }
-        public void ImportFromXml()
+        public void ImportStudentsFromXml()
         {
             XmlDocument xml = new XmlDocument();
             xml.Load(FileName["XML"]);
@@ -228,6 +245,20 @@ namespace Test
                             People.Add(student);
                             break;
                         }
+                    default:
+                        break;
+                }
+            }
+        }
+        public void ImportTeachersFromXml()
+        {
+            XmlDocument xml = new XmlDocument();
+            xml.Load(FileName["XML"]);
+            People.Clear();
+            foreach (XmlNode element in xml.ChildNodes[0].ChildNodes)
+            {
+                switch (element.Name)
+                {
                     case "Teacher":
                         {
                             Teacher teacher = new Teacher(element.ChildNodes[0].InnerText,

@@ -20,7 +20,7 @@ namespace Test_2.AddingPeople
             this.teacher = teacher;
             academicDegreeComboBox.SelectedItem = academicDegreeComboBox.Items[3];
             titleComboBox.SelectedItem = titleComboBox.Items[3];
-            foreach (Student item in MainForm.personList.getList())
+            foreach (Student item in MainForm.studentList.getList())
                 checkedListBox1.Items.Add(item.getName());
             if(teacher.getName()!="xxx")
             {
@@ -53,7 +53,7 @@ namespace Test_2.AddingPeople
             if (checkedListBox1.CheckedItems.Count > 0)
             {
                 foreach (string item in checkedListBox1.CheckedItems)
-                    teacher.AddCourseWorkStudent((Student)MainForm.personList.FindPersonByName(item).getList()[0]);
+                    teacher.AddCourseWorkStudent((Student)MainForm.studentList.FindPersonByName(item).getList()[0]);
             }
             else teacher.setCourseWorkStudents(new List<Student>(teacher.getMaxNumberOfCourseWorks()));
             MessageBox.Show("Готово!", "OK", MessageBoxButtons.OK);

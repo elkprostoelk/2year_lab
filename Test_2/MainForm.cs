@@ -14,17 +14,19 @@ namespace Test_2
 {
     public partial class MainForm : Form
     {
-        public static PersonList personList;
+        public static PersonList studentList;
+        public static PersonList teacherList;
         public MainForm()
         {
             InitializeComponent();
-            personList = new PersonList();
+            studentList = new PersonList();
+            teacherList = new PersonList();
         }
         private void StudentListToDataGrid()
         {
             studentDataGridView.Rows.Clear();
             int i = 0;
-            foreach (Student item in personList.getList())
+            foreach (Student item in studentList.getList())
             {
                 studentDataGridView.Rows.Add(1);
                 studentDataGridView.Rows[i].Cells["SId"].Value = item.getId().ToString();
@@ -46,7 +48,7 @@ namespace Test_2
         {
             teacherDataGridView.Rows.Clear();
             int i = 0;
-            foreach (Teacher item in personList.getList())
+            foreach (Teacher item in teacherList.getList())
             {
                 teacherDataGridView.Rows.Add(1);
                 teacherDataGridView.Rows[i].Cells["TId"].Value = item.getId().ToString();
@@ -57,7 +59,7 @@ namespace Test_2
                 teacherDataGridView.Rows[i].Cells["MaxNumberOfCourseWorks"].Value = item.getMaxNumberOfCourseWorks();
                 foreach (var st in item.getCourseWorkStudents())
                     teacherDataGridView.Rows[i].Cells["CourseWorkStudents"].Value += item.getName() + ", ";
-                teacherDataGridView.Rows[i].Cells["CourseWorkStudents"].Value = teacherDataGridView.Rows[i].Cells["CourseWorkStudents"].Value.ToString().Remove(teacherDataGridView.Rows[i].Cells["CourseWorkStudents"].Value.ToString().LastIndexOf(", "));
+                //teacherDataGridView.Rows[i].Cells["CourseWorkStudents"].Value = teacherDataGridView.Rows[i].Cells["CourseWorkStudents"].Value.ToString().Remove(teacherDataGridView.Rows[i].Cells["CourseWorkStudents"].Value.ToString().LastIndexOf(", "));
                 teacherDataGridView.Rows[i].Cells["AcademicDegree"].Value = item.getAcademicDegreeStr();
                 teacherDataGridView.Rows[i].Cells["Title"].Value = item.getTitle();
                 i++;
@@ -69,7 +71,7 @@ namespace Test_2
             Student student = new Student();
             StudentForm addStudentForm = new StudentForm(ref student);
             addStudentForm.ShowDialog();
-            if(student.getName()!="xxx") personList.AddPerson(student);
+            if(student.getName()!="xxx") studentList.AddPerson(student);
             StudentListToDataGrid();
         }
 
@@ -85,7 +87,7 @@ namespace Test_2
                     }
                 case 1:
                     {
-                        Student student = (Student)personList.FindPersonByName(studentDataGridView.SelectedRows[0].Cells["SName"].Value.ToString()).getList()[0];
+                        Student student = (Student)studentList.FindPersonByName(studentDataGridView.SelectedRows[0].Cells["SName"].Value.ToString()).getList()[0];
                         StudentForm editStudentForm = new StudentForm(ref student);
                         editStudentForm.ShowDialog();
                         StudentListToDataGrid();
@@ -104,7 +106,7 @@ namespace Test_2
             Teacher teacher = new Teacher();
             TeacherForm addTeacherForm = new TeacherForm(ref teacher);
             addTeacherForm.ShowDialog();
-            personList.AddPerson(teacher);
+            teacherList.AddPerson(teacher);
             TeacherListToDataGrid();
         }
 
@@ -120,7 +122,7 @@ namespace Test_2
                     }
                 case 1:
                     {
-                        Teacher teacher = (Teacher)personList.FindPersonByName(teacherDataGridView.SelectedRows[0].Cells["TName"].Value.ToString()).getList()[0];
+                        Teacher teacher = (Teacher)teacherList.FindPersonByName(teacherDataGridView.SelectedRows[0].Cells["TName"].Value.ToString()).getList()[0];
                         TeacherForm editTeacherForm = new TeacherForm(ref teacher);
                         editTeacherForm.ShowDialog();
                         TeacherListToDataGrid();
@@ -141,12 +143,14 @@ namespace Test_2
             {
                 case DialogResult.Yes:
                     {
-                        personList.ExportInTxt();
+                        studentList.ExportInTxt();
+                        teacherList.ExportInTxt();
                         break;
                     }
                 case DialogResult.No:
                     {
-                        personList.ExportInXml();
+                        studentList.ExportInXml();
+                        teacherList.ExportInXml();
                         break;
                     }
                 default:
@@ -161,12 +165,18 @@ namespace Test_2
             {
                 case DialogResult.Yes:
                     {
-                        personList.ImportFromTxt();
+                        studentList.ImportStudentsFromTxt();
+                        teacherList.ImportTeachersFromTxt();
+                        StudentListToDataGrid();
+                        TeacherListToDataGrid();
                         break;
                     }
                 case DialogResult.No:
                     {
-                        personList.ImportFromXml();
+                        studentList.ImportStudentsFromXml();
+                        teacherList.ImportTeachersFromXml();
+                        StudentListToDataGrid();
+                        TeacherListToDataGrid();
                         break;
                     }
                 default:
@@ -188,7 +198,8 @@ namespace Test_2
                         if (MessageBox.Show($"Вы действительно хотите удалить студента {studentDataGridView.SelectedRows[0].Cells["SName"].Value}?", "Подтверждение", MessageBoxButtons.YesNo) == DialogResult.Yes)
                         {
                             MessageBox.Show($"Студент {studentDataGridView.SelectedRows[0].Cells["SName"].Value} успешно удален.", "Успех");
-                            personList.RemovePerson(int.Parse(studentDataGridView.SelectedRows[0].Cells["SId"].Value.ToString()));
+                            studentList.RemovePerson(int.Parse(studentDataGridView.SelectedRows[0].Cells["SId"].Value.ToString()));
+                            studentDataGridView.Rows.Remove(studentDataGridView.SelectedRows[0]);
                         }
                         break;
                     }
@@ -196,8 +207,47 @@ namespace Test_2
                     {
                         if (MessageBox.Show("Вы действительно хотите удалить выбранных студентов?", "Подтверждение", MessageBoxButtons.YesNo) == DialogResult.Yes)
                         {
-                            MessageBox.Show($"Студент {studentDataGridView.SelectedRows[0].Cells["SName"].Value} успешно удален.", "Успех");
-                            personList.RemovePerson(int.Parse(studentDataGridView.SelectedRows[0].Cells["SId"].Value.ToString()));
+                            MessageBox.Show($"Студенты успешно удалены.", "Успех");
+                            foreach (DataGridViewRow row in studentDataGridView.SelectedRows)
+                            {
+                                studentList.RemovePerson(int.Parse(row.Cells["SId"].Value.ToString()));
+                                studentDataGridView.Rows.Remove(row);
+                            }
+                        }
+                        break;
+                    }
+            }
+        }
+
+        private void deleteTeacherButton_Click(object sender, EventArgs e)
+        {
+            switch (teacherDataGridView.SelectedRows.Count)
+            {
+                case 0:
+                    {
+                        MessageBox.Show("Не выбрано ни одной позиции для удаления!", "Ошибка");
+                        break;
+                    }
+                case 1:
+                    {
+                        if (MessageBox.Show($"Вы действительно хотите удалить преподавателя {teacherDataGridView.SelectedRows[0].Cells["TName"].Value}?", "Подтверждение", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                        {
+                            MessageBox.Show($"Преподаватель {teacherDataGridView.SelectedRows[0].Cells["TName"].Value} успешно удален.", "Успех");
+                            teacherList.RemovePerson(int.Parse(teacherDataGridView.SelectedRows[0].Cells["TId"].Value.ToString()));
+                            teacherDataGridView.Rows.Remove(teacherDataGridView.SelectedRows[0]);
+                        }
+                        break;
+                    }
+                default:
+                    {
+                        if (MessageBox.Show("Вы действительно хотите удалить выбранных преподавателей?", "Подтверждение", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                        {
+                            MessageBox.Show($"Преподаватели успешно удалены.", "Успех");
+                            foreach (DataGridViewRow row in teacherDataGridView.SelectedRows)
+                            {
+                                teacherList.RemovePerson(int.Parse(row.Cells["TId"].Value.ToString()));
+                                teacherDataGridView.Rows.Remove(row);
+                            }
                         }
                         break;
                     }

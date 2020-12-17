@@ -37,12 +37,9 @@ namespace Test_2
             this.editTeacherButton = new System.Windows.Forms.ToolStripButton();
             this.exportButton = new System.Windows.Forms.ToolStripButton();
             this.importButton = new System.Windows.Forms.ToolStripButton();
-            this.studentDataGridView = new System.Windows.Forms.DataGridView();
-            this.teacherDataGridView = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.deleteStudentButton = new System.Windows.Forms.ToolStripButton();
             this.deleteTeacherButton = new System.Windows.Forms.ToolStripButton();
+            this.studentDataGridView = new System.Windows.Forms.DataGridView();
             this.SId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SAge = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,6 +50,7 @@ namespace Test_2
             this.Scholarship = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AverageBall = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CourseWork = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.teacherDataGridView = new System.Windows.Forms.DataGridView();
             this.TId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TAge = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,6 +60,8 @@ namespace Test_2
             this.AcademicDegree = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Title = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CourseWorkStudents = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studentDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.teacherDataGridView)).BeginInit();
@@ -73,12 +73,12 @@ namespace Test_2
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addStudentButton,
             this.editStudentButton,
+            this.deleteStudentButton,
             this.addTeacherButton,
             this.editTeacherButton,
+            this.deleteTeacherButton,
             this.exportButton,
-            this.importButton,
-            this.deleteStudentButton,
-            this.deleteTeacherButton});
+            this.importButton});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1358, 27);
@@ -145,6 +145,26 @@ namespace Test_2
             this.importButton.Text = "Импортировать данные";
             this.importButton.Click += new System.EventHandler(this.importButton_Click);
             // 
+            // deleteStudentButton
+            // 
+            this.deleteStudentButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.deleteStudentButton.Image = ((System.Drawing.Image)(resources.GetObject("deleteStudentButton.Image")));
+            this.deleteStudentButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.deleteStudentButton.Name = "deleteStudentButton";
+            this.deleteStudentButton.Size = new System.Drawing.Size(29, 24);
+            this.deleteStudentButton.Text = "Удалить студента(ов)";
+            this.deleteStudentButton.Click += new System.EventHandler(this.deleteStudentButton_Click);
+            // 
+            // deleteTeacherButton
+            // 
+            this.deleteTeacherButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.deleteTeacherButton.Image = ((System.Drawing.Image)(resources.GetObject("deleteTeacherButton.Image")));
+            this.deleteTeacherButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.deleteTeacherButton.Name = "deleteTeacherButton";
+            this.deleteTeacherButton.Size = new System.Drawing.Size(29, 24);
+            this.deleteTeacherButton.Text = "Удалить преподавателя(ей)";
+            this.deleteTeacherButton.Click += new System.EventHandler(this.deleteTeacherButton_Click);
+            // 
             // studentDataGridView
             // 
             this.studentDataGridView.AllowUserToAddRows = false;
@@ -168,68 +188,6 @@ namespace Test_2
             this.studentDataGridView.RowTemplate.Height = 24;
             this.studentDataGridView.Size = new System.Drawing.Size(1330, 287);
             this.studentDataGridView.TabIndex = 1;
-            // 
-            // teacherDataGridView
-            // 
-            this.teacherDataGridView.AllowUserToAddRows = false;
-            this.teacherDataGridView.AllowUserToDeleteRows = false;
-            this.teacherDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.teacherDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.TId,
-            this.TName,
-            this.TAge,
-            this.TAddress,
-            this.Salary,
-            this.MaxNumberOfCourseWorks,
-            this.AcademicDegree,
-            this.Title,
-            this.CourseWorkStudents});
-            this.teacherDataGridView.Location = new System.Drawing.Point(12, 458);
-            this.teacherDataGridView.Name = "teacherDataGridView";
-            this.teacherDataGridView.ReadOnly = true;
-            this.teacherDataGridView.RowHeadersWidth = 51;
-            this.teacherDataGridView.RowTemplate.Height = 24;
-            this.teacherDataGridView.Size = new System.Drawing.Size(1330, 202);
-            this.teacherDataGridView.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(571, 48);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(165, 36);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Студенты";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(531, 410);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(256, 36);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Преподаватели";
-            // 
-            // deleteStudentButton
-            // 
-            this.deleteStudentButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.deleteStudentButton.Image = ((System.Drawing.Image)(resources.GetObject("deleteStudentButton.Image")));
-            this.deleteStudentButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.deleteStudentButton.Name = "deleteStudentButton";
-            this.deleteStudentButton.Size = new System.Drawing.Size(29, 24);
-            this.deleteStudentButton.Text = "Удалить студента(ов)";
-            this.deleteStudentButton.Click += new System.EventHandler(this.deleteStudentButton_Click);
-            // 
-            // deleteTeacherButton
-            // 
-            this.deleteTeacherButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.deleteTeacherButton.Image = ((System.Drawing.Image)(resources.GetObject("deleteTeacherButton.Image")));
-            this.deleteTeacherButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.deleteTeacherButton.Name = "deleteTeacherButton";
-            this.deleteTeacherButton.Size = new System.Drawing.Size(29, 24);
-            this.deleteTeacherButton.Text = "Удалить преподавателя(ей)";
             // 
             // SId
             // 
@@ -311,6 +269,29 @@ namespace Test_2
             this.CourseWork.ReadOnly = true;
             this.CourseWork.Width = 125;
             // 
+            // teacherDataGridView
+            // 
+            this.teacherDataGridView.AllowUserToAddRows = false;
+            this.teacherDataGridView.AllowUserToDeleteRows = false;
+            this.teacherDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.teacherDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.TId,
+            this.TName,
+            this.TAge,
+            this.TAddress,
+            this.Salary,
+            this.MaxNumberOfCourseWorks,
+            this.AcademicDegree,
+            this.Title,
+            this.CourseWorkStudents});
+            this.teacherDataGridView.Location = new System.Drawing.Point(12, 458);
+            this.teacherDataGridView.Name = "teacherDataGridView";
+            this.teacherDataGridView.ReadOnly = true;
+            this.teacherDataGridView.RowHeadersWidth = 51;
+            this.teacherDataGridView.RowTemplate.Height = 24;
+            this.teacherDataGridView.Size = new System.Drawing.Size(1330, 202);
+            this.teacherDataGridView.TabIndex = 2;
+            // 
             // TId
             // 
             this.TId.HeaderText = "Id";
@@ -382,6 +363,26 @@ namespace Test_2
             this.CourseWorkStudents.Name = "CourseWorkStudents";
             this.CourseWorkStudents.ReadOnly = true;
             this.CourseWorkStudents.Width = 125;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(571, 48);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(165, 36);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Студенты";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(531, 410);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(256, 36);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Преподаватели";
             // 
             // MainForm
             // 
