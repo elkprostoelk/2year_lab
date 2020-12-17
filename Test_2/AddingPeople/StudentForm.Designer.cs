@@ -41,7 +41,6 @@ namespace Test_2.AddingPeople
             this.averageBallTextBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.isStateComboBox = new System.Windows.Forms.ComboBox();
-            this.courseWorksComboBox = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.facultyTextBox = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -62,6 +61,10 @@ namespace Test_2.AddingPeople
             this.oblastTextBox = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.countryTextBox = new System.Windows.Forms.TextBox();
+            this.titleTextBox = new System.Windows.Forms.TextBox();
+            this.descriptionTextBox = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // nameTextBox
@@ -80,7 +83,7 @@ namespace Test_2.AddingPeople
             // 
             // submitStudentButton
             // 
-            this.submitStudentButton.Location = new System.Drawing.Point(281, 626);
+            this.submitStudentButton.Location = new System.Drawing.Point(271, 684);
             this.submitStudentButton.Name = "submitStudentButton";
             this.submitStudentButton.Size = new System.Drawing.Size(199, 44);
             this.submitStudentButton.TabIndex = 3;
@@ -167,16 +170,6 @@ namespace Test_2.AddingPeople
             this.isStateComboBox.Size = new System.Drawing.Size(121, 24);
             this.isStateComboBox.TabIndex = 14;
             this.isStateComboBox.SelectedValueChanged += new System.EventHandler(this.isStateComboBox_SelectedValueChanged);
-            // 
-            // courseWorksComboBox
-            // 
-            this.courseWorksComboBox.FormattingEnabled = true;
-            this.courseWorksComboBox.Items.AddRange(new object[] {
-            "нет"});
-            this.courseWorksComboBox.Location = new System.Drawing.Point(249, 567);
-            this.courseWorksComboBox.Name = "courseWorksComboBox";
-            this.courseWorksComboBox.Size = new System.Drawing.Size(321, 24);
-            this.courseWorksComboBox.TabIndex = 15;
             // 
             // label9
             // 
@@ -341,11 +334,47 @@ namespace Test_2.AddingPeople
             this.countryTextBox.Size = new System.Drawing.Size(90, 22);
             this.countryTextBox.TabIndex = 56;
             // 
+            // titleTextBox
+            // 
+            this.titleTextBox.Location = new System.Drawing.Point(320, 570);
+            this.titleTextBox.Name = "titleTextBox";
+            this.titleTextBox.Size = new System.Drawing.Size(588, 22);
+            this.titleTextBox.TabIndex = 71;
+            // 
+            // descriptionTextBox
+            // 
+            this.descriptionTextBox.Location = new System.Drawing.Point(320, 609);
+            this.descriptionTextBox.Name = "descriptionTextBox";
+            this.descriptionTextBox.Size = new System.Drawing.Size(586, 22);
+            this.descriptionTextBox.TabIndex = 72;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(268, 573);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(46, 17);
+            this.label3.TabIndex = 73;
+            this.label3.Text = "Тема:";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(235, 612);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(78, 17);
+            this.label19.TabIndex = 74;
+            this.label19.Text = "Описание:";
+            // 
             // StudentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1168, 700);
+            this.ClientSize = new System.Drawing.Size(1168, 760);
+            this.Controls.Add(this.label19);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.descriptionTextBox);
+            this.Controls.Add(this.titleTextBox);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
@@ -366,7 +395,6 @@ namespace Test_2.AddingPeople
             this.Controls.Add(this.facultyTextBox);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.courseWorksComboBox);
             this.Controls.Add(this.isStateComboBox);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.averageBallTextBox);
@@ -403,7 +431,6 @@ namespace Test_2.AddingPeople
         private System.Windows.Forms.TextBox averageBallTextBox;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox isStateComboBox;
-        private System.Windows.Forms.ComboBox courseWorksComboBox;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox facultyTextBox;
         private System.Windows.Forms.Label label10;
@@ -424,5 +451,9 @@ namespace Test_2.AddingPeople
         private System.Windows.Forms.TextBox oblastTextBox;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox countryTextBox;
+        private System.Windows.Forms.TextBox titleTextBox;
+        private System.Windows.Forms.TextBox descriptionTextBox;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label19;
     }
 }

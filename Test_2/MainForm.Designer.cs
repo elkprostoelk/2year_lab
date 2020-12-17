@@ -33,12 +33,12 @@ namespace Test_2
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.addStudentButton = new System.Windows.Forms.ToolStripButton();
             this.editStudentButton = new System.Windows.Forms.ToolStripButton();
+            this.deleteStudentButton = new System.Windows.Forms.ToolStripButton();
             this.addTeacherButton = new System.Windows.Forms.ToolStripButton();
             this.editTeacherButton = new System.Windows.Forms.ToolStripButton();
+            this.deleteTeacherButton = new System.Windows.Forms.ToolStripButton();
             this.exportButton = new System.Windows.Forms.ToolStripButton();
             this.importButton = new System.Windows.Forms.ToolStripButton();
-            this.deleteStudentButton = new System.Windows.Forms.ToolStripButton();
-            this.deleteTeacherButton = new System.Windows.Forms.ToolStripButton();
             this.studentDataGridView = new System.Windows.Forms.DataGridView();
             this.SId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,7 +49,8 @@ namespace Test_2
             this.isState = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Scholarship = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AverageBall = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CourseWork = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CourseWorkTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CourseWorkDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.teacherDataGridView = new System.Windows.Forms.DataGridView();
             this.TId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -81,7 +82,7 @@ namespace Test_2
             this.importButton});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1358, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(1782, 27);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -105,6 +106,16 @@ namespace Test_2
             this.editStudentButton.Text = "Редактировать студента";
             this.editStudentButton.Click += new System.EventHandler(this.editStudentButton_Click);
             // 
+            // deleteStudentButton
+            // 
+            this.deleteStudentButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.deleteStudentButton.Image = ((System.Drawing.Image)(resources.GetObject("deleteStudentButton.Image")));
+            this.deleteStudentButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.deleteStudentButton.Name = "deleteStudentButton";
+            this.deleteStudentButton.Size = new System.Drawing.Size(29, 24);
+            this.deleteStudentButton.Text = "Удалить студента(ов)";
+            this.deleteStudentButton.Click += new System.EventHandler(this.deleteStudentButton_Click);
+            // 
             // addTeacherButton
             // 
             this.addTeacherButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -124,6 +135,16 @@ namespace Test_2
             this.editTeacherButton.Size = new System.Drawing.Size(29, 24);
             this.editTeacherButton.Text = "Редактировать преподавателя";
             this.editTeacherButton.Click += new System.EventHandler(this.editTeacherButton_Click);
+            // 
+            // deleteTeacherButton
+            // 
+            this.deleteTeacherButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.deleteTeacherButton.Image = ((System.Drawing.Image)(resources.GetObject("deleteTeacherButton.Image")));
+            this.deleteTeacherButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.deleteTeacherButton.Name = "deleteTeacherButton";
+            this.deleteTeacherButton.Size = new System.Drawing.Size(29, 24);
+            this.deleteTeacherButton.Text = "Удалить преподавателя(ей)";
+            this.deleteTeacherButton.Click += new System.EventHandler(this.deleteTeacherButton_Click);
             // 
             // exportButton
             // 
@@ -145,26 +166,6 @@ namespace Test_2
             this.importButton.Text = "Импортировать данные";
             this.importButton.Click += new System.EventHandler(this.importButton_Click);
             // 
-            // deleteStudentButton
-            // 
-            this.deleteStudentButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.deleteStudentButton.Image = ((System.Drawing.Image)(resources.GetObject("deleteStudentButton.Image")));
-            this.deleteStudentButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.deleteStudentButton.Name = "deleteStudentButton";
-            this.deleteStudentButton.Size = new System.Drawing.Size(29, 24);
-            this.deleteStudentButton.Text = "Удалить студента(ов)";
-            this.deleteStudentButton.Click += new System.EventHandler(this.deleteStudentButton_Click);
-            // 
-            // deleteTeacherButton
-            // 
-            this.deleteTeacherButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.deleteTeacherButton.Image = ((System.Drawing.Image)(resources.GetObject("deleteTeacherButton.Image")));
-            this.deleteTeacherButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.deleteTeacherButton.Name = "deleteTeacherButton";
-            this.deleteTeacherButton.Size = new System.Drawing.Size(29, 24);
-            this.deleteTeacherButton.Text = "Удалить преподавателя(ей)";
-            this.deleteTeacherButton.Click += new System.EventHandler(this.deleteTeacherButton_Click);
-            // 
             // studentDataGridView
             // 
             this.studentDataGridView.AllowUserToAddRows = false;
@@ -180,13 +181,14 @@ namespace Test_2
             this.isState,
             this.Scholarship,
             this.AverageBall,
-            this.CourseWork});
+            this.CourseWorkTitle,
+            this.CourseWorkDescription});
             this.studentDataGridView.Location = new System.Drawing.Point(12, 99);
             this.studentDataGridView.Name = "studentDataGridView";
             this.studentDataGridView.ReadOnly = true;
             this.studentDataGridView.RowHeadersWidth = 51;
             this.studentDataGridView.RowTemplate.Height = 24;
-            this.studentDataGridView.Size = new System.Drawing.Size(1330, 287);
+            this.studentDataGridView.Size = new System.Drawing.Size(1758, 287);
             this.studentDataGridView.TabIndex = 1;
             // 
             // SId
@@ -211,7 +213,7 @@ namespace Test_2
             this.SAge.MinimumWidth = 6;
             this.SAge.Name = "SAge";
             this.SAge.ReadOnly = true;
-            this.SAge.Width = 125;
+            this.SAge.Width = 75;
             // 
             // SAddress
             // 
@@ -235,7 +237,7 @@ namespace Test_2
             this.Group.MinimumWidth = 6;
             this.Group.Name = "Group";
             this.Group.ReadOnly = true;
-            this.Group.Width = 125;
+            this.Group.Width = 75;
             // 
             // isState
             // 
@@ -261,13 +263,21 @@ namespace Test_2
             this.AverageBall.ReadOnly = true;
             this.AverageBall.Width = 125;
             // 
-            // CourseWork
+            // CourseWorkTitle
             // 
-            this.CourseWork.HeaderText = "Курсовая работа";
-            this.CourseWork.MinimumWidth = 6;
-            this.CourseWork.Name = "CourseWork";
-            this.CourseWork.ReadOnly = true;
-            this.CourseWork.Width = 125;
+            this.CourseWorkTitle.HeaderText = "Тема курсовой";
+            this.CourseWorkTitle.MinimumWidth = 6;
+            this.CourseWorkTitle.Name = "CourseWorkTitle";
+            this.CourseWorkTitle.ReadOnly = true;
+            this.CourseWorkTitle.Width = 125;
+            // 
+            // CourseWorkDescription
+            // 
+            this.CourseWorkDescription.HeaderText = "Описание курсовой";
+            this.CourseWorkDescription.MinimumWidth = 6;
+            this.CourseWorkDescription.Name = "CourseWorkDescription";
+            this.CourseWorkDescription.ReadOnly = true;
+            this.CourseWorkDescription.Width = 125;
             // 
             // teacherDataGridView
             // 
@@ -289,7 +299,7 @@ namespace Test_2
             this.teacherDataGridView.ReadOnly = true;
             this.teacherDataGridView.RowHeadersWidth = 51;
             this.teacherDataGridView.RowTemplate.Height = 24;
-            this.teacherDataGridView.Size = new System.Drawing.Size(1330, 202);
+            this.teacherDataGridView.Size = new System.Drawing.Size(1758, 202);
             this.teacherDataGridView.TabIndex = 2;
             // 
             // TId
@@ -314,7 +324,7 @@ namespace Test_2
             this.TAge.MinimumWidth = 6;
             this.TAge.Name = "TAge";
             this.TAge.ReadOnly = true;
-            this.TAge.Width = 125;
+            this.TAge.Width = 75;
             // 
             // TAddress
             // 
@@ -362,7 +372,7 @@ namespace Test_2
             this.CourseWorkStudents.MinimumWidth = 6;
             this.CourseWorkStudents.Name = "CourseWorkStudents";
             this.CourseWorkStudents.ReadOnly = true;
-            this.CourseWorkStudents.Width = 125;
+            this.CourseWorkStudents.Width = 300;
             // 
             // label1
             // 
@@ -388,7 +398,7 @@ namespace Test_2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1358, 672);
+            this.ClientSize = new System.Drawing.Size(1782, 672);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.teacherDataGridView);
@@ -420,16 +430,6 @@ namespace Test_2
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ToolStripButton deleteStudentButton;
         private System.Windows.Forms.ToolStripButton deleteTeacherButton;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SAge;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SAddress;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Faculty;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Group;
-        private System.Windows.Forms.DataGridViewTextBoxColumn isState;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Scholarship;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AverageBall;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CourseWork;
         private System.Windows.Forms.DataGridViewTextBoxColumn TId;
         private System.Windows.Forms.DataGridViewTextBoxColumn TName;
         private System.Windows.Forms.DataGridViewTextBoxColumn TAge;
@@ -439,6 +439,17 @@ namespace Test_2
         private System.Windows.Forms.DataGridViewTextBoxColumn AcademicDegree;
         private System.Windows.Forms.DataGridViewTextBoxColumn Title;
         private System.Windows.Forms.DataGridViewTextBoxColumn CourseWorkStudents;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SAge;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SAddress;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Faculty;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Group;
+        private System.Windows.Forms.DataGridViewTextBoxColumn isState;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Scholarship;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AverageBall;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CourseWorkTitle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CourseWorkDescription;
     }
 }
 

@@ -18,7 +18,6 @@ namespace Test_2.AddingPeople
         {
             InitializeComponent();
             this.student = student;
-            courseWorksComboBox.SelectedItem = courseWorksComboBox.Items[0];
             if(student.getName()!="xxx")
             {
                 nameTextBox.Text = student.getName();
@@ -36,6 +35,11 @@ namespace Test_2.AddingPeople
                 else isStateComboBox.SelectedItem = isStateComboBox.Items[1];
                 scholarshipTextBox.Text = student.getScholarship().ToString();
                 averageBallTextBox.Text = student.getAverageBall().ToString();
+                if(student.getCourseWork()!=null)
+                {
+                    titleTextBox.Text = student.getCourseWork().getTitle();
+                    descriptionTextBox.Text = student.getCourseWork().getDescription();
+                }
             }
         }
 
@@ -44,14 +48,15 @@ namespace Test_2.AddingPeople
             student.setName(nameTextBox.Text);
             student.setAge(int.Parse(ageTextBox.Text));
             student.setAddress(new AddressField(countryTextBox.Text, oblastTextBox.Text, regionTextBox.Text,
-                cityTextBox.Text, streetTextBox.Text, homeNumberTextBox.Text, int.Parse(apartmentTextBox.Text)));
+                cityTextBox.Text, streetTextBox.Text, homeNumberTextBox.Text, apartmentTextBox.Text));
             student.setFaculty(facultyTextBox.Text);
             student.setGroup(groupTextBox.Text);
             if (isStateComboBox.SelectedIndex == 0) student.setIsState(true);
             else student.setIsState(false);
             student.setScholarship(float.Parse(scholarshipTextBox.Text));
             student.setAverageBall(float.Parse(averageBallTextBox.Text));
-            if (courseWorksComboBox.SelectedItem.ToString() == "нет") student.setCourseWork(null);
+            if (titleTextBox.Text == "") student.setCourseWork(null);
+            else student.setCourseWork(new CourseWork(titleTextBox.Text, descriptionTextBox.Text));
             MessageBox.Show("Готово!", "OK", MessageBoxButtons.OK);
             this.Close();
         }

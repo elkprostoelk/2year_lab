@@ -1,2 +1,3 @@
-Student|Ivan Ivanov|20|Ukraine Khersonska Kherson 126 Universitetska 11|FCSPM|141|State|1300|87,4|Student-teacher app creating$App for student-teacher conversation
-Teacher|Petr Petrov|49|Ukraine Khersonska Kherson 25 200YearOfKherson 10|4000|3|CandidateOfSciences|Docent|Ivan Ivanov
+Student|Иван Иванов|20|Украина;Херсонская;;Херсон;Университетская;126;11|ФКНФМ|141|Бюджетная|1300|87,4|Student-teacher app creating$App for student-teacher conversation
+Teacher|Петр Петров|49|Украина;Херсонская;;Херсон;200 лет Херсона;25;10|4000|3|Кандидат наук|Доцент|Иван Иванов&Алексей Алексеев
+Student|Алексей Алексеев|18|Украина;Херсонская;Скадовский;Лазурное;10;Мира;|ФКНФМ|131|Контрактная|0|80,3|Разработка компьютерной игры KSU Simulator$Разработка компьютерной игры KSU Simulator на движке Unity 3D

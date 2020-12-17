@@ -209,7 +209,8 @@ namespace Test_2.AddingPeople
             "Профессор",
             "Доцент",
             "Старший преподаватель",
-            "Преподаватель"});
+            "Преподаватель",
+            "Ассистент"});
             this.titleComboBox.Location = new System.Drawing.Point(316, 432);
             this.titleComboBox.Name = "titleComboBox";
             this.titleComboBox.Size = new System.Drawing.Size(163, 24);

@@ -25,7 +25,7 @@ namespace Test
         {
             Faculty = faculty;
             Group = group;
-            if (isstate.ToLower() == "state") isState = true;
+            if (isstate.ToLower() == "бюджетная") isState = true;
             else isState = false;
             Scholarship = scholarship;
             AverageBall = averball;
@@ -46,14 +46,18 @@ namespace Test
         public override string ToString()
         {
             string result = this.GetType().Name + "|" + base.ToString();
-            result += this.Faculty + "|";
+            result += "|" + this.Faculty + "|";
             result += this.Group + "|";
-            if (this.isState) result += "|State|";
-            else result += "|Contract|";
+            if (this.isState) result += "Бюджетная|";
+            else result += "Контрактная|";
             result += this.Scholarship + "|";
             result += this.AverageBall + "|";
             result += this.courseWork.ToString();
             return result;
+        }
+        public override string GetTypeName()
+        {
+            return this.GetType().Name;
         }
     }
 }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Test
 {
-    public abstract class Person
+    public class Person
     {
         protected int Id;
         protected string Name;
@@ -18,7 +18,7 @@ namespace Test
         public void setAge(int Age) { this.Age = Age; }
         public AddressField getAddress() { return this.Address; }
         public void setAddress(AddressField Address) { this.Address = Address; }
-        protected Person()
+        public Person()
         {
             Id = 0;
             Name = "xxx";
@@ -35,6 +35,10 @@ namespace Test
         public override string ToString()
         {
             return Name + "|" + Age + "|" + Address.ToString();
+        }
+        public virtual string GetTypeName()
+        {
+            return "";
         }
     }
 }

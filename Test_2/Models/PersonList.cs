@@ -48,6 +48,12 @@ namespace Test
                 if (item.getName().Contains(name)) found.AddPerson(item);
             return found;
         }
+        public Person GetPersonById(int id)
+        {
+            foreach (var item in People)
+                if (item.getId() == id) return item;
+            return new Person();
+        }
         public void ExportInTxt()
         {
             using (StreamWriter sw = new StreamWriter(FileName["TXT"]))
@@ -56,34 +62,28 @@ namespace Test
                     sw.WriteLine(item.ToString());
             }
         }
-        public void ImportStudentsFromTxt()
+        public void ImportFromTxt()
         {
             People.Clear();
             using (StreamReader sr = new StreamReader(FileName["TXT"]))
-            { 
+            {
                 while (!sr.EndOfStream)
                 {
                     string[] current = sr.ReadLine().Split('|');
-                    switch(current[0])
+                    switch (current[0])
                     {
-                        case "Teacher": break;
                         case "Student":
-                        {
-                            Student s = new Student(current[1], int.Parse(current[2]), new AddressField(current[3]),
-                            current[4], current[5], current[6], float.Parse(current[7]), float.Parse(current[8]),
-                            new CourseWork(current[9].Split('$')[0], current[9].Split('$')[1]));
-                            this.AddPerson(s);
-                            break;
-                        }
+                            {
+                                Student s = new Student(current[1], int.Parse(current[2]), new AddressField(current[3]),
+                                current[4], current[5], current[6], float.Parse(current[7]), float.Parse(current[8]),
+                                new CourseWork(current[9].Split('$')[0], current[9].Split('$')[1]));
+                                this.AddPerson(s);
+                                break;
+                            }
                         default: break;
                     }
-                    
                 }
             }
-        }
-        public void ImportTeachersFromTxt()
-        {
-            People.Clear();
             using (StreamReader sr = new StreamReader(FileName["TXT"]))
             {
                 while (!sr.EndOfStream)
@@ -96,14 +96,17 @@ namespace Test
                                 Teacher t = new Teacher(current[1], int.Parse(current[2]),
                                         new AddressField(current[3]), float.Parse(current[4]), int.Parse(current[5]), current[6], current[7]);
                                 foreach (var item in current[8].Split('&'))
-                                    for (int i = 0; i < FindPersonByName(item).People.Count; i++)
-                                        t.getCourseWorkStudents().Add((Student)FindPersonByName(item).People[i]);
+                                {
+                                    List<Person> found = FindPersonByName(item).People;
+                                    for (int i = 0; i < found.Count; i++)
+                                        t.getCourseWorkStudents().Add((Student)found[i]);
+                                }
                                 this.AddPerson(t);
                                 break;
                             }
-                        case "Student": break;
                         default: break;
                     }
+
                 }
             }
         }
@@ -200,7 +203,7 @@ namespace Test
                             string courseworkers = "";
                             foreach (var student in teacher.getCourseWorkStudents())
                                 courseworkers += student.getName() + "&";
-                            courseworkers=courseworkers.Remove(courseworkers.LastIndexOf('&'));
+                            courseworkers = courseworkers.Remove(courseworkers.LastIndexOf('&'));
                             XmlText courseWorkStudentsTxt = xmlDocument.CreateTextNode(courseworkers);
                             current.AppendChild(salary);
                             current.AppendChild(MaxNumberOfCourseWorks);
@@ -220,7 +223,7 @@ namespace Test
             }
             xmlDocument.Save(FileName["XML"]);
         }
-        public void ImportStudentsFromXml()
+        public void ImportFromXml()
         {
             XmlDocument xml = new XmlDocument();
             xml.Load(FileName["XML"]);
@@ -236,25 +239,20 @@ namespace Test
                             student.setAge(int.Parse(element.ChildNodes[1].InnerText));
                             student.setAddress(new AddressField(element.ChildNodes[2].ChildNodes[0].InnerText, element.ChildNodes[2].ChildNodes[1].InnerText,
                                 element.ChildNodes[2].ChildNodes[2].InnerText, element.ChildNodes[2].ChildNodes[3].InnerText, element.ChildNodes[2].ChildNodes[4].InnerText,
-                                element.ChildNodes[2].ChildNodes[5].InnerText, int.Parse(element.ChildNodes[2].ChildNodes[6].InnerText)));
+                                element.ChildNodes[2].ChildNodes[5].InnerText, element.ChildNodes[2].ChildNodes[6].InnerText));
                             student.setFaculty(element.ChildNodes[3].InnerText);
                             student.setGroup(element.ChildNodes[4].InnerText);
                             student.setIsState(bool.Parse(element.ChildNodes[5].InnerText));
                             student.setScholarship(float.Parse(element.ChildNodes[6].InnerText));
-                            student.setCourseWork(new CourseWork(element.ChildNodes[7].InnerText.Split('$')[0], element.ChildNodes[7].InnerText.Split('$')[1]));
-                            People.Add(student);
+                            student.setAverageBall(float.Parse(element.ChildNodes[7].InnerText));
+                            student.setCourseWork(new CourseWork(element.ChildNodes[8].InnerText.Split('$')[0], element.ChildNodes[8].InnerText.Split('$')[1]));
+                            AddPerson(student);
                             break;
                         }
                     default:
                         break;
                 }
             }
-        }
-        public void ImportTeachersFromXml()
-        {
-            XmlDocument xml = new XmlDocument();
-            xml.Load(FileName["XML"]);
-            People.Clear();
             foreach (XmlNode element in xml.ChildNodes[0].ChildNodes)
             {
                 switch (element.Name)
@@ -263,7 +261,9 @@ namespace Test
                         {
                             Teacher teacher = new Teacher(element.ChildNodes[0].InnerText,
                                 int.Parse(element.ChildNodes[1].InnerText),
-                                new AddressField(element.ChildNodes[2].InnerText),
+                                new AddressField(element.ChildNodes[2].ChildNodes[0].InnerText, element.ChildNodes[2].ChildNodes[1].InnerText,
+                                element.ChildNodes[2].ChildNodes[2].InnerText, element.ChildNodes[2].ChildNodes[3].InnerText, element.ChildNodes[2].ChildNodes[4].InnerText,
+                                element.ChildNodes[2].ChildNodes[5].InnerText, element.ChildNodes[2].ChildNodes[6].InnerText),
                                 float.Parse(element.ChildNodes[3].InnerText),
                                 int.Parse(element.ChildNodes[4].InnerText),
                                 element.ChildNodes[5].InnerText,
@@ -271,11 +271,10 @@ namespace Test
                             foreach (var item in element.ChildNodes[7].InnerText.Split('&'))
                                 foreach (Student stud in FindPersonByName(item).getList())
                                     teacher.AddCourseWorkStudent(stud);
-                            People.Add(teacher);
+                            AddPerson(teacher);
                             break;
                         }
-                    default:
-                        break;
+                    default: break;
                 }
             }
         }

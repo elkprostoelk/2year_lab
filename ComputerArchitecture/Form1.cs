@@ -16,5 +16,16 @@ namespace ComputerArchitecture
         {
             InitializeComponent();
         }
+
+        private void button1_MouseDown(object sender, MouseEventArgs e)
+        {
+            button1.DoDragDrop(button1.Location, DragDropEffects.Move | DragDropEffects.Copy);
+        }
+
+        private void button2_DragEnter(object sender, DragEventArgs e)
+        {
+            
+
+        }
     }
 }

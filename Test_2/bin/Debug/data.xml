@@ -1,21 +1,61 @@
 <People>
   <Student>
-    <Name>Ivan Ivanov</Name>
+    <Name>Иван Иванов</Name>
     <Age>20</Age>
-    <AddressField>Ukraine Khersonska Kherson 126 Universitetska 11</AddressField>
+    <AddressField>
+      <Country>Украина</Country>
+      <Oblast>Херсонская</Oblast>
+      <Region>
+      </Region>
+      <City>Херсон</City>
+      <Street>Университетская</Street>
+      <HomeNumber>126</HomeNumber>
+      <Apartment>11</Apartment>
+    </AddressField>
+    <Faculty>ФКНФМ</Faculty>
+    <Group>141</Group>
     <isState>True</isState>
     <Scholarship>1300</Scholarship>
     <AverageBall>87,4</AverageBall>
     <courseWork>Student-teacher app creating$App for student-teacher conversation</courseWork>
   </Student>
+  <Student>
+    <Name>Алексей Алексеев</Name>
+    <Age>18</Age>
+    <AddressField>
+      <Country>Украина</Country>
+      <Oblast>Херсонская</Oblast>
+      <Region>Скадовский</Region>
+      <City>Лазурное</City>
+      <Street>10</Street>
+      <HomeNumber>Мира</HomeNumber>
+      <Apartment>
+      </Apartment>
+    </AddressField>
+    <Faculty>ФКНФМ</Faculty>
+    <Group>131</Group>
+    <isState>False</isState>
+    <Scholarship>0</Scholarship>
+    <AverageBall>80,3</AverageBall>
+    <courseWork>Разработка компьютерной игры KSU Simulator$Разработка компьютерной игры KSU Simulator на движке Unity 3D</courseWork>
+  </Student>
   <Teacher>
-    <Name>Petr Petrov</Name>
+    <Name>Петр Петров</Name>
     <Age>49</Age>
-    <AddressField>Ukraine Khersonska Kherson 25 200YearOfKherson 10</AddressField>
+    <AddressField>
+      <Country>Украина</Country>
+      <Oblast>Херсонская</Oblast>
+      <Region>
+      </Region>
+      <City>Херсон</City>
+      <Street>200 лет Херсона</Street>
+      <HomeNumber>25</HomeNumber>
+      <Apartment>10</Apartment>
+    </AddressField>
     <Salary>4000</Salary>
     <MaxNumberOfCourseWorks>3</MaxNumberOfCourseWorks>
-    <AcademicDegree>Candidate of Sciences</AcademicDegree>
-    <Title>Docent</Title>
-    <CourseWorkStudents>Ivan Ivanov</CourseWorkStudents>
+    <AcademicDegree>Кандидат наук</AcademicDegree>
+    <Title>Доцент</Title>
+    <CourseWorkStudents>Иван Иванов&amp;Алексей Алексеев</CourseWorkStudents>
   </Teacher>
 </People>

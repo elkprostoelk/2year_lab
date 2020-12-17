@@ -25,13 +25,13 @@ namespace Test
         {
             switch (acaddegree)
             {
-                case "Doctor of Sciences":
+                case "Доктор наук":
                     { this.AcademicDegree = AcademicDegrees.DoctorOfSсiences; break; }
-                case "Candidate of Sciences":
+                case "Кандидат наук":
                     { this.AcademicDegree = AcademicDegrees.CandidateOfSciences; break; }
-                case "Masters":
+                case "Магистр":
                     { this.AcademicDegree = AcademicDegrees.Masters; break; }
-                case "Bachelors":
+                case "Бакалавр":
                     { this.AcademicDegree = AcademicDegrees.Bachelors; break; }
                 default:
                     { this.AcademicDegree = AcademicDegrees.Bachelors; break; }
@@ -42,13 +42,13 @@ namespace Test
             switch (AcademicDegree)
             {
                 case AcademicDegrees.DoctorOfSсiences:
-                    { return "Doctor of Sciences"; }
+                    { return "Доктор наук"; }
                 case AcademicDegrees.CandidateOfSciences:
-                    { return "Candidate of Sciences"; }
+                    { return "Кандидат наук"; }
                 case AcademicDegrees.Masters:
-                    { return "Masters"; }
+                    { return "Магистр"; }
                 case AcademicDegrees.Bachelors:
-                    { return "Bachelors"; }
+                    { return "Бакалавр"; }
                 default:
                     return string.Empty;
             }
@@ -58,15 +58,15 @@ namespace Test
             switch (this.Title)
             {
                 case Titles.Professor:
-                    return "Professor";
+                    return "Профессор";
                 case Titles.Docent:
-                    return "Docent";
+                    return "Доцент";
                 case Titles.ElderTeacher:
-                    return "Elder Teacher";
+                    return "Старший преподаватель";
                 case Titles.Teacher:
-                    return "Teacher";
+                    return "Преподаватель";
                 case Titles.Assistant:
-                    return "Assistant";
+                    return "Ассистент";
                 default:
                     return string.Empty;
             }
@@ -75,15 +75,15 @@ namespace Test
         {
             switch (title)
             {
-                case "Professor":
+                case "Профессор":
                     { this.Title = Titles.Professor; break; }
-                case "Docent":
+                case "Доцент":
                     { this.Title = Titles.Docent; break; }
-                case "Elder Teacher":
+                case "Старший преподаватель":
                     { this.Title = Titles.ElderTeacher; break; }
-                case "Teacher":
+                case "Преподаватель":
                     { this.Title = Titles.Teacher; break; }
-                case "Assistant":
+                case "Ассистент":
                     { this.Title = Titles.Assistant; break; }
                 default:
                     { this.Title = Titles.Assistant; break; }
@@ -135,11 +135,15 @@ namespace Test
             string result = this.GetType().Name + "|" + base.ToString() + "|";
             result += this.Salary + "|";
             result += this.MaxNumberOfCourseWorks + "|";
-            result += this.AcademicDegree + "|";
-            result += this.Title + "|";
+            result += this.getAcademicDegreeStr() + "|";
+            result += this.getTitleStr() + "|";
             foreach (var item in CourseWorkStudents)
                 result += item.getName() + "&";
             return result.Remove(result.LastIndexOf('&'));
+        }
+        public override string GetTypeName()
+        {
+            return this.GetType().Name;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace Test
         private string City;
         private string Street;
         private string HomeNumber;
-        private int Apartment;
+        private string Apartment;
         public AddressField()
         {
             Country = "Ukraine";
@@ -21,11 +21,11 @@ namespace Test
             City = "Kherson";
             Street = "Universitetska";
             HomeNumber = "27";
-            Apartment = 0;
+            Apartment = "";
         }
         public AddressField(string fullAddress)
         {
-            string[] splitted = fullAddress.Split(' ');
+            string[] splitted = fullAddress.Split(';');
             Country = splitted[0];
             Oblast = splitted[1];
             if(splitted.Length==7)
@@ -34,7 +34,7 @@ namespace Test
                 City = splitted[3];
                 Street = splitted[4];
                 HomeNumber = splitted[5];
-                Apartment = int.Parse(splitted[6]);
+                Apartment = splitted[6];
             }
             else
             {
@@ -42,10 +42,10 @@ namespace Test
                 City = splitted[2];
                 Street = splitted[3];
                 HomeNumber = splitted[4];
-                Apartment = int.Parse(splitted[5]);
+                Apartment = splitted[5];
             }
         }
-        public AddressField(string country, string oblast, string region, string city, string street, string homenum, int apartment)
+        public AddressField(string country, string oblast, string region, string city, string street, string homenum, string apartment)
         {
             Country = country;
             Oblast = oblast;
@@ -67,17 +67,17 @@ namespace Test
         public void setStreet(string Street) { this.Street = Street; }
         public string getHomeNumber() { return this.HomeNumber; }
         public void setHomeNumber(string HomeNumber) { this.HomeNumber = HomeNumber; }
-        public int getApartment() { return this.Apartment; }
-        public void setApartment(int Apartment) { this.Apartment = Apartment; }
+        public string getApartment() { return this.Apartment; }
+        public void setApartment(string Apartment) { this.Apartment = Apartment; }
         public override string ToString()
         {
             string address = "";
-            address += Country + " ";
-            address += Oblast + " ";
-            if (!string.IsNullOrWhiteSpace(Region)) address += Region + " ";
-            address += City + " ";
-            address += HomeNumber + " ";
-            address += Street + " ";
+            address += Country + ";";
+            address += Oblast + ";";
+            if (!string.IsNullOrWhiteSpace(Region)) address += Region + ";";
+            address += City + ";";
+            address += HomeNumber + ";";
+            address += Street + ";";
             address += Apartment;
             return address;
         }
